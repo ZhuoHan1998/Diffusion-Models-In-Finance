@@ -46,7 +46,8 @@ organize a fast-growing and fragmented literature along two axes---methodologica
 family and financial task---consolidate how diffusion's conditioning and SDE
 structure are exploited for finance-specific goals (risk-neutral generation,
 stylized-fact fidelity, controllable stress, microstructure realism), and
-critically review evaluation, where heterogeneous protocols, leakage, and
+contribute a critical review of evaluation together with a concrete reporting
+protocol, since heterogeneous metrics, leakage, and
 in-distribution testing currently limit comparability. We close with a research
 agenda: tail fidelity, non-stationarity guarantees, hard economic constraints,
 efficiency for real-time use, privacy and governance, and standardized benchmarks.
@@ -70,40 +71,42 @@ relaxes all three constraints at once: it augments thin datasets, substitutes fo
 privacy-restricted records, and supplies controllable scenarios for backtesting
 and stress testing~\cite{hounwanou2025deepgen,sattarov2023findiff}.
 
-For roughly a decade this need was met primarily by generative adversarial
-networks (GANs) and variational autoencoders (VAEs). Quant
-GANs~\cite{wiese2020quantgan} showed that temporal convolutional GANs reproduce
-volatility clustering and fat tails; signature-based Sig-Wasserstein
-GANs~\cite{ni2021sigwgan} and structured-noise/MMD models~\cite{lu2024structnoise}
-improved stability and path realism. Yet GANs remain hard to train, prone to mode
-collapse, and awkward to condition, while VAEs oversmooth the heavy tails that
-dominate financial risk.
+For roughly a decade this need was met by GANs and VAEs: Quant
+GANs~\cite{wiese2020quantgan}, signature-based Sig-Wasserstein
+GANs~\cite{ni2021sigwgan}, and structured-noise/MMD models~\cite{lu2024structnoise}
+reproduce volatility clustering and fat tails. Yet GANs remain hard to train, prone
+to mode collapse, and awkward to condition, while VAEs oversmooth the heavy tails
+that dominate financial risk.
 
 \textbf{Why diffusion, why now.} Denoising diffusion probabilistic models
 (DDPMs)~\cite{ho2020ddpm} and score-based models~\cite{song2019ncsn}, unified
 under a stochastic differential equation (SDE) view~\cite{song2021sde}, offer a
 different trade-off: stable likelihood-based training, strong mode coverage, and
 native, flexible \emph{conditioning} through guidance~\cite{dhariwal2021beatgan,
-ho2022cfg}. They also sit beside the objects quantitative finance already uses. A
-diffusion model \emph{is} an SDE with a learned drift; sampling is the numerical
-solution of a reverse-time SDE or its probability-flow ODE; and training has a
-control-theoretic reading through a Hamilton--Jacobi--Bellman (HJB) equation on
-the log-density~\cite{berner2022optcontrol}. For a field built on It\^o calculus,
-Monte Carlo, and stochastic control, this is a comfortable fit---and the reason
-diffusion methods have, since roughly 2023, spread across nearly every
-quantitative-finance task.
+ho2022cfg}. They also sit beside the objects quantitative finance already uses: a
+diffusion model \emph{is} an SDE with a learned drift, sampling is reverse-time
+simulation, and training has a control-theoretic Hamilton--Jacobi--Bellman (HJB)
+reading~\cite{berner2022optcontrol}. For a field built on It\^o calculus, Monte
+Carlo, and stochastic control, this is a comfortable fit---and the reason diffusion
+methods have, since roughly 2023, spread across nearly every quantitative-finance
+task.
 
-\textbf{Contributions.} (i) A two-axis taxonomy (method $\times$ financial task,
-Figure~\ref{fig:taxonomy}) and coverage map (Figure~\ref{fig:coverage}) that
-organize the literature. (ii) A consolidated
-account of how diffusion's conditioning and SDE structure serve finance-specific
-goals---risk-neutral generation, stylized-fact fidelity, controllable stress, and
-microstructure realism. (iii) A critical review of evaluation and its pitfalls.
-(iv) A research agenda. Prior reviews are GAN/VAE-centric or target generic time
-series~\cite{yang2024tssurvey} and anomaly detection~\cite{liu2025anomalysurvey};
-broad GenAI synthetic-data surveys~\cite{li2025gensynthsurvey} and tabular
-surveys~\cite{challagundla2025tabsurvey} are not finance-specific. To our
-knowledge this is the first survey dedicated to diffusion \emph{in finance}.
+\textbf{Contributions.} Our central contribution is normative: (i) a critical
+review of evaluation and a concrete \emph{reporting protocol}
+(\S\ref{sec:eval}), because the field's binding constraint is measuring progress,
+not producing methods. Around it we offer (ii) a two-axis taxonomy (method
+$\times$ financial task, Figure~\ref{fig:taxonomy}) and coverage map
+(Figure~\ref{fig:coverage}); (iii) a consolidated account of how diffusion's
+conditioning and SDE structure serve finance-specific goals---risk-neutral
+generation, stylized-fact fidelity, controllable stress, and microstructure
+realism; and (iv) a research agenda. The \emph{delta} over generic time-series
+diffusion surveys~\cite{yang2024tssurvey,liu2025anomalysurvey} and broad
+GenAI/tabular synthetic-data surveys~\cite{li2025gensynthsurvey,challagundla2025tabsurvey}
+is the finance-specific structure those reviews do not treat: the
+$\mathbb{P}\!\to\!\mathbb{Q}$ measure change and no-arbitrage, microstructure
+\emph{responsiveness}, tails as a capital quantity, the simultaneous battery of
+stylized facts, and privacy/governance. To our knowledge this is the first survey
+dedicated to diffusion \emph{in finance}.
 Section~\ref{sec:bg} reviews fundamentals; Sections~\ref{sec:synth}--\ref{sec:port}
 survey applications; Section~\ref{sec:emerging} covers emerging and cross-domain
 uses; Section~\ref{sec:themes} synthesizes cross-cutting themes;
@@ -122,6 +125,21 @@ are adapted to finance. Within each financial task we organize work by method. W
 prioritize peer-reviewed and widely cited results, while noting that much of this
 literature is recent and preprint-stage, so quantitative claims should be read as
 indicative.
+
+%% TODO(authors): confirm the search sources, keyword set, date cutoff, and counts
+%% below against what was actually done before camera-ready; values are templated.
+\textbf{Methodology.} We searched arXiv, SSRN, the ACM and IEEE digital libraries,
+and Google Scholar for a method term (\emph{diffusion}, \emph{score-based},
+\emph{flow matching}, \emph{stochastic interpolant}) conjoined with a finance term
+(\emph{market}, \emph{limit order book}, \emph{volatility}, \emph{portfolio},
+\emph{risk}, \emph{option pricing}, \emph{tabular financial data}) through
+2026~Q1, and snowballed from the works retrieved. We kept work applying a
+diffusion-family generator to a financial task (the 88 cited, from a larger
+screened pool), excluding generic time-series or vision diffusion with no
+financial instantiation. The corpus is unavoidably preprint-heavy and a snapshot,
+and is biased toward published, well-cited, thesis-confirming work---negative
+results are likely under-represented, a selection risk we revisit in
+\S\ref{sec:eval}.
 
 \begin{figure}[t]
 \centering
@@ -204,58 +222,52 @@ or the prior), how to reason about a change of measure (a drift shift, hence a
 score shift; \S\ref{sec:price}), and why control-theoretic tools apply---the
 training objective satisfies an HJB equation on the evolving
 log-density~\cite{berner2022optcontrol}, connecting generation to the
-optimal-investment and hedging problems of continuous-time finance. The
+optimal-investment and hedging problems of continuous-time finance---though, to
+date, this is mainly a unifying lens rather than a tool the surveyed methods
+exploit concretely (\S\ref{sec:open}). The
 probability-flow ODE additionally yields exact likelihoods, useful for anomaly
 scoring and model comparison.
 
-\textbf{Discrete vs.\ continuous, and which to use.} The discrete DDPM and the
-continuous score-SDE are two views of one object, but the choice has practical
-consequences in finance. The discrete formulation is convenient for fixed-length
-tabular records and short return windows~\cite{kotelnikov2023tabddpm,
-sattarov2023findiff}; the continuous SDE view is natural when the target is itself
-a process---asset paths, yield-curve dynamics, or order flow---because it exposes
-the drift and diffusion terms where economic structure (mean reversion, jumps, the
-risk-neutral shift) is most naturally imposed~\cite{kim2025gbmdiff,
-gao2025sdepaths,tiwari2026riskneutral}. Few-step distillations and latent variants
-apply to either and are increasingly used when sampling cost is binding. In
-practice, financial models mix these ingredients freely: a latent-space score
-model with a transformer backbone, classifier-free conditioning, and a
-finance-specific prior is a common composite.
+\textbf{Discrete vs.\ continuous.} The two are views of one object, but the choice
+matters in finance. The discrete DDPM suits fixed-length tabular records and short
+return windows~\cite{kotelnikov2023tabddpm,sattarov2023findiff}; the continuous SDE
+view is natural when the target is itself a process---asset paths, yield curves,
+order flow---since it exposes the drift and diffusion terms where economic
+structure (mean reversion, jumps, the risk-neutral shift) is
+imposed~\cite{kim2025gbmdiff,gao2025sdepaths,tiwari2026riskneutral}. Few-step
+distillations and latent variants apply to either. In practice models mix these
+freely: a latent score model with a transformer backbone, classifier-free
+conditioning, and a finance-specific prior is a common composite.
 
-\textbf{From recipe to practice.} Building a financial diffusion model thus
-involves a small set of recurring choices: the \emph{backbone} (Transformer for
-long-range and cross-asset dependence, convolutional/U-Net for local structure,
-state-space for very long sequences~\cite{alcaraz2022sssd}); the
-\emph{representation} (raw series, latent code, image, or byte stream); the
-\emph{conditioning signal} and how it is injected (concatenation, cross-attention,
-or classifier-free guidance); the \emph{noise schedule and parameterization}; and
-any \emph{structural prior} encoding economic knowledge. The same few decisions
-recur across tasks, which is why methods transfer readily between, say, LOB
-simulation and scenario generation once the modality is matched. This modularity
-is a strength---progress in generic diffusion propagates quickly to finance---but
-it also means careless transfer can import assumptions (Gaussianity, stationarity,
+\textbf{From recipe to practice.} A financial diffusion model involves a few
+recurring choices: the \emph{backbone} (Transformer for long-range and cross-asset
+dependence, convolutional/U-Net for local structure, state-space for long
+sequences~\cite{alcaraz2022sssd}); the \emph{representation} (series, latent,
+image, or byte stream); the \emph{conditioning signal} and its injection
+(concatenation, cross-attention, or guidance); the \emph{noise schedule}; and any
+\emph{structural prior}. These recur across tasks, so methods transfer once the
+modality is matched---a strength, since generic progress propagates quickly, but a
+hazard, since careless transfer imports assumptions (Gaussianity, stationarity,
 exchangeability) that financial data violate.
 
 \textbf{Sampling and acceleration.} Ancestral sampling needs hundreds to thousands
 of network evaluations, prohibitive for high-frequency or large-scale risk use.
-Refinements add learned variances and improved schedules~\cite{nichol2021improved};
-DDIM~\cite{songddim2021}, EDM~\cite{karras2022edm}, consistency
-models~\cite{song2023consistency}, and flow matching~\cite{lipman2023flow} push
-toward few-step generation. Sampling cost recurs as a binding constraint below.
+Refinements~\cite{nichol2021improved}---DDIM~\cite{songddim2021},
+EDM~\cite{karras2022edm}, consistency models~\cite{song2023consistency}, flow
+matching~\cite{lipman2023flow}---push toward few-step generation, a binding
+constraint we revisit below.
 
-\textbf{Flows and interpolants: the broader family.} Flow matching is also the
-entry point to a \emph{generalization} of diffusion that we treat as in scope.
-Rectified flow~\cite{liu2023rectifiedflow} learns a neural ODE transporting noise
-to data along near-straight paths by least-squares velocity regression, and
-stochastic interpolants~\cite{albergo2023interpolants} give a unifying framework in
-which a tunable interpolation between any two densities yields both a
-probability-flow ODE and a family of SDEs, with classical diffusion recovered as
-the Gaussian special case. For finance this matters because arbitrary base
-distributions and interpolation schedules let priors be built into the
-\emph{path}, and the ODE form supports few-step sampling where latency binds. We
-therefore include flow-matching/rectified-flow/interpolant methods alongside
-DDPM and score-SDE, while treating \emph{classical} normalizing flows (invertible
-exact-likelihood maps) as a related baseline rather than as diffusion.
+\textbf{Flows and interpolants: the broader family.} Flow matching is the entry
+point to a \emph{generalization} of diffusion we treat as in scope. Rectified
+flow~\cite{liu2023rectifiedflow} learns a neural ODE transporting noise to data
+along near-straight paths, and stochastic interpolants~\cite{albergo2023interpolants}
+unify the picture: a tunable interpolation between any two densities yields both a
+probability-flow ODE and a family of SDEs, with classical diffusion the Gaussian
+special case. This matters in finance because arbitrary base distributions and
+schedules let priors be built into the \emph{path}, and the ODE form supports
+few-step sampling where latency binds. We therefore include
+flow/rectified-flow/interpolant methods alongside DDPM and score-SDE, treating
+\emph{classical} normalizing flows as a related baseline.
 
 \textbf{Conditioning and backbones.} Finance rarely wants unconditional samples;
 it wants samples \emph{given} a regime, a volatility target, or a history.
@@ -263,26 +275,24 @@ Classifier~\cite{dhariwal2021beatgan} and classifier-free~\cite{ho2022cfg}
 guidance steer generation; latent diffusion~\cite{rombach2022ldm} improves
 efficiency. Cross-domain backbones recur as finance models and baselines:
 TimeGrad~\cite{rasul2021timegrad}, CSDI~\cite{tashiro2021csdi},
-SSSD~\cite{alcaraz2022sssd}, Diffusion-TS~\cite{yuan2024diffusionts}, and
-TSDiff~\cite{kollovieh2023tsdiff} for sequences; TabDDPM~\cite{kotelnikov2023tabddpm}
-and TabSyn~\cite{zhang2024tabsyn} for tables; DiT~\cite{peebles2022dit} for
-transformer backbones; and Diffuser~\cite{janner2022diffuser}/Decision
+SSSD~\cite{alcaraz2022sssd}, Diffusion-TS~\cite{yuan2024diffusionts},
+TSDiff~\cite{kollovieh2023tsdiff} for sequences; TabDDPM~\cite{kotelnikov2023tabddpm},
+TabSyn~\cite{zhang2024tabsyn} for tables; DiT~\cite{peebles2022dit} for transformer
+backbones; Diffuser~\cite{janner2022diffuser}/Decision
 Diffuser~\cite{ajay2022decisiondiffuser} (surveyed by~\citet{zhu2023diff4rl}) for
-decision-making-as-generation. The flow/interpolant family supplies its own
-sequence backbones---FlowTS~\cite{hu2024flowts} and TimeFlow~\cite{he2025timeflow}
-for generation, and interpolant-based probabilistic
-forecasting~\cite{chen2024siforecasting,chen2024recurrentinterpolants}---and
-RecTable~\cite{fuchi2025rectable} for tables.
+decision-as-generation; and the flow/interpolant family's own backbones,
+FlowTS~\cite{hu2024flowts}, TimeFlow~\cite{he2025timeflow}, interpolant
+forecasting~\cite{chen2024siforecasting,chen2024recurrentinterpolants}, and
+RecTable~\cite{fuchi2025rectable}.
 
-\textbf{Why finance is hard.} Generic successes do not transfer automatically.
-Returns exhibit heavy (power-law) tails, volatility clustering, the leverage
-effect, and weak return autocorrelation but strong autocorrelation of absolute
-returns; the distribution drifts; the signal-to-noise ratio is low; LOB data are
-discrete, bursty, and rule-governed; and pricing requires no-arbitrage and the
-correct change of measure. These tensions motivate \emph{structure-informed}
-designs---GBM-based forward processes~\cite{kim2025gbmdiff}, factor
+\textbf{Why finance is hard.} Generic successes do not transfer automatically:
+returns are heavy-tailed, volatility-clustered, and non-stationary, the
+signal-to-noise ratio is low, LOB data are discrete and rule-governed, and pricing
+requires no-arbitrage and the correct change of measure (we detail these stylized
+facts in \S\ref{sec:synth}). These tensions motivate the \emph{structure-informed}
+designs---GBM forward processes~\cite{kim2025gbmdiff}, factor
 structure~\cite{chen2025difffactor}, arbitrage penalties~\cite{jin2025ivsurface},
-and risk-neutral drift corrections---that recur throughout.
+risk-neutral drift corrections---that recur throughout.
 
 \section{Synthetic Data and Time-Series Generation}\label{sec:synth}
 The largest cluster targets data that passes for real. Two design philosophies
@@ -291,33 +301,30 @@ recur. The first \emph{reshapes} data so off-the-shelf diffusion applies:
 spread into image-like representations, train a DDPM, and invert it, recovering
 fat tails and clustering. The second \emph{bakes in} financial structure:
 \citet{kim2025gbmdiff} replace Gaussian corruption with a geometric-Brownian-motion
-forward process, improving heavy-tail and clustering fidelity. The lesson is that
-inductive bias---priors in the noise process or representation---outperforms
-architecture tuning alone. The fidelity bar is unusually demanding: a financial
+forward process, improving heavy-tail and clustering fidelity. A pattern recurs
+across such studies---which we state as a working hypothesis rather than a
+measured result, given the comparability problems of \S\ref{sec:eval}---that
+inductive bias (priors in the noise process or representation) tends to help more
+than architecture tuning alone. The fidelity bar is unusually demanding: a financial
 generator must reproduce a battery of \emph{stylized facts} simultaneously---fat
 (power-law) tails, volatility clustering, the leverage effect, weak return
 autocorrelation alongside strong autocorrelation of absolute returns, and
-gain/loss asymmetry---none of which a low reconstruction error guarantees. Score
-networks for these tasks typically use Transformer, U-Net, or convolutional
-backbones with explicit temporal and positional encodings and diffusion-step
-embeddings to capture non-stationary temporal dependence; the multivariate case
-additionally demands faithful cross-sectional dependence, which motivates the
-factor- and correlation-structured designs that recur in
+gain/loss asymmetry---none of which a low reconstruction error guarantees. The
+multivariate case additionally demands faithful cross-sectional dependence,
+motivating the factor- and correlation-structured designs that recur in
 \S\ref{sec:risk}--\ref{sec:port}.
 
-The data modalities span a wide range, and the appropriate machinery differs by
-modality. Low-frequency univariate and panel returns are the most studied setting
-and the natural home of stylized-fact evaluation~\cite{takahashi2024synthfts,
-chen2025difffactor}. High-frequency and microstructure data (\S\ref{sec:lob})
-are discrete and event-driven, demanding event- or byte-level
-models~\cite{zheng2024lobdif,li2025bytegen}. Mixed-type tabular records---credit,
-fraud, fund holdings---require combined continuous/categorical
-diffusion~\cite{kotelnikov2023tabddpm,sattarov2023findiff}. And structured objects
-such as implied-volatility surfaces or yield curves are best modeled with the
-relevant no-arbitrage constraints built in~\cite{jin2025ivsurface,
-fukunishi2025termstructure}. A practical implication is that ``diffusion for
-finance'' is not one method but a family, selected and specialized per modality;
-the cross-domain backbones of \S\ref{sec:bg} supply the starting points.
+Machinery differs by modality: low-frequency univariate and panel returns, the
+most-studied setting, are the home of stylized-fact
+evaluation~\cite{takahashi2024synthfts,chen2025difffactor}; high-frequency
+microstructure data (\S\ref{sec:lob}) are discrete and event-driven, demanding
+event- or byte-level models~\cite{zheng2024lobdif,li2025bytegen}; mixed-type
+tabular records (credit, fraud, holdings) require combined continuous/categorical
+diffusion~\cite{kotelnikov2023tabddpm,sattarov2023findiff}; and structured objects
+such as implied-volatility surfaces or yield curves need no-arbitrage constraints
+built in~\cite{jin2025ivsurface,fukunishi2025termstructure}. ``Diffusion for
+finance'' is thus not one method but a family, specialized per modality from the
+cross-domain backbones of \S\ref{sec:bg}.
 
 \textbf{High-dimensional and conditional generation.} Portfolio and risk
 applications need realistic \emph{dependence}. \citet{chen2025difffactor} embed a
@@ -347,24 +354,29 @@ per-cluster diffusion transformers and latent flow-diffusion~\cite{ihsan2025late
 targets minority oversampling. Privacy is moving from proxies to formal
 guarantees: DP-FinDiff~\cite{sattarov2025dpfindiff} and federated
 DP-FedTabDiff~\cite{sattarov2024dpfedtabdiff} train under differential privacy,
-and~\citet{zuo2026privacyrisks} benchmark the privacy--utility frontier. Actuarial
-use is adjacent (survival-data diffusion~\cite{brockschmidt2025survdiff}). The
+and~\citet{zuo2026privacyrisks} benchmark the privacy--utility frontier. The
 non-diffusion frontier (adversarial synthetic data~\cite{xia2026bayesrobust})
 remains the comparison point.
 
-\textbf{Relation to GANs, VAEs, and flows.} It is worth stating the comparison
-plainly, since these baselines recur throughout. GANs---Quant
-GANs~\cite{wiese2020quantgan}, Sig-Wasserstein GANs~\cite{ni2021sigwgan}, and
-signature-MMD models~\cite{lu2024structnoise}---can reproduce stylized facts and
-were the first deep generators to do so convincingly, but their adversarial
-training is unstable and prone to mode collapse, and conditioning them on rich
-controls is awkward. VAEs train stably and give latent structure but tend to
-oversmooth, blunting exactly the heavy tails finance cares about. Across the
-surveyed studies the reported pattern is consistent: diffusion matches or exceeds
-these baselines on stylized-fact and downstream metrics while conditioning more
-naturally, at the cost of slower sampling. None of this is a clean dominance
-claim---cross-paper comparison is confounded by inconsistent data and metrics
-(\S\ref{sec:eval})---but it explains the field's rapid migration toward diffusion.
+\textbf{Relation to classical and deep baselines.} The comparison point is not
+only other deep generators but the calibrated stochastic models finance already
+trusts: GARCH-family volatility~\cite{bollerslev1986garch}, stochastic-volatility~\cite{heston1993sv}
+and rough-volatility~\cite{gatheral2018rough} models for returns, and
+Hawkes/point-process models~\cite{bacry2015hawkes} for order flow. A diffusion
+generator earns its place only if it matches or beats a well-calibrated model from
+this class on the stylized facts that matter; most surveyed work benchmarks against
+deep baselines and reports this classical comparison only sparingly---a gap we
+flag. Among deep baselines, GANs---Quant GANs~\cite{wiese2020quantgan},
+Sig-Wasserstein GANs~\cite{ni2021sigwgan}, signature-MMD
+models~\cite{lu2024structnoise}---first reproduced stylized facts convincingly but
+train unstably, collapse modes, and condition awkwardly, while VAEs train stably
+but oversmooth the heavy tails finance cares about. Across the surveyed studies the
+\emph{reported} pattern is consistent: diffusion matches or exceeds these baselines
+on stylized-fact and downstream metrics while conditioning more naturally, at the
+cost of slower sampling. We emphasize this is a synthesis of papers' self-reported
+comparisons, not an independently verified ranking (\S\ref{sec:eval}), so we read
+it as a hypothesis explaining the field's rapid migration rather than a settled
+result.
 
 \section{Market Microstructure and LOB Simulation}\label{sec:lob}
 Simulating the LOB and its order flow is harder than low-frequency generation: the
@@ -395,48 +407,43 @@ dynamics simulation yields portfolio-ready covariances~\cite{lesniewski2024beyon
 Interpretable evaluation uses optimal transport to test power-law
 reproduction~\cite{hashimoto2025otpowerlaw}.
 
-The defining requirement that separates microstructure simulation from mere
-sequence generation is \emph{responsiveness}: under a strategy backtest or
-market-impact study the simulated book must react plausibly to the evaluated
-agent's own orders, not merely replay history. Conditioning the generator on the
+The requirement that separates microstructure simulation from sequence generation
+is \emph{responsiveness}: under a backtest or market-impact study the book must
+react plausibly to the agent's own orders, not replay history. Conditioning on the
 evolving market state---and, in DigMA~\cite{huang2024digma}, on an explicit
-agent---is the route to this, and counterfactual generation
-\cite{wang2025diffvolume,wang2026difflob} is its controllable form. Two
-constraints temper progress: latency (thousand-step sampling is infeasible at
-high frequency, motivating the skip-step scheme of LOBDIF~\cite{zheng2024lobdif}
-and few-step samplers generally) and the discrete, rule-governed nature of order
-events, which byte- and event-level models~\cite{li2025bytegen,zheng2024lobdif}
-address more directly than continuous-image framings.
+agent---is the route, with counterfactual
+generation~\cite{wang2025diffvolume,wang2026difflob} its controllable form.
+Latency (thousand-step sampling is infeasible at high
+frequency~\cite{zheng2024lobdif}) and the discrete, rule-governed nature of order
+events---which byte- and event-level models~\cite{li2025bytegen,zheng2024lobdif}
+address more directly than image framings---temper progress.
 
-This work sits in a longer arc of market simulation that moved from hand-built
-agent-based and stochastic point-process models, through GAN-based generators, to
-the current diffusion frontier, which packages stable training, broad
-distributional coverage, and flexible conditioning. Diffusion simulators are
-increasingly positioned as substrates for \emph{agent-based}
-experiments~\cite{berti2025trades,huang2024digma}: a calibrated, responsive
-generator lets researchers inject hypothetical agents or shocks and observe
-plausible market reactions, which is precisely what counterfactual and
-regime-conditioned designs~\cite{wang2025diffvolume,wang2026difflob} enable. The
-open evaluation question---how to certify that a simulator's \emph{reaction} to an
-unseen agent is realistic, not merely that its unconditional samples match
-history---remains the key obstacle to using these simulators for high-stakes
-strategy validation.
+This work sits in a longer arc---from hand-built agent-based and point-process
+models (e.g.\ Hawkes-driven order flow~\cite{bacry2015hawkes}), through GANs, to
+the diffusion frontier, which packages stable training,
+broad coverage, and flexible conditioning. Diffusion simulators are increasingly
+substrates for \emph{agent-based} experiments~\cite{berti2025trades,huang2024digma}:
+a calibrated, responsive generator lets researchers inject hypothetical agents or
+shocks and observe plausible reactions, which counterfactual and regime-conditioned
+designs~\cite{wang2025diffvolume,wang2026difflob} enable. The open evaluation
+question---certifying that a simulator's \emph{reaction} to an unseen agent is
+realistic, not merely that unconditional samples match history---remains the key
+obstacle to high-stakes strategy validation.
 
 \section{Risk, Scenario Generation, and Stress Testing}\label{sec:risk}
 Controllability pays off most in risk, where the goal is to populate \emph{tails}
 and \emph{what-ifs} absent from history. Guidance~\cite{dhariwal2021beatgan,
 ho2022cfg} yields samples \emph{given} a crash intensity or regime; the same
-heavy-tail fidelity that aids generation makes the resulting Value-at-Risk and
-Expected-Shortfall estimates credible---a generator that thins tails understates
-risk. Methodologically, a trained generator is used as a Monte Carlo engine:
-risk measures (VaR, ES/CVaR) and their sensitivities are estimated from sampled
-scenarios, optionally conditioned on a stressed regime, so the quality of the
-tail directly determines the quality of the capital number. This makes the
-stylized-fact and tail-fidelity evaluation of \S\ref{sec:eval} not a cosmetic
-check but a precondition for trustworthy risk use, and it is why several recent
-methods add explicitly tail-weighted training objectives or regime
-conditioning~\cite{alzahrani2025marcd,wang2025neuralllevy} rather than relying on
-a generator tuned for average-case realism. Scenario generation is most useful wired into a decision:
+heavy-tail fidelity that aids generation is what \emph{would} make the resulting
+Value-at-Risk and Expected-Shortfall estimates credible. But the tails are exactly
+where generators most often fail their fidelity checks (\S\ref{sec:eval}), so this
+credibility must be validated, not assumed---a generator that thins tails silently
+understates risk. Methodologically, the generator is a Monte Carlo engine: VaR and
+ES/CVaR and their sensitivities are estimated from sampled scenarios, optionally
+conditioned on a stressed regime, so tail quality directly sets the capital
+number---which is why recent methods add tail-weighted objectives or regime
+conditioning~\cite{alzahrani2025marcd,wang2025neuralllevy} rather than tuning for
+average-case realism. Scenario generation is most useful wired into a decision:
 diffusion-augmented RL~\cite{choudhary2025diffaugrl} trains robust policies against
 generated stress, and MARCD~\cite{alzahrani2025marcd} couples a regime-aligned
 diffusion generator (a hidden Markov model) to a CVaR-constrained allocator with a
@@ -477,22 +484,23 @@ language-conditioned Treasury-futures series. More foundationally,
 \citet{gao2025sdepaths} generate SDE solution paths \emph{without} known drift and
 diffusion coefficients---the calibration setting when the model is unknown---and
 the HJB view~\cite{berner2022optcontrol} links diffusion to the optimal-investment
-and hedging equations. Deep hedging~\cite{buehler2019deephedging} is the downstream
-decision these generators serve: better training distributions yield better learned
-hedges, as CoFinDiff~\cite{tanaka2025cofindiff} demonstrates. Neural PDE solvers
-for (rough) volatility pricing~\cite{papapantoleon2024deepgradflow} are a
-complementary, non-generative route. Calibration---fitting a model to observed market prices---reappears throughout:
-generating arbitrage-consistent surfaces~\cite{jin2025ivsurface} or term
-structures~\cite{fukunishi2025termstructure} is calibration in distributional
-form, and learning unknown SDE coefficients from data~\cite{gao2025sdepaths} is
-calibration when the model class itself is uncertain. Hedging connects pricing to
-decisions: with a faithful $\mathbb{Q}$-generator, sensitivities (Greeks) and
-hedge ratios can be estimated by simulation, and deep-hedging
-policies~\cite{buehler2019deephedging} can be trained on diffusion-generated paths
-that include frictions and jumps. The unresolved frontier is enforcing
-\emph{exact} no-arbitrage and the martingale property by construction---via
-constrained sampling, projection, or hard-constrained guidance---rather than
-penalizing their violation, while preserving tail accuracy.
+and hedging equations. Calibration recurs in distributional form---arbitrage-consistent
+surfaces~\cite{jin2025ivsurface} and term structures~\cite{fukunishi2025termstructure},
+or learning unknown SDE coefficients when the model class is
+uncertain~\cite{gao2025sdepaths}. Deep hedging~\cite{buehler2019deephedging} is the
+downstream decision these generators serve: with a faithful $\mathbb{Q}$-generator,
+better training distributions yield better learned hedges (as
+CoFinDiff~\cite{tanaka2025cofindiff} shows) and Greeks follow by simulation on
+paths with frictions and jumps. Neural PDE solvers for (rough) volatility
+pricing~\cite{papapantoleon2024deepgradflow} are a complementary, non-generative
+route. The unresolved frontier is enforcing \emph{exact} no-arbitrage and the
+martingale property by construction rather than by penalty. Three routes trade off
+differently: soft penalties~\cite{jin2025ivsurface} are simple to add but only
+approximate and can still admit arbitrage; \emph{projecting} samples onto the
+no-arbitrage set guarantees feasibility but distorts the learned distribution and
+its tails; and \emph{constrained or guided sampling} imposes the constraint along
+the reverse SDE, at higher sampling cost. Achieving exactness while preserving tail
+accuracy, and at latencies real-time pricing can afford, remains open.
 
 \section{Forecasting and Portfolio Construction}\label{sec:port}
 Diffusion models are \emph{probabilistic} forecasters---they produce predictive
@@ -519,9 +527,11 @@ agents~\cite{gao2024diffsformer,lu2024structnoise}, and the generate-then-optimi
 pipeline of \S\ref{sec:risk}~\cite{choudhary2025diffaugrl,alzahrani2025marcd}
 closes the loop by optimizing the allocation directly against generated scenarios.
 Across all three routes the strongest results couple a financial inductive bias to
-the generator rather than relying on a generic backbone. The recurring caveat is
-evaluation: portfolio metrics are especially vulnerable to look-ahead bias and to
-overfitting a single backtest, a theme we return to next.
+the generator; a separate open question is how these diffusion forecasters compare
+against the large pretrained time-series foundation models now emerging as a
+competing paradigm. The recurring caveat is evaluation: portfolio metrics are
+especially vulnerable to look-ahead bias and single-backtest overfitting, a theme
+we turn to next.
 
 \begin{figure*}[t]
 \centering
@@ -548,67 +558,69 @@ Flow / interpolant & \coverage{finRed!60}{2.1pt} & \coverage{finRed!50}{1.9pt} &
   \coverage{finRed!60}{2.1pt} \\
 \bottomrule
 \end{tabular}
-\caption{Qualitative coverage map of the surveyed literature. Larger/darker
-markers indicate denser activity in this survey, not comparable publication
-counts. The map highlights the current imbalance: conditioning is widespread,
-while flow/interpolant methods and hard-constrained pricing remain early.}
+\caption{Coverage map of the surveyed literature. Marker area and darkness
+increase with the number of works \emph{in this survey} that we place in each
+method\,$\times$\,task cell (coarsely binned: small $\le2$, medium $3$--$5$, large
+$>5$); it is not a bibliometric count of the wider literature. The map highlights
+the current imbalance: conditioning is widespread, while flow/interpolant methods
+and hard-constrained pricing remain early.}
 \Description{A method-by-task matrix with dot size and darkness indicating
 qualitative literature density across synthetic data, LOB, risk, pricing, and
 portfolio applications.}
 \label{fig:coverage}
 \end{figure*}
 
-\begin{table}[t]
-\centering\small
-\caption{Representative diffusion-in-finance works by task. ``C'' marks explicit
-conditioning/controllability.}
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{5pt}
+\caption{Representative works by task, with methodological
+backbone/representation and explicit conditioning (``C''). The final column is the
+headline comparison \emph{as reported by each cited work}---self-reported,
+protocol-heterogeneous, and not independently verified, hence indicative rather
+than a ranking (\S\ref{sec:eval}).}
+%% TODO(authors): a public-code column was omitted pending per-repository
+%% verification; add ``Code'' (URL/\checkmark/--) once links are confirmed.
 \label{tab:summary}
-\begin{tabular}{@{}llc@{}}
+\begin{tabular}{@{}llllc l@{}}
 \toprule
-Work & Task & C \\
+Work & Task & Modality & Backbone / representation & C & Reported comparison \\
 \midrule
-Takahashi--Mizuno~\cite{takahashi2024synthfts} & Synthetic gen & \\
-Diffusion Factor~\cite{chen2025difffactor} & Hi-dim returns & \\
-CoFinDiff~\cite{tanaka2025cofindiff} & Controllable gen & $\checkmark$ \\
-FinDiff~\cite{sattarov2023findiff} & Tabular & $\checkmark$ \\
-Imb-FinDiff~\cite{sattarov2024imbfindiff} & Tabular (imbalance) & $\checkmark$ \\
-DP-FinDiff~\cite{sattarov2025dpfindiff} & Private tabular & $\checkmark$ \\
-TRADES~\cite{berti2025trades} & LOB sim & $\checkmark$ \\
-Painting~\cite{backhouse2025painting} & LOB sim & $\checkmark$ \\
-DiffVolume~\cite{wang2025diffvolume} & LOB volume & $\checkmark$ \\
-DiffLOB~\cite{wang2026difflob} & LOB counterfactual & $\checkmark$ \\
-LOBDIF~\cite{zheng2024lobdif} & LOB event stream & \\
-MARCD~\cite{alzahrani2025marcd} & Stress + CVaR & $\checkmark$ \\
-Risk-neutral~\cite{tiwari2026riskneutral} & Pricing & $\checkmark$ \\
-IV surface~\cite{jin2025ivsurface} & Pricing & $\checkmark$ \\
-Term structure~\cite{fukunishi2025termstructure} & Rates & $\checkmark$ \\
-Diffolio~\cite{cho2025diffolio} & Forecast/portfolio & $\checkmark$ \\
-Factor-cond.~\cite{gao2025factorcond} & Portfolio & $\checkmark$ \\
-Dyn.\ portfolio~\cite{aghapour2025dynport} & Portfolio & \\
-FlowHFT~\cite{li2025flowhft} & Trading (flow) & $\checkmark$ \\
+Takahashi--Mizuno~\cite{takahashi2024synthfts} & Synthetic gen & Returns & Wavelet$\to$image DDPM & & Fat tails, clustering \\
+Diffusion Factor~\cite{chen2025difffactor} & Hi-dim returns & Panel returns & Latent factor diffusion & & Factor cov.\ + theory \\
+CoFinDiff~\cite{tanaka2025cofindiff} & Controllable gen & Returns & Cond.\ (trend/vol) & $\checkmark$ & $>$ GAN/VAE control err.\ \\
+FinDiff~\cite{sattarov2023findiff} & Tabular & Mixed-type & Tabular diffusion & $\checkmark$ & $>$ TVAE/CTGAN/TabDDPM \\
+Imb-FinDiff~\cite{sattarov2024imbfindiff} & Tabular (imbalance) & Mixed-type & Denoise + label obj.\ & $\checkmark$ & Minority (fraud) synth.\ \\
+DP-FinDiff~\cite{sattarov2025dpfindiff} & Private tabular & Mixed-type & Diffusion under DP & $\checkmark$ & Formal DP budget \\
+TRADES~\cite{berti2025trades} & LOB sim & Order flow & Transformer diffusion & $\checkmark$ & Predictive-score gain \\
+Painting~\cite{backhouse2025painting} & LOB sim & LOB image & Image inpainting & $\checkmark$ & LOB-Bench \\
+DiffVolume~\cite{wang2025diffvolume} & LOB volume & Volume snapshot & Cond.\ counterfactual & $\checkmark$ & Counterfactual control \\
+DiffLOB~\cite{wang2026difflob} & LOB counterfactual & LOB trajectory & Regime-conditioned & $\checkmark$ & Regime what-ifs \\
+LOBDIF~\cite{zheng2024lobdif} & LOB event stream & Event stream & Event + skip-step & & Joint timing/type \\
+MARCD~\cite{alzahrani2025marcd} & Stress + CVaR & Returns & Regime (HMM) + CVaR & $\checkmark$ & Drawdown reduction \\
+Risk-neutral~\cite{tiwari2026riskneutral} & Pricing & Paths & Score-shift to $\mathbb{Q}$ & $\checkmark$ & Martingale enforced \\
+IV surface~\cite{jin2025ivsurface} & Pricing & Vol.\ surface & Arbitrage-penalized & $\checkmark$ & $>$ GAN surfaces \\
+Term structure~\cite{fukunishi2025termstructure} & Rates & Yield curve & Arb.-aware + macro & $\checkmark$ & Arb-consistent curves \\
+Diffolio~\cite{cho2025diffolio} & Forecast/portfolio & Panel returns & Hier.\ attn + corr.\ reg.\ & $\checkmark$ & Sharpe/CE gain \\
+Factor-cond.~\cite{gao2025factorcond} & Portfolio & Cross-section & Factor-conditioned & $\checkmark$ & Mean-var/CVaR \\
+Dyn.\ portfolio~\cite{aghapour2025dynport} & Portfolio & Returns & Model-free policy & & $>$ Markowitz \\
+FlowHFT~\cite{li2025flowhft} & Trading (flow) & HF features & Flow-matching policy & $\checkmark$ & Regime-adaptive \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 
 \section{Emerging and Cross-Domain Applications}\label{sec:emerging}
-Beyond the five core tasks, several adjacent applications are maturing.
-\emph{Fixed income} has its first generative treatments---arbitrage-aware term
-structures~\cite{fukunishi2025termstructure} and Treasury-futures
-synthesis~\cite{zhang2026tfcodit}---extending diffusion from equities to rates.
-\emph{Insurance and actuarial} use is nascent but methodologically close:
-diffusion for survival (time-to-event) data~\cite{brockschmidt2025survdiff} maps
-onto mortality and claims modeling. \emph{Macro-conditioned} generation links
-return distributions to economic state, a capability shared by factor-conditioned
-models~\cite{gao2025factorcond} and macro-aware robust-trading
-generators~\cite{xia2026bayesrobust}. Finally, much methodology transfers from
-\emph{energy} markets, where conditional diffusion for scenario generation is
-comparatively mature~\cite{li2023diffcharge,wang2025dayaheadenergy}; these
-electricity- and mobility-scenario techniques are routinely validated before
-adaptation to financial risk, and the multistage-stochastic-optimization framing
-of scenario trees~\cite{zarifis2025scenariotree} applies equally to energy
-arbitrage and to financial asset--liability management. The pattern is consistent:
-a technique proven on a structurally similar non-financial problem is imported and
-specialized with a financial prior.
+Beyond the five core tasks, adjacent applications are maturing along one recurring
+pattern: a technique proven on a structurally similar non-financial problem is
+imported and specialized with a financial prior. \emph{Fixed income} has its first
+generative treatments (arbitrage-aware term
+structures~\cite{fukunishi2025termstructure}, Treasury-futures
+synthesis~\cite{zhang2026tfcodit}); \emph{insurance/actuarial} use is nascent but
+close, with survival diffusion~\cite{brockschmidt2025survdiff} mapping onto
+mortality and claims; \emph{macro-conditioned} generation links returns to economic
+state~\cite{gao2025factorcond,xia2026bayesrobust}; and much methodology transfers
+from \emph{energy} markets, where scenario
+generation~\cite{li2023diffcharge,wang2025dayaheadenergy} and scenario
+trees~\cite{zarifis2025scenariotree} are comparatively mature.
 
 \section{Cross-Cutting Themes}\label{sec:themes}
 Read across tasks, four threads organize the field. \textbf{Conditioning is the
@@ -618,12 +630,14 @@ microstructure~\cite{wang2025diffvolume,wang2026difflob}, stress
 scenarios~\cite{choudhary2025diffaugrl,alzahrani2025marcd}, and
 forecast-conditioned allocation~\cite{cho2025diffolio,gao2025factorcond}---is
 conditional, because controllability is what finance actually wants from a
-generator. \textbf{Inductive bias beats architecture tuning.} The wins come from
+generator. \textbf{Inductive bias appears to matter more than architecture tuning.} Where
+one design clearly outperforms another, the gain typically comes from
 encoding financial structure---GBM noising~\cite{kim2025gbmdiff}, factor
 covariance~\cite{chen2025difffactor}, arbitrage penalties~\cite{jin2025ivsurface},
 risk-neutral drift shifts~\cite{tiwari2026riskneutral}, correlation
 regularizers~\cite{cho2025diffolio}---into the noise process, the prior, or the
-loss. \textbf{Representation is a design lever.} Wavelet-to-image
+loss; we offer this as a hypothesis the field's inconsistent evaluation
+(\S\ref{sec:eval}) cannot yet confirm. \textbf{Representation is a design lever.} Wavelet-to-image
 \cite{takahashi2024synthfts}, LOB-as-image~\cite{backhouse2025painting},
 byte-space~\cite{li2025bytegen}, latent~\cite{rombach2022ldm,zhang2024tabsyn}, and
 chart-image~\cite{lee2025charts} framings repeatedly unlock generic diffusion
@@ -634,6 +648,21 @@ allocation~\cite{alzahrani2025marcd}, multistage stochastic
 optimization~\cite{zarifis2025scenariotree}, and the diffusion-as-policy
 line~\cite{janner2022diffuser,ajay2022decisiondiffuser}---rather than treating
 realistic samples as an end in themselves.
+
+\textbf{How to choose.} Let the binding constraint, not the backbone, pick the
+method. \emph{Synthetic returns}: a structure-informed or representation-reshaping
+model~\cite{kim2025gbmdiff,takahashi2024synthfts}, checked on the stylized-fact
+battery against a calibrated classical benchmark~\cite{gatheral2018rough}.
+\emph{LOB simulation}: a conditional order-flow or image
+model~\cite{berti2025trades,backhouse2025painting}, checked on responsiveness to
+the agent's own orders. \emph{Risk/stress}: a regime-conditioned, tail-weighted
+generator~\cite{alzahrani2025marcd}, checked on Expected Shortfall under a held-out
+crisis. \emph{Pricing/hedging}: an arbitrage-aware or $\mathbb{Q}$-shifted
+model~\cite{tiwari2026riskneutral,jin2025ivsurface}, checked on arbitrage-violation
+rates. \emph{Forecasting/portfolios}: a factor- or correlation-guided
+model~\cite{cho2025diffolio,gao2025factorcond}, checked out-of-sample under
+chronological splits. When latency binds, prefer few-step samplers from the
+outset~\cite{songddim2021,song2023consistency}.
 
 \textbf{Deployment considerations.} Three practical constraints cut across all of
 the above. \emph{Latency}: real-time and high-frequency use cannot afford
@@ -662,12 +691,12 @@ LOB-Bench~\cite{backhouse2025painting}, though \emph{responsiveness} (impact
 realism under the simulated agent's own actions) remains non-standardized.
 \emph{Privacy} is first-class when synthetic data substitutes for sensitive
 records~\cite{sattarov2023findiff,sattarov2025dpfindiff,zuo2026privacyrisks}.
-It is useful to view these as four metric families---marginal (stylized facts),
-joint/distributional (discriminative scores), task (downstream utility), and
-privacy---each guarding against a different failure: a model can ace marginals yet
-fail joint dependence, or attain high utility yet leak membership. A credible
-evaluation reports at least one from each family; reporting only marginals, still
-common, is the weakest acceptable bar and the easiest to game.
+These form four metric families---marginal (stylized facts), joint/distributional
+(discriminative scores), task (downstream utility), and privacy---each guarding a
+different failure (Figure~\ref{fig:eval-stack}): a model can ace marginals yet fail
+joint dependence, or attain high utility yet leak membership. A credible study
+reports at least one from each; reporting only marginals, still common, is the
+easiest bar to game.
 
 \begin{figure}[t]
 \centering
@@ -716,6 +745,10 @@ test-on-real) metric, since each probes a different failure mode; (iv) for
 private data, a stated privacy notion and budget rather than an empirical proxy
 alone; and (v) released code and preprocessing. None of these is universal today,
 which is why headline claims of superiority so rarely reproduce across papers.
+%% TODO(authors): create/de-anonymize the companion repository before camera-ready.
+To make Table~\ref{tab:summary} auditable and answer the code-availability question
+practitioners ask first, we maintain a companion repository indexing each method's
+public code (where available), datasets, and evaluation protocol.
 
 \section{Open Problems}\label{sec:open}
 \textbf{Tail and extreme-event fidelity.} Decision-relevant mass lives in the
@@ -760,15 +793,12 @@ benchmarks with chronological and regime-aware splits, tail- and arbitrage-aware
 objectives, formal privacy and model-risk treatment, and tighter coupling of
 generation to the decision it serves.
 
-\textbf{Scope and limitations of this survey.} We have emphasized breadth across
-financial tasks over exhaustive coverage of any one; some fast-moving
-sub-areas---multimodal (news/price) generation, graph-based systemic-risk
-modeling, and crypto-specific work---are touched only briefly and merit dedicated
-treatment. Because the literature is recent and largely preprint-stage, reported
-results should be read as indicative rather than settled, which reinforces our call
-for shared benchmarks. We expect the method $\times$ task map of
-Figures~\ref{fig:taxonomy}--\ref{fig:coverage} to fill in rapidly, particularly in the under-served
-cells of hard-constrained pricing and tail-faithful risk.
+\textbf{Scope and limitations.} We emphasized breadth across tasks over exhaustive
+coverage of any one; fast-moving sub-areas---multimodal (news/price) generation,
+graph-based systemic-risk modeling, and crypto-specific work---are touched only
+briefly and merit dedicated treatment. We expect the method $\times$ task map
+(Figures~\ref{fig:taxonomy}--\ref{fig:coverage}) to fill in rapidly, especially
+the under-served cells of hard-constrained pricing and tail-faithful risk.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}

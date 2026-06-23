@@ -214,45 +214,45 @@ Warning--no number and no volume in zhu2023diff4rl
 Warning--page numbers missing in both pages and numpages fields in zhu2023diff4rl
 Warning--no number and no volume in zuo2026privacyrisks
 Warning--page numbers missing in both pages and numpages fields in zuo2026privacyrisks
-You've used 88 entries,
+You've used 92 entries,
             5901 wiz_defined-function locations,
-            1689 strings with 31102 characters,
-and the built_in function-call counts, 99885 in all, are:
-= -- 12895
-> -- 4702
+            1713 strings with 31670 characters,
+and the built_in function-call counts, 104812 in all, are:
+= -- 13694
+> -- 4824
 < -- 0
-+ -- 1587
-- -- 1580
-* -- 7739
-:= -- 10472
-add.period$ -- 447
-call.type$ -- 88
-change.case$ -- 699
-chr.to.int$ -- 83
-cite$ -- 291
-duplicate$ -- 8032
-empty$ -- 5762
-format.name$ -- 1919
-if$ -- 24521
++ -- 1625
+- -- 1620
+* -- 8041
+:= -- 10910
+add.period$ -- 467
+call.type$ -- 92
+change.case$ -- 723
+chr.to.int$ -- 87
+cite$ -- 295
+duplicate$ -- 8457
+empty$ -- 6057
+format.name$ -- 1967
+if$ -- 25837
 int.to.chr$ -- 7
 int.to.str$ -- 1
-missing$ -- 381
-newline$ -- 787
-num.names$ -- 699
-pop$ -- 3732
+missing$ -- 397
+newline$ -- 819
+num.names$ -- 731
+pop$ -- 3865
 preamble$ -- 1
-purify$ -- 1481
+purify$ -- 1541
 quote$ -- 0
-skip$ -- 2445
+skip$ -- 2593
 stack$ -- 0
-substring$ -- 5130
-swap$ -- 469
+substring$ -- 5533
+swap$ -- 527
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1790
+type$ -- 1854
 warning$ -- 203
-while$ -- 452
+while$ -- 486
 width$ -- 0
-write$ -- 1490
+write$ -- 1558
 (There were 203 warnings)

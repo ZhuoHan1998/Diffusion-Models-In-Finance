@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{88}
+\begin{thebibliography}{92}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -115,6 +115,19 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Bacry, Mastromatteo, and Muzy}{Bacry
+  et~al\mbox{.}}{2015}]%
+        {bacry2015hawkes}
+\bibfield{author}{\bibinfo{person}{Emmanuel Bacry}, \bibinfo{person}{Iacopo
+  Mastromatteo}, {and} \bibinfo{person}{Jean-Fran\c{c}ois Muzy}.}
+  \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Hawkes Processes in Finance}.
+\newblock \bibinfo{journal}{\emph{Market Microstructure and Liquidity}}
+  \bibinfo{volume}{1}, \bibinfo{number}{1} (\bibinfo{year}{2015}),
+  \bibinfo{pages}{1550005}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Bagchi, Tesfaye, and Shastri}{Bagchi
   et~al\mbox{.}}{2026}]%
         {bagchi2026factordim}
@@ -153,6 +166,18 @@
   with Diffusion Models}.
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2502.07071}}
   (\bibinfo{year}{2025}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Bollerslev}{Bollerslev}{1986}]%
+        {bollerslev1986garch}
+\bibfield{author}{\bibinfo{person}{Tim Bollerslev}.}
+  \bibinfo{year}{1986}\natexlab{}.
+\newblock \showarticletitle{Generalized Autoregressive Conditional
+  Heteroskedasticity}.
+\newblock \bibinfo{journal}{\emph{Journal of Econometrics}}
+  \bibinfo{volume}{31}, \bibinfo{number}{3} (\bibinfo{year}{1986}),
+  \bibinfo{pages}{307--327}.
 \newblock
 
 
@@ -351,6 +376,18 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Gatheral, Jaisson, and Rosenbaum}{Gatheral
+  et~al\mbox{.}}{2018}]%
+        {gatheral2018rough}
+\bibfield{author}{\bibinfo{person}{Jim Gatheral}, \bibinfo{person}{Thibault
+  Jaisson}, {and} \bibinfo{person}{Mathieu Rosenbaum}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Volatility is Rough}.
+\newblock \bibinfo{journal}{\emph{Quantitative Finance}} \bibinfo{volume}{18},
+  \bibinfo{number}{6} (\bibinfo{year}{2018}), \bibinfo{pages}{933--949}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Guo, Li, Tang, and Yao}{Guo
   et~al\mbox{.}}{2025}]%
         {guo2025compressedsensing}
@@ -386,6 +423,18 @@
   Time Series Generation via Flow Matching Modeling}.
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2511.07968}}
   (\bibinfo{year}{2025}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Heston}{Heston}{1993}]%
+        {heston1993sv}
+\bibfield{author}{\bibinfo{person}{Steven~L. Heston}.}
+  \bibinfo{year}{1993}\natexlab{}.
+\newblock \showarticletitle{A Closed-Form Solution for Options with Stochastic
+  Volatility with Applications to Bond and Currency Options}.
+\newblock \bibinfo{journal}{\emph{The Review of Financial Studies}}
+  \bibinfo{volume}{6}, \bibinfo{number}{2} (\bibinfo{year}{1993}),
+  \bibinfo{pages}{327--343}.
 \newblock
 
 
