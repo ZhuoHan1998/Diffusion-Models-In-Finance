@@ -1,0 +1,24 @@
+{
+  "directions": [
+    {"iter": 1, "direction": "synthetic financial time-series generation + survey landscape", "outcome": "hit: Takahashi&Mizuno, Fiaingen(cand)"},
+    {"iter": 1, "direction": "score-based diffusion for stock returns + limit order book", "outcome": "hit: Diffusion Factor Models, TRADES, Painting-the-market, DiffVolume(cand), DiffLOB(cand)"},
+    {"iter": 1, "direction": "derivative pricing / hedging / calibration via diffusion", "outcome": "hit: Exotic-option(cand), GBM-diffusion, implied-vol-surface(cand); risk-neutral pricing(cand)"},
+    {"iter": 1, "direction": "scenario generation / stress testing / tail risk", "outcome": "hit: Diffusion-Augmented RL(cand), compressed-sensing-finance(cand)"},
+    {"iter": 1, "direction": "DDPM/score-SDE foundational papers (Ho, Song)", "outcome": "hit: confirmed canonical anchors"},
+    {"iter": 1, "direction": "portfolio optimization + probabilistic forecasting (Diffolio/TimeGrad)", "outcome": "hit: Diffolio, Aghapour dynamic portfolio, TimeGrad baseline"},
+    {"iter": 1, "direction": "agent-based market simulation / order flow (TRADES)", "outcome": "hit: TRADES verified; SSRN order-book survey exists"},
+    {"iter": 1, "direction": "tabular financial diffusion (TabDDPM/FinDiff/fraud)", "outcome": "hit: FinDiff(ICAIF23), Entity-based(ICAIF24,cand), EmDT(cand), TabDDPM"}
+  ],
+  "untried_next": [
+    "existing survey papers on diffusion-in-finance / generative-models-in-finance (position the contribution)",
+    "deep hedging + neural SDE pricing (Buehler; robust pricing)",
+    "financial PDE/HJB solving with diffusion / generative methods",
+    "anomaly & fraud detection with diffusion",
+    "evaluation: stylized facts, fidelity/diversity metrics, LOB-Bench, discriminative/predictive scores",
+    "privacy / differential privacy of synthetic financial data",
+    "GAN/VAE baselines in finance (QuantGAN, Fin-GAN, market simulators) for comparison",
+    "crypto / high-frequency / volatility-surface specific diffusion work",
+    "macro / credit risk / insurance / ESG generative applications"
+  ],
+  "note": "Each new direction must differ from all historical attempts (framework diversity rule)."
+}
