@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{92}
+\begin{thebibliography}{88}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -178,19 +178,6 @@
 \newblock \bibinfo{journal}{\emph{Journal of Econometrics}}
   \bibinfo{volume}{31}, \bibinfo{number}{3} (\bibinfo{year}{1986}),
   \bibinfo{pages}{307--327}.
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Brockschmidt, Schr{\"o}der, and
-  Feuerriegel}{Brockschmidt et~al\mbox{.}}{2025}]%
-        {brockschmidt2025survdiff}
-\bibfield{author}{\bibinfo{person}{Marie Brockschmidt}, \bibinfo{person}{Maresa
-  Schr{\"o}der}, {and} \bibinfo{person}{Stefan Feuerriegel}.}
-  \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{{SurvDiff}: A Diffusion Model for Generating
-  Synthetic Data in Survival Analysis}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2509.22352}}
-  (\bibinfo{year}{2025}).
 \newblock
 
 
@@ -643,17 +630,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Li, Xiong, and Chen}{Li et~al\mbox{.}}{2023}]%
-        {li2023diffcharge}
-\bibfield{author}{\bibinfo{person}{Siyang Li}, \bibinfo{person}{Hui Xiong},
-  {and} \bibinfo{person}{Yize Chen}.} \bibinfo{year}{2023}\natexlab{}.
-\newblock \showarticletitle{{DiffCharge}: Generating {EV} Charging Scenarios
-  via a Denoising Diffusion Model}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2308.09857}}
-  (\bibinfo{year}{2023}).
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Li and Chen}{Li and Chen}{2025}]%
         {li2025bytegen}
 \bibfield{author}{\bibinfo{person}{Yang Li} {and} \bibinfo{person}{Zhi Chen}.}
@@ -1016,19 +992,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Wang, Liu, Cao, Liang, Li, and Mo}{Wang
-  et~al\mbox{.}}{2025}]%
-        {wang2025dayaheadenergy}
-\bibfield{author}{\bibinfo{person}{Changgang Wang}, \bibinfo{person}{Wei Liu},
-  \bibinfo{person}{Yu Cao}, \bibinfo{person}{Dong Liang}, \bibinfo{person}{Yang
-  Li}, {and} \bibinfo{person}{Jingshan Mo}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{The Day-Ahead Scenario Generation Method for New
-  Energy Based on an Improved Conditional Generative Diffusion Model}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2503.07648}}
-  (\bibinfo{year}{2025}).
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Wang and Rachev}{Wang and Rachev}{2025}]%
         {wang2025neuralllevy}
 \bibfield{author}{\bibinfo{person}{Ziyao Wang} {and}
@@ -1198,21 +1161,6 @@
 \newblock
 \newblock
 \shownote{arXiv:2412.09631.}
-
-
-\bibitem[\protect\citeauthoryear{Zhu, Zhao, He, Zhong, Zhang, Guo, Chen, and
-  Zhang}{Zhu et~al\mbox{.}}{2023}]%
-        {zhu2023diff4rl}
-\bibfield{author}{\bibinfo{person}{Zhengbang Zhu}, \bibinfo{person}{Hanye
-  Zhao}, \bibinfo{person}{Haoran He}, \bibinfo{person}{Yichao Zhong},
-  \bibinfo{person}{Shenyu Zhang}, \bibinfo{person}{Haoquan Guo},
-  \bibinfo{person}{Tingting Chen}, {and} \bibinfo{person}{Weinan Zhang}.}
-  \bibinfo{year}{2023}\natexlab{}.
-\newblock \showarticletitle{Diffusion Models for Reinforcement Learning: A
-  Survey}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2311.01223}}
-  (\bibinfo{year}{2023}).
-\newblock
 
 
 \bibitem[\protect\citeauthoryear{Zuo, Kang, Patterson, and Seneviratne}{Zuo
