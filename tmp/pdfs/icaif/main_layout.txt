@@ -1,0 +1,595 @@
+                             Diffusion Models in Finance: A Survey
+                                                         Anonymous Author(s)
+                                                          Anonymous Institution(s)
+
+ABSTRACT                                                                 a stochastic differential equation (SDE) view [69], offer a different
+Diffusion and score-based generative models have, within a few           trade-off: stable likelihood-based training, strong mode coverage,
+years, spread across many major quantitative-finance tasks: syn-         and native, flexible conditioning through guidance [20, 32]. They
+thetic data generation, limit- order-book (LOB) simulation, risk         also sit beside the objects quantitative finance already uses: a diffu-
+and scenario generation, derivative pricing and hedging, and port-       sion model is an SDE with a learned drift, sampling is reverse-time
+folio construction. Their appeal is structural—stable likelihood-        simulation, and training has a control-theoretic Hamilton–Jacobi–
+based training, strong mode coverage, native conditioning, and           Bellman (HJB) reading [9]. For a field built on Itô calculus, Monte
+a stochastic-differential-equation (SDE) formulation that sits nat-      Carlo, and stochastic control, this is a comfortable fit—and the rea-
+urally beside the Itô calculus and stochastic control finance al-        son diffusion methods have, since roughly 2023, spread across many
+ready uses. We argue that progress is now bottlenecked less by           major quantitative-finance tasks.
+architecture than by finance-specific evaluation, constraints, and           Contributions. Our central contribution is normative: (i) a crit-
+deployment validation. We present, to our knowledge, the first           ical review of evaluation and a concrete reporting protocol (§10),
+survey focused specifically on diffusion-family generative models        because the field’s binding constraint is measuring progress, not
+across financial tasks. We organize a fast-growing and fragmented        producing methods. Around it we offer (ii) a two-axis taxonomy
+literature along two axes—methodological family and financial            (method × financial task, Figure 1) and coverage map (Figure 2);
+task—consolidate how diffusion’s conditioning and SDE structure          (iii) a consolidated account of how diffusion’s conditioning and
+are exploited for finance-specific goals (risk-neutral generation,       SDE structure serve finance-specific goals—risk-neutral generation,
+stylized-fact fidelity, controllable stress, microstructure realism),    stylized-fact fidelity, controllable stress, and microstructure realism;
+and contribute a critical review of evaluation together with a con-      and (iv) a research agenda. The delta over generic time-series diffu-
+crete reporting protocol, since heterogeneous metrics, leakage, and      sion surveys [51, 81] and broad GenAI/tabular synthetic-data sur-
+in-distribution testing currently limit comparability. We close with     veys [13, 46] is the finance-specific structure those reviews do not
+a research agenda: tail fidelity, non-stationarity guarantees, hard      treat: the P → Q measure change and no-arbitrage, microstructure
+economic constraints, efficiency for real-time use, privacy and gov-     responsiveness, tails as a capital quantity, the simultaneous battery
+ernance, and standardized benchmarks.                                    of stylized facts, and privacy/governance. To our knowledge this is
+                                                                         the first survey focused specifically on diffusion-family generative
+KEYWORDS                                                                 models across financial tasks, rather than on time-series diffusion,
+                                                                         tabular synthesis, GenAI-in-finance, or portfolio/forecasting use
+diffusion models, score-based generative models, synthetic data,         alone. Section 2 reviews fundamentals; Sections 3–7 survey applica-
+market simulation, limit order book, risk management, derivative         tions; Section 8 covers emerging and cross-domain uses; Section 9
+pricing, portfolio optimization, stress testing                          synthesizes cross-cutting themes; Section 10 treats evaluation; and
+                                                                         Section 11 discusses open problems.
+1   INTRODUCTION                                                             Scope. We focus on diffusion and score-based models—DDPMs,
+                                                                         continuous score-SDEs, and their conditional, latent, fast-sampling,
+Generative modeling is now central to quantitative finance, for
+                                                                         and structure-informed variants—applied to financial problems.
+structural rather than fashionable reasons. Financial data are scarce
+                                                                         We also include the flow-matching, rectified-flow, and stochastic-
+in the regimes that matter most—crises, regime transitions, and
+                                                                         interpolant generalization (§2), of which diffusion is the Gauss-
+rare events are by definition under-represented in any historical
+                                                                         ian special case, but treat classical normalizing flows as a related
+sample. They are sensitive, since client-level and proprietary records
+                                                                         baseline. We include the most relevant non-diffusion baselines (no-
+cannot be shared freely. And they are non-stationary, drifting with
+                                                                         tably GANs and VAEs) for context but do not survey them exhaus-
+policy, liquidity, and market structure. Synthetic data that faith-
+                                                                         tively, and we treat cross-domain backbones only insofar as they are
+fully reproduces the statistical signature of markets relaxes all
+                                                                         adapted to finance. Within each financial task we organize work by
+three constraints at once: it augments thin datasets, substitutes for
+                                                                         method. We prioritize peer-reviewed and widely cited results, while
+privacy-restricted records, and supplies controllable scenarios for
+                                                                         noting that much of this literature is recent and preprint-stage, so
+backtesting and stress testing [33, 61].
+                                                                         quantitative claims should be read as indicative.
+   For roughly a decade this need was met by GANs and VAEs:
+                                                                             Methodology. We paired method terms (diffusion, score-based,
+Quant GANs [79], signature-based Sig-Wasserstein GANs [54], and
+                                                                         flow matching, rectified flow, stochastic interpolant) with finance
+structured-noise/MMD models [53] reproduce volatility clustering
+                                                                         terms (market, limit order book, volatility, portfolio, risk, option pric-
+and fat tails. Yet GANs remain hard to train, prone to mode collapse,
+                                                                         ing, tabular financial data) across arXiv, SSRN, ACM, IEEE, and
+and awkward to condition, while VAEs oversmooth the heavy tails
+                                                                         Google Scholar through 2026 Q1, then snowballed citations. From
+that dominate financial risk.
+                                                                         103 recorded candidate/seed records, we retained the 88 cited works
+   Why diffusion, why now. Denoising diffusion probabilistic
+models (DDPMs) [31] and score-based models [68], unified under
+                                                                                                                                     Anonymous Author(s)
+
+
+               Method axis                                 Task axis            so a diffusion generator is a learned, data-driven SDE, and sam-
+            DDPM / score-SDE                          synthetic data (§3)       pling is the reverse-time simulation quants already perform—now
+                                     conditioning
+            conditional / guided
+                                    SDE structure     LOB simulation (§4)       with a neural drift. The correspondence is operational, not merely
+           latent & fast-sampling                    risk & scenarios (§5)      aesthetic: it tells us where financial structure can be injected (the
+            structure-informed                      pricing & hedging (§6)
+                                                                                drift 𝑓 , the diffusion 𝑔, the noise schedule, or the prior), how to
+            (GBM, factor, arb.)                                                 reason about a change of measure (a drift shift, hence a score shift;
+                                                    forecast & portfolio (§7)
+                                                                                §6), and why control-theoretic tools apply—the training objective
+                                                                                satisfies an HJB equation on the evolving log-density [9], connect-
+Figure 1: Two-axis taxonomy. Each surveyed work pairs a                         ing generation to the optimal-investment and hedging problems of
+methodological family with one or more financial tasks;                         continuous-time finance—though, to date, this is mainly a unifying
+conditioning and SDE structure are the threads that recur                       lens rather than a tool the surveyed methods exploit concretely
+across both axes.                                                               (§11). The probability-flow ODE additionally yields exact likeli-
+                                                                                hoods, useful for anomaly scoring and model comparison.
+                                                                                    Discrete vs. continuous. The two are views of one object, but
+applying diffusion-family generators or generative decision mod-
+                                                                                the choice matters in finance. The discrete DDPM suits fixed-length
+els to financial tasks, excluded three false positives, and replaced
+                                                                                tabular records and short return windows [42, 61]; the continuous
+eleven early candidates after verification. We coded primary task,
+                                                                                SDE view is natural when the target is itself a process—asset paths,
+method family, modality, conditioning, evaluation type, publication
+                                                                                yield curves, order flow—since it exposes the drift and diffusion
+status, and verifiable code/data availability; Figure 2 aggregates
+                                                                                terms where economic structure (mean reversion, jumps, the risk-
+these primary codes and Table 1 lists representative entries. The
+                                                                                neutral shift) is imposed [24, 40, 74]. Few-step distillations and
+corpus is a preprint-heavy snapshot, biased toward published, well-
+                                                                                latent variants apply to either. In practice models mix these freely:
+cited, thesis-confirming work; negative results are likely under-
+                                                                                a latent score model with a transformer backbone, classifier-free
+represented (§10).
+                                                                                conditioning, and a finance-specific prior is a common composite.
+                                                                                    From recipe to practice. Financial diffusion models repeatedly
+2    BACKGROUND                                                                 choose a backbone (Transformer, U-Net, state-space), representa-
+This section gives the minimum machinery to read the survey and,                tion (series, latent, image, byte stream), conditioning route (concate-
+more importantly, draws the bridge to financial mathematics.                    nation, cross-attention, guidance), noise schedule, and structural
+   Forward and reverse processes. A diffusion model defines a                   prior. These choices transfer once the modality is matched, but
+forward process that corrupts data 𝑥 0 ∼ 𝑝 data into noise and learns           careless transfer imports assumptions—Gaussianity, stationarity,
+a reverse process that reconstructs data from noise. In DDPM [31],              exchangeability—that financial data violate.
+the forward chain adds Gaussian noise,                                              Sampling and acceleration. Ancestral sampling needs hun-
+                                                                                dreds to thousands of network evaluations, prohibitive for high-
+                                      p
+              𝑞(𝑥𝑡 | 𝑥𝑡 −1 ) = N (𝑥𝑡 ; 1 − 𝛽𝑡 𝑥𝑡 −1, 𝛽𝑡 𝐼 ),
+                               √        √                                       frequency or large-scale risk use. Refinements [55]—DDIM [66],
+                         𝑥𝑡 = 𝛼¯𝑡 𝑥 0 + 1 − 𝛼¯𝑡 𝜖.                              EDM [39], consistency models [67], flow matching [49]—push to-
+A network 𝜖𝜃 (𝑥𝑡 , 𝑡) is trained with the denoising objective E∥𝜖 −             ward few-step generation, a binding constraint we revisit below.
+𝜖𝜃 (𝑥𝑡 , 𝑡) ∥ 2 , an idea rooted in non-equilibrium thermodynamics [65].            Flows and interpolants: the broader family. Flow matching
+Score-based models [68] instead learn the score ∇𝑥 log 𝑝𝑡 (𝑥) by de-            is the entry point to a generalization of diffusion we treat as in scope.
+noising score matching across noise scales; predicting noise and                Rectified flow [52] learns a neural ODE transporting noise to data
+predicting the score are equivalent up to scaling. The simple ob-               along near-straight paths, and stochastic interpolants [3] unify the
+jective is a reweighting of the variational bound on log 𝑝𝜃 (𝑥 0 ), so          picture: a tunable interpolation between any two densities yields
+training is likelihood-based and stable—a sharp contrast with the               both a probability-flow ODE and a family of SDEs, with classical
+adversarial min–max of GANs, and a practical reason diffusion                   diffusion the Gaussian special case. This matters in finance because
+has displaced them in finance, where training instability and mode              arbitrary base distributions and schedules let priors be built into the
+collapse directly translate into missing market regimes. Condition-             path, and the ODE form supports few-step sampling where latency
+ing on covariates 𝑐 (a regime label, a volatility target, a history)            binds. We therefore include flow/rectified-flow/interpolant meth-
+is handled by learning 𝜖𝜃 (𝑥𝑡 , 𝑡, 𝑐) and, at sampling time, combin-            ods alongside DDPM and score-SDE, treating classical normalizing
+ing conditional and unconditional predictions via classifier-free               flows as a related baseline.
+guidance [32],                                                                      Conditioning and backbones. Finance rarely wants uncondi-
+                                                                                tional samples; it wants samples given a regime, a volatility target,
+           𝜖˜ = 𝜖𝜃 (𝑥𝑡 , 𝑡, ∅) + 𝑤 [𝜖𝜃 (𝑥𝑡 , 𝑡, 𝑐) − 𝜖𝜃 (𝑥𝑡 , 𝑡, ∅)].
+                                                                                or a history. Classifier [20] and classifier-free [32] guidance steer
+The guidance weight 𝑤 trades fidelity to 𝑐 against diversity—the                generation; latent diffusion [59] improves efficiency. Cross-domain
+knob that makes “generate a crash of intensity 𝑐” operational.                  backbones recur as finance models and baselines: TimeGrad [58],
+    The SDE unification. Song et al. [69] unify both under an Itô               CSDI [73], SSSD [4], Diffusion-TS [82], TSDiff [41] for sequences;
+SDE 𝑑𝑥 = 𝑓 (𝑥, 𝑡) 𝑑𝑡 +𝑔(𝑡) 𝑑𝑊𝑡 whose time reversal, 𝑑𝑥 = [𝑓 (𝑥, 𝑡) −            TabDDPM [42], TabSyn [84] for tables; DiT [57] for transformer
+𝑔(𝑡) 2 ∇𝑥 log 𝑝𝑡 (𝑥)] 𝑑𝑡 + 𝑔(𝑡) 𝑑𝑊¯ 𝑡 , is itself driven by the score, with     backbones; diffusion planning [2, 37] for decisions; and flow-family
+a deterministic probability-flow ODE of identical marginals. This               backbones, FlowTS [34], TimeFlow [29], interpolant forecasting [15,
+is the heart of the finance connection: asset-price models are SDEs,            16], and RecTable [21].
+Diffusion Models in Finance: A Survey
+
+
+   Why finance is hard. Generic successes do not transfer auto-            analogue RecTable [21] define the general state of the art; FinD-
+matically: returns are heavy-tailed, volatility-clustered, and non-        iff [61], presented at ICAIF, specializes it to financial tables (credit,
+stationary, the signal-to-noise ratio is low, LOB data are discrete        expenditure, fund composition) with strong fidelity, utility, and pri-
+and rule-governed, and pricing requires no-arbitrage and the cor-          vacy versus TVAE/CTGAN/TabDDPM. Two extensions address the
+rect change of measure (we detail these stylized facts in §3). These       field’s defining difficulty—class imbalance: Imb-FinDiff [63] adds a
+tensions motivate the structure-informed designs—GBM forward               joint denoising-plus-label objective for minority (fraud) synthesis,
+processes [40], factor structure [14], arbitrage penalties [38], risk-     and EntTabDiff [50] conditions on entities to improve fidelity and
+neutral drift corrections—that recur throughout.                           reduce entity-level leakage. For fraud, EmDT [43] trains per-cluster
+                                                                           diffusion transformers and latent flow-diffusion [36] targets minor-
+                                                                           ity oversampling. Privacy is moving from proxies to formal guaran-
+                                                                           tees: DP-FinDiff [64] and federated DP-FedTabDiff [62] train under
+3    SYNTHETIC DATA AND TIME-SERIES                                        differential privacy, and Zuo et al. [88] benchmark the privacy–
+     GENERATION                                                            utility frontier. The non-diffusion frontier (adversarial synthetic
+The largest cluster targets data that passes for real. Two design          data [80]) remains the comparison point.
+philosophies recur. The first reshapes data so off-the-shelf diffu-            Relation to classical and deep baselines. The comparison
+sion applies: Takahashi and Mizuno [71] apply a wavelet transform          point is not only other deep generators but the calibrated stochas-
+mapping price, volume, and spread into image-like representations,         tic models finance already trusts: GARCH-family volatility [11],
+train a DDPM, and invert it, recovering fat tails and clustering.          stochastic-volatility [30] and rough-volatility [26] models for re-
+The second bakes in financial structure: Kim et al. [40] replace           turns, and Hawkes/point-process models [7] for order flow. A dif-
+Gaussian corruption with a geometric-Brownian-motion forward               fusion generator earns its place only if it matches or beats a well-
+process, improving heavy-tail and clustering fidelity. A pattern re-       calibrated model from this class on the stylized facts that mat-
+curs across such studies—which we state as a working hypothesis            ter; most surveyed work benchmarks against deep baselines and
+rather than a measured result, given the comparability problems            reports this classical comparison only sparingly—a gap we flag.
+of §10—that inductive bias (priors in the noise process or repre-          Among deep baselines, GANs—Quant GANs [79], Sig-Wasserstein
+sentation) tends to help more than architecture tuning alone. The          GANs [54], signature-MMD models [53]—first reproduced stylized
+fidelity bar is unusually demanding: a financial generator must re-        facts convincingly but train unstably, collapse modes, and condi-
+produce a battery of stylized facts simultaneously—fat (power-law)         tion awkwardly, while VAEs train stably but oversmooth the heavy
+tails, volatility clustering, the leverage effect, weak return autocor-    tails finance cares about. Across the surveyed studies the reported
+relation alongside strong autocorrelation of absolute returns, and         pattern is consistent: diffusion matches or exceeds these baselines
+gain/loss asymmetry—none of which a low reconstruction error               on stylized-fact and downstream metrics while conditioning more
+guarantees. The multivariate case additionally demands faithful            naturally, at the cost of slower sampling. We emphasize this is a syn-
+cross-sectional dependence, motivating the factor- and correlation-        thesis of papers’ self-reported comparisons, not an independently
+structured designs that recur in §5–7.                                     verified ranking (§10), so we read it as a hypothesis explaining the
+    Machinery differs by modality: low-frequency univariate and            field’s rapid migration rather than a settled result.
+panel returns, the most-studied setting, are the home of stylized-
+fact evaluation [14, 71]; high-frequency microstructure data (§4)
+are discrete and event-driven, demanding event- or byte-level mod-
+                                                                           4    MARKET MICROSTRUCTURE AND LOB
+els [47, 87]; mixed-type tabular records (credit, fraud, holdings)              SIMULATION
+require combined continuous/categorical diffusion [42, 61]; and            Simulating the LOB and its order flow is harder than low-frequency
+structured objects such as implied-volatility surfaces or yield curves     generation: the data are high-frequency, discrete, bursty, and rule-
+need no-arbitrage constraints built in [22, 38]. “Diffusion for finance”   governed, and a useful simulator must be responsive—reacting plau-
+is thus not one method but a family, specialized per modality from         sibly to an agent’s own orders, so it can serve backtesting, market-
+the cross-domain backbones of §2.                                          impact studies, and agent-based experiments.
+    High-dimensional generation. Portfolio and risk applications               Order flow and representations. TRADES [10] generates or-
+need realistic dependence. Chen et al. [14] embed a latent factor          der flow with a transformer diffusion conditioned on market state,
+structure into diffusion, generating high-dimensional returns that         reporting predictive-score gains; since the book reconstructs from
+respect a factor covariance, with theoretical guarantees and small-        the flow, realism propagates. “Painting the Market” [6] renders the
+sample gains. Conditioning turns a generator into a scenario engine:       LOB as an image and applies inpainting, generating long horizons
+CoFinDiff [72] controls trend and realized volatility with lower           in parallel and avoiding the error accumulation of autoregressive
+control error and more diversity than GAN/VAE baselines, and               simulators, scoring well on LOB-Bench. ByteGen [47] forgoes tok-
+downstream hedging gains. Fidelity is ultimately judged by use:            enization, generating events directly in byte space with a hybrid
+Fiaingen [60] reports train-on-synthetic/test-on-real near parity          Mamba–Transformer.
+with real data, and comparative studies position diffusion against             Volume, counterfactuals, and control. Beyond price levels,
+TimeGAN/VAE as a privacy-preserving substitute [33]; general               the volume profile governs liquidity and impact: DiffVolume [77]
+style-guided TS diffusion [70] supplies further backbone machinery.        generates controllable volume snapshots, and DiffLOB [78] pro-
+    Tabular, fraud, privacy. Much financial data is mixed-type tab-        duces regime-conditioned LOB trajectories for microstructure what-
+ular. TabDDPM [42], latent-space TabSyn [84], and its rectified-flow       if stress. DigMA [35] pairs a conditional diffusion of the market state
+                                                                                                                             Anonymous Author(s)
+
+
+with a financially informed meta-agent for controllable, responsive       while preserving dependence; compressed-sensing-accelerated dif-
+order generation. Event-stream models (LOBDIF [87]) predict the           fusion in a low-dimensional macro space [27] reproduces left-tail
+joint timing and type of events with skip-step sampling for latency.      quantiles for backtesting; diffusion scenario trees [83] feed multi-
+Diffusion also serves upstream as a market-series denoiser [76],          stage stochastic optimization; and neural Lévy jump-diffusion [75]
+and lower-frequency dynamics simulation yields portfolio-ready            targets jump-dominated tails. Regulated stress testing could use
+covariances [45]. Interpretable evaluation uses optimal transport         richer, internally consistent scenario sets, but a scenario generator
+to test power-law reproduction [28].                                      used for capital must itself be validated and auditable (Section 11)—
+   The requirement that separates microstructure simulation from          in our view the main barrier between these results and regulated
+sequence generation is responsiveness: under a backtest or market-        deployment.
+impact study the book must react plausibly to the agent’s own
+orders, not replay history. Conditioning on the evolving market
+state—and, in DigMA [35], on an explicit agent—is the route, with
+counterfactual generation [77, 78] its controllable form. Latency
+(thousand-step sampling is infeasible at high frequency [87]) and
+the discrete, rule-governed nature of order events—which byte-
+and event-level models [47, 87] address more directly than image          6   PRICING, HEDGING, AND CALIBRATION
+framings—temper progress.                                                 Pricing imposes the hardest economic constraints: no-arbitrage and
+   This work sits in a longer arc—from hand-built agent-based and         the change of measure from the physical (P) to the risk-neutral
+point-process models (e.g. Hawkes-driven order flow [7]), through         (Q) world. A change of measure shifts the SDE drift [69], which in
+GANs, to the diffusion frontier, which packages stable training,          score/𝜖 terms is an additive correction to the reverse dynamics; Ti-
+broad coverage, and flexible conditioning. Diffusion simulators are       wari [74] realize exactly this as a score-function shift enforcing the
+increasingly substrates for agent-based experiments [10, 35]: a cal-      martingale condition, making the measure change explicit rather
+ibrated, responsive generator lets researchers inject hypothetical        than approximate (cf. the built-in risk-neutral transition of Quant
+agents or shocks and observe plausible reactions, which counter-          GANs [79]). Zhao and Shen [86] price exotic and path-dependent
+factual and regime-conditioned designs [77, 78] enable. The open          options (European, arithmetic Asian) with conditional diffusion,
+evaluation question—certifying that a simulator’s reaction to an          honestly reporting degraded accuracy on extreme scenarios—the
+unseen agent is realistic, not merely that unconditional samples          crux for risk-sensitive products. Jin and Agarwal [38] generate
+match history—remains the key obstacle to high-stakes strategy            arbitrage-aware implied-volatility surfaces one day ahead by penal-
+validation.                                                               izing arbitrage violations in training, beating GAN-based surface
+                                                                          models. Pricing evidence is therefore most credible when it reports
+                                                                          arbitrage-violation rates and tail errors, not only average pricing
+                                                                          loss against neural or GAN baselines.
+5   RISK, SCENARIO GENERATION, AND                                           Fixed income and foundations. Diffusion has reached rates:
+    STRESS TESTING                                                        Fukunishi et al. [22] generate arbitrage-aware yield-curve term
+Controllability pays off most in risk, where the goal is to populate      structures with macroeconomic conditioning, and Zhang et al. [85]
+tails and what-ifs absent from history. Guidance [20, 32] yields sam-     synthesize language-conditioned Treasury-futures series. More
+ples given a crash intensity or regime; the same heavy-tail fidelity      foundationally, Gao et al. [24] generate SDE solution paths without
+that aids generation is what would make the resulting Value-at-Risk       known drift and diffusion coefficients—the calibration setting when
+and Expected-Shortfall estimates credible. But the tails are exactly      the model is unknown—and the HJB view [9] links diffusion to the
+where generators most often fail their fidelity checks (§10), so this     optimal-investment and hedging equations. Calibration recurs in
+credibility must be validated, not assumed—a generator that thins         distributional form—arbitrage-consistent surfaces [38] and term
+tails silently understates risk. Evidence is strongest when stress        structures [22], or learning unknown SDE coefficients when the
+scenarios are tested on chronological or held-out crisis periods          model class is uncertain [24]. Deep hedging [12] is the downstream
+and against classical volatility, extreme-value, or factor-stress base-   decision these generators serve: with a faithful Q-generator, better
+lines; many papers still report only deep generator comparisons.          training distributions yield better learned hedges (as CoFinDiff [72]
+Methodologically, the generator is a Monte Carlo engine: VaR and          shows) and Greeks follow by simulation on paths with frictions and
+ES/CVaR and their sensitivities are estimated from sampled sce-           jumps. Neural PDE solvers for (rough) volatility pricing [56] are a
+narios, optionally conditioned on a stressed regime, so tail quality      complementary, non-generative route. The unresolved frontier is
+directly sets the capital number—which is why recent methods              enforcing exact no-arbitrage and the martingale property by con-
+add tail-weighted objectives or regime conditioning [5, 75] rather        struction rather than by penalty. Three routes trade off differently:
+than tuning for average-case realism. Scenario generation is most         soft penalties [38] are simple to add but only approximate and can
+useful wired into a decision: diffusion-augmented RL [18] trains          still admit arbitrage; projecting samples onto the no-arbitrage set
+robust policies against generated stress, and MARCD [5] couples a         guarantees feasibility but distorts the learned distribution and its
+regime-aligned diffusion generator (a hidden Markov model) to a           tails; and constrained or guided sampling imposes the constraint
+CVaR-constrained allocator with a tail-weighted objective, report-        along the reverse SDE, at higher sampling cost. Achieving exactness
+ing large drawdown reductions. Structure-aware generation applies         while preserving tail accuracy, and at latencies real-time pricing
+stress coherently: factor-structured diffusion [14] shocks factors        can afford, remains open.
+Diffusion Models in Finance: A Survey
+
+
+7    FORECASTING AND PORTFOLIO                                            process, the prior, or the loss; we offer this as a hypothesis the field’s
+     CONSTRUCTION                                                         inconsistent evaluation (§10) cannot yet confirm. Representation
+                                                                          is a design lever. Wavelet-to-image [71], LOB-as-image [6], byte-
+Diffusion models are probabilistic forecasters—they produce pre-
+                                                                          space [47], latent [59, 84], and chart-image [44] framings repeatedly
+dictive distributions, which is what portfolio construction and risk
+                                                                          unlock generic diffusion machinery for financial objects. Gener-
+budgeting consume. TimeGrad [58] is the standard baseline; in
+                                                                          ation increasingly serves a decision. The frontier couples the
+finance, Diffolio [17] adds hierarchical (asset- and market-level)
+                                                                          generator to control—deep hedging [12, 72], CVaR allocation [5],
+attention and a correlation-guided regularizer, so the predictive dis-
+                                                                          multistage stochastic optimization [83], and the diffusion-as-policy
+tribution respects cross-sectional dependence, improving both accu-
+                                                                          line [2, 37]—rather than treating realistic samples as an end in
+racy and downstream Sharpe and certainty-equivalent. Allocation
+                                                                          themselves.
+follows two routes. Predict-then-optimize: factor-conditioned dif-
+                                                                             How to choose. Let the binding constraint, not the backbone,
+fusion learns the cross-sectional return distribution and optimizes
+                                                                          pick the method: stylized-fact batteries for synthetic returns, respon-
+mean-variance/mean-CVaR portfolios [23], with a bias–variance
+                                                                          siveness tests for LOB simulators, Expected Shortfall under held-out
+analysis of the conditioning-factor count [8]. Direct policy learn-
+                                                                          crises for stress generators, arbitrage-violation rates for pricing,
+ing: model-free dynamic selection beats Markowitz [1], building
+                                                                          and chronological out-of-sample tests for portfolio models. When
+on decision-as-generation [2, 37]; the flow-matching form of this
+                                                                          latency binds, prefer few-step samplers from the outset [66, 67].
+idea, FlowHFT [48], learns an imitation-learning trading policy for
+                                                                             Deployment considerations. Three constraints cut across all
+high-frequency trading that adapts across market regimes. Rela-
+                                                                          tasks: latency (few-step and skip-step sampling are load-bearing for
+tional and augmentation variants include DiffSTOCK [19] (condi-
+                                                                          real-time use [49, 66, 67, 87]); data governance (synthetic sensitive
+tioning on indicators and inter-stock relations) and DiffsFormer [25]
+                                                                          records require privacy and membership-risk checks [62, 64, 88]);
+(factor augmentation); chart-image forecasting [44] illustrates the
+                                                                          and validation (generators feeding capital, valuation, or surveillance
+role of representation. A third, indirect route is augmentation: syn-
+                                                                          inherit model-risk-management duties).
+thetic paths enlarge thin training sets for downstream predictors
+and reinforcement-learning agents [25, 53], and the generate-then-
+optimize pipeline of §5 [5, 18] closes the loop by optimizing the         10    EVALUATION, BENCHMARKS,
+allocation directly against generated scenarios. Across all three               REPRODUCIBILITY
+routes the strongest results couple a financial inductive bias to the
+                                                                          Evaluation is the weakest link, and matters more in finance than
+generator; claims are weaker when they omit transaction costs,
+                                                                          in vision: a generator that looks good by a generic metric can
+simple chronological rebalancing baselines, or regime-shifted test
+                                                                          misprice tail risk or leak look-ahead information. Stylized-fact fi-
+periods. A separate open question is how these diffusion forecast-
+                                                                          delity (excess kurtosis, the Hill tail index, autocorrelation of returns
+ers compare against the large pretrained time-series foundation
+                                                                          vs. absolute returns) is the first-line test [40, 71], with optimal-
+models now emerging as a competing paradigm. The recurring
+                                                                          transport distances a more interpretable, mechanism-attributing
+caveat is evaluation: portfolio metrics are especially vulnerable to
+                                                                          alternative for market simulators [28]; these checks are necessary
+look-ahead bias and single-backtest overfitting, a theme we turn to
+                                                                          but largely marginal. Distributional/downstream metrics probe joint
+next.
+                                                                          and task-relevant structure: discriminative/predictive scores [10]
+8    EMERGING AND CROSS-DOMAIN                                            and train-on-synthetic/test-on-real [60], the operational standard
+                                                                          for replacing real data. Microstructure has LOB-Bench [6], though
+     APPLICATIONS                                                         responsiveness (impact realism under the simulated agent’s own
+Beyond the five core tasks, adjacent applications are maturing along      actions) remains non-standardized. Privacy is first-class when syn-
+one recurring pattern: a technique proven on a structurally sim-          thetic data substitutes for sensitive records [61, 64, 88]. These form
+ilar problem is specialized with a financial prior. Fixed income          four metric families—marginal (stylized facts), joint/distributional
+has its first generative treatments (arbitrage-aware term struc-          (discriminative scores), task (downstream utility), and privacy—each
+tures [22], Treasury-futures synthesis [85]); macro-conditioned gen-      guarding a different failure (Figure 3): a model can ace marginals
+eration links returns to macro state [23, 80]; and scenario trees [83]    yet fail joint dependence, or attain high utility yet leak membership.
+connect diffusion forecasts to multistage optimization.                   A credible study reports at least one from each; reporting only
+                                                                          marginals, still common, is the easiest bar to game.
+9    CROSS-CUTTING THEMES                                                    Three pitfalls undermine comparability. (i) Heterogeneous data
+Read across tasks, four threads organize the field. Conditioning          and metrics: papers use different assets, periods, and scores, so
+is the norm, not the exception. Recent finance-specific work—             reported superiority rarely transfers. (ii) Leakage and look-ahead
+controllable generation [72], counterfactual microstructure [77, 78],     bias: full-sample normalization or conditioning on information
+stress scenarios [5, 18], and forecast-conditioned allocation [17, 23]—   unavailable at decision time inflates results, especially in forecasting
+is conditional, because controllability is what finance wants from a      and portfolio studies. (iii) In-distribution evaluation: testing on the
+generator. Inductive bias appears to matter more than archi-              training regime hides the non-stationarity failure that matters in
+tecture tuning. Where one design clearly outperforms another,             deployment. We recommend chronological splits, regime-shifted
+the gain typically comes from encoding financial structure—GBM            test sets, fixed public benchmarks, and released code; the absence
+noising [40], factor covariance [14], arbitrage penalties [38], risk-     of a shared, finance-specific benchmark suite is the single biggest
+neutral drift shifts [74], correlation regularizers [17]—into the noise   obstacle to measurable progress.
+                                                                                                                                                               Anonymous Author(s)
+
+
+                                                           Method family                Synthetic   LOB   Risk    Pricing    Portfolio
+                                                           DDPM / score-SDE
+                                                           Conditional / guided
+                                                           Structure-informed
+                                                           Latent / tabular
+                                                           Flow / interpolant
+
+
+Figure 2: Coverage map of the surveyed literature. Each retained work was coded by primary method family and primary
+financial task; marker area and darkness increase with the number of coded works in this survey in each method × task cell
+(coarsely binned: small ≤ 2, medium 3–5, large > 5). It is not a bibliometric count of the wider literature.
+
+Table 1: Representative finance works using learned generative diffusion, score-based, or flow-matching/rectified-flow mod-
+els, with methodological backbone/representation and explicit conditioning (“C”). Classical “diffusion” SDE or PDE models
+without a learned generative diffusion/flow sampler are excluded from this table. The final column is the headline comparison
+as reported by each cited work—self-reported, protocol-heterogeneous, and not independently verified, hence indicative rather
+than a ranking (§10); entries are drawn from the same coding sheet summarized in Figure 2.
+
+                      Work                             Task                      Modality           Backbone / representation      C     Reported comparison
+                      Takahashi–Mizuno [71]            Synthetic gen             Returns            Wavelet→image DDPM                   Fat tails, clustering
+                      Diffusion Factor [14]            Hi-dim returns            Panel returns      Latent factor diffusion              Factor cov. + theory
+                      CoFinDiff [72]                   Controllable gen          Returns            Cond. (trend/vol)              ✓     > GAN/VAE control err.
+                      FinDiff [61]                     Tabular                   Mixed-type         Tabular diffusion              ✓     > TVAE/CTGAN/TabDDPM
+                      Imb-FinDiff [63]                 Tabular (imbalance)       Mixed-type         Denoise + label obj.           ✓     Minority (fraud) synth.
+                      DP-FinDiff [64]                  Private tabular           Mixed-type         Diffusion under DP             ✓     Formal DP budget
+                      TRADES [10]                      LOB sim                   Order flow         Transformer diffusion          ✓     Predictive-score gain
+                      Painting [6]                     LOB sim                   LOB image          Image inpainting               ✓     LOB-Bench
+                      DiffVolume [77]                  LOB volume                Volume snapshot    Cond. counterfactual           ✓     Counterfactual control
+                      DiffLOB [78]                     LOB counterfactual        LOB trajectory     Regime-conditioned             ✓     Regime what-ifs
+                      LOBDIF [87]                      LOB event stream          Event stream       Event + skip-step                    Joint timing/type
+                      MARCD [5]                        Stress + CVaR             Returns            Regime (HMM) + CVaR            ✓     Drawdown reduction
+                      Risk-neutral [74]                Pricing                   Paths              Score-shift to Q               ✓     Martingale enforced
+                      IV surface [38]                  Pricing                   Vol. surface       Arbitrage-penalized            ✓     > GAN surfaces
+                      TF-CoDiT [85]                    Fixed income              Treasury futures   Latent diffusion transformer   ✓     Low-data synthesis
+                      Diffolio [17]                    Forecast/portfolio        Panel returns      Hier. attn + corr. reg.        ✓     Sharpe/CE gain
+                      Factor-cond. [23]                Portfolio                 Cross-section      Factor-conditioned             ✓     Mean-var/CVaR
+                      Dyn. portfolio [1]               Portfolio                 Returns            Model-free policy                    > Markowitz
+                      FlowHFT [48]                     Trading (flow)            HF features        Flow-matching policy           ✓     Regime-adaptive
+
+
+                                           Stylized facts                                            stated privacy notion and budget rather than an empirical proxy
+                                    tails, clustering, leverage
+                                                                                                     alone; and (v) released code and preprocessing. None of these is uni-
+                                      Joint distribution                                             versal today, which is why headline claims of superiority so rarely
+                               dependence, discriminative scores
+                                                                                                     reproduce across papers. To make Table 1 auditable and answer
+                                      Downstream utility                                             the code-availability question practitioners ask first, the compan-
+                               pricing, hedging, portfolio, TSTR
+                                                                                                     ion artifact for release records paper metadata, method/task labels,
+                                 Privacy and governance                                              modality, conditioning, evaluation protocol, publication status, and
+                            membership risk, DP budget, audit trail
+                                                                                                     verifiable code/dataset availability.
+ Protocol guards: chronological splits, held-out regimes, leakage checks, released preprocessing
+
+                                                                                                     11      OPEN PROBLEMS
+Figure 3: Evaluation stack for financial diffusion models.
+                                                                                                     Tail and extreme-event fidelity. Decision-relevant mass lives in
+Each layer catches a different failure mode; credible studies
+                                                                                                     the tails, yet strong results degrade there [86], and risk numbers
+should report at least one check at each layer rather than
+                                                                                                     inherit any tail thinning. Objectives and noise schedules that ex-
+relying on marginal stylized facts alone.
+                                                                                                     plicitly target tail accuracy, and rare-event conditioning, are open;
+                                                                                                     structure-informed designs [14, 40] help but do not solve it. Non-
+                                                                                                     stationarity. Out-of-regime generalization and guarantees under
+   A recommended reporting protocol. Concretely, we suggest                                          shift are largely unaddressed; existing guarantees are narrow [14].
+each study report: (i) the exact data source, asset universe, and date                               Hard economic constraints. Enforcing exact no-arbitrage and
+range; (ii) a chronological train/test split with a held-out regime or                               the Q-martingale property by construction (not penalty [38]) is a
+crisis; (iii) at least one stylized-fact metric, discriminative/predictive                           prerequisite for front-office adoption. Efficiency. Few-step sam-
+score, and downstream (train-on-synthetic, test-on-real) metric,                                     pling [49, 66, 67] for real-time/HFT is underexplored on heavy-
+since each probes a different failure mode; (iv) for private data, a                                 tailed targets and is essential for responsive simulation. Decision
+Diffusion Models in Finance: A Survey
+
+
+integration. Coupling generation to control [9, 18, 24] is promis-                       [10] Leonardo Berti, Bardh Prenkaj, and Paola Velardi. 2025. TRADES: Generating Re-
+ing but immature. Governance. Model risk, auditability, and for-                              alistic Market Simulations with Diffusion Models. arXiv preprint arXiv:2502.07071
+                                                                                              (2025).
+mal privacy [64] gate regulated use. Causality and counterfac-                           [11] Tim Bollerslev. 1986. Generalized Autoregressive Conditional Heteroskedasticity.
+tuals. Most models are correlational generators; counterfactual                               Journal of Econometrics 31, 3 (1986), 307–327.
+                                                                                         [12] Hans Bühler, Lukas Gonon, Josef Teichmann, and Ben Wood. 2019. Deep Hedging.
+microstructure [77, 78] and controllable agents [35] gesture toward                           Quantitative Finance 19, 8 (2019). arXiv:1802.03042.
+intervention, but principled causal diffusion—answering “what if                         [13] Raju Challagundla, Mohsen Dorodchi, Pu Wang, and Minwoo Lee. 2025. Synthetic
+this policy or shock occurred”—is largely unexplored and is pre-                              Tabular Data Generation: A Comparative Survey for Modern Techniques. arXiv
+                                                                                              preprint arXiv:2507.11590 (2025).
+cisely what stress testing requires. Theory. Approximation and                           [14] Minshuo Chen, Renyuan Xu, Yumin Xu, and Ruixun Zhang. 2025. Diffusion
+sample-complexity guarantees remain narrow: factor-structure re-                              Factor Models: Generating High-Dimensional Returns with Factor Structure.
+sults [14] and the control-theoretic view [9] are starting points, but                        arXiv preprint arXiv:2504.06566 (2025).
+                                                                                         [15] Yu Chen, Marin Biloš, Sarthak Mittal, Wei Deng, Kashif Rasul, and Anderson
+error bounds under non-stationarity and for heavy-tailed targets                              Schneider. 2024. Recurrent Interpolants for Probabilistic Time Series Prediction.
+are open. Benchmarks. A shared finance-specific suite—returns,                                arXiv preprint arXiv:2409.11684 (2024).
+                                                                                         [16] Yifan Chen, Mark Goldstein, Mengjian Hua, Michael S. Albergo, Nicholas M.
+LOB [6], tabular [61], and risk—with chronological, regime-aware                              Boffi, and Eric Vanden-Eijnden. 2024. Probabilistic Forecasting with Stochastic
+splits would do for this field what community benchmarks did for                              Interpolants and Föllmer Processes. In ICML. arXiv:2403.13724.
+vision diffusion.                                                                        [17] So-Yoon Cho, Jin-Young Kim, Kayoung Ban, Hyeng Keun Koo, and Hyun-
+                                                                                              Gyoon Kim. 2025. Diffolio: A Diffusion Model for Multivariate Probabilistic
+                                                                                              Financial Time-Series Forecasting and Portfolio Construction. arXiv preprint
+12     CONCLUSION                                                                             arXiv:2511.07014 (2025).
+                                                                                         [18] Himanshu Choudhary, Arishi Orra, and Manoj Thakur. 2025. Diffusion-
+Diffusion models have earned a permanent place in the quantitative-                           Augmented Reinforcement Learning for Robust Portfolio Optimization under
+finance toolkit, mapping their stable training, mode coverage, con-                           Stress Scenarios. arXiv preprint arXiv:2510.07099 (2025).
+                                                                                         [19] Divyanshu Daiya, Monika Yadav, and Harshit Singh Rao. 2024. DiffSTOCK:
+ditioning, and SDE structure onto finance’s needs across data gen-                            Probabilistic Relational Stock Market Predictions using Diffusion Models. In
+eration, microstructure simulation, risk, pricing, and portfolio deci-                        ICASSP. arXiv:2403.14063.
+                                                                                         [20] Prafulla Dhariwal and Alexander Quinn Nichol. 2021. Diffusion Models Beat
+sions. The evidence is encouraging, but the field’s progress is harder                        GANs on Image Synthesis. In NeurIPS. arXiv:2105.05233.
+to measure than to produce: tail fidelity degrades where finance                         [21] Masane Fuchi and Tomohiro Takagi. 2025. RecTable: Fast Modeling Tabular Data
+cares most, evaluation is fragmented and frequently in-distribution,                          with Rectified Flow. arXiv preprint arXiv:2503.20731 (2025).
+                                                                                         [22] Yosuke Fukunishi, Haorong Qiu, Akihiko Takahashi, and Fan Ye. 2025. Generating
+economic constraints are penalized rather than enforced, sampling                             the Term Structure of Interest Rates with Diffusion Models. Expert Systems with
+is too slow for real-time use, and governance for regulated de-                               Applications (forthcoming); CIRJE Discussion Paper CF-1262 (2025).
+ployment is barely begun. The next phase depends less on new                             [23] Xuefeng Gao, Mengying He, Xuedong He, and Jiale Zha. 2025. Factor-Based
+                                                                                              Conditional Diffusion Model for Contextual Portfolio Optimization. arXiv preprint
+architectures than on discipline: finance-specific benchmarks with                            arXiv:2509.22088 (2025).
+chronological and regime-aware splits, tail- and arbitrage-aware                         [24] Xuefeng Gao, Jiale Zha, and Xun Yu Zhou. 2025. Generating Solution Paths
+                                                                                              of Markovian Stochastic Differential Equations using Diffusion Models. arXiv
+objectives, formal privacy and model-risk treatment, and tighter                              preprint arXiv:2509.08731 (2025).
+coupling of generation to the decision it serves.                                        [25] Yuan Gao, Haokun Chen, Xiang Wang, Zhicai Wang, Xue Wang, Jinyang Gao,
+   Scope and limitations. We emphasize breadth over exhaustive                                and Bolin Ding. 2024. DiffsFormer: A Diffusion Transformer on Stock Factor
+                                                                                              Augmentation. arXiv preprint arXiv:2402.06656 (2024).
+coverage of any one task; multimodal generation, graph-based                             [26] Jim Gatheral, Thibault Jaisson, and Mathieu Rosenbaum. 2018. Volatility is Rough.
+systemic risk, and crypto-specific work receive only brief treatment.                         Quantitative Finance 18, 6 (2018), 933–949.
+We expect the method × task map (Figures 1–2) to fill rapidly,                           [27] Zhengyi Guo, Jiatu Li, Wenpin Tang, and David D. Yao. 2025. Diffusion Generative
+                                                                                              Models Meet Compressed Sensing, with Applications to Imaging and Finance.
+especially in hard-constrained pricing and tail-faithful risk.                                arXiv preprint arXiv:2509.03898 (2025).
+                                                                                         [28] Ryuji Hashimoto and Kiyoshi Izumi. 2025. Towards Realistic and Interpretable
+                                                                                              Market Simulations: Factorizing Financial Power Law using Optimal Transport.
+REFERENCES                                                                                    arXiv preprint arXiv:2507.09863 (2025).
+ [1] Ahmad Aghapour, Erhan Bayraktar, and Fengyi Yuan. 2025. Solving Dynamic             [29] Panjing He, Mingyue Cheng, Li Li, and XiaoHan Zhang. 2025. TimeFlow: To-
+     Portfolio Selection Problems via Score-Based Diffusion Models. arXiv preprint            wards Stochastic-Aware and Efficient Time Series Generation via Flow Matching
+     arXiv:2507.09916 (2025).                                                                 Modeling. arXiv preprint arXiv:2511.07968 (2025).
+ [2] Anurag Ajay, Yilun Du, Abhi Gupta, Joshua Tenenbaum, Tommi Jaakkola, and            [30] Steven L. Heston. 1993. A Closed-Form Solution for Options with Stochastic
+     Pulkit Agrawal. 2023. Is Conditional Generative Modeling all you need for                Volatility with Applications to Bond and Currency Options. The Review of
+     Decision-Making?. In ICLR. arXiv:2211.15657.                                             Financial Studies 6, 2 (1993), 327–343.
+ [3] Michael S. Albergo, Nicholas M. Boffi, and Eric Vanden-Eijnden. 2023. Stochastic    [31] Jonathan Ho, Ajay Jain, and Pieter Abbeel. 2020. Denoising Diffusion Probabilistic
+     Interpolants: A Unifying Framework for Flows and Diffusions. arXiv preprint              Models. In NeurIPS. arXiv:2006.11239.
+     arXiv:2303.08797 (2023).                                                            [32] Jonathan Ho and Tim Salimans. 2022. Classifier-Free Diffusion Guidance. In
+ [4] Juan Miguel Lopez Alcaraz and Nils Strodthoff. 2022. Diffusion-based Time Series         NeurIPS Workshop on Deep Generative Models. arXiv:2207.12598.
+     Imputation and Forecasting with Structured State Space Models. Transactions on      [33] Christophe D. Hounwanou and Yae Ulrich Gaba. 2025. Deep Generative Models
+     Machine Learning Research (2022). arXiv:2208.09399.                                      for Synthetic Financial Data: Applications to Portfolio and Risk Modeling. arXiv
+ [5] Ali Atiah Alzahrani. 2025. Multi-Agent Regime-Conditioned Diffusion (MARCD)              preprint arXiv:2512.21798 (2025).
+     for CVaR-Constrained Portfolio Decisions. arXiv preprint arXiv:2510.10807 (2025).   [34] Yang Hu, Xiao Wang, Zezhen Ding, Lirong Wu, Huatian Zhang, Stan Z. Li, Sheng
+ [6] Alfred Backhouse, Kang Li, Jakob Foerster, Anisoara Calinescu, and Stefan Zohren.        Wang, Jiheng Zhang, Ziyun Li, and Tianlong Chen. 2024. FlowTS: Time Series
+     2025. Painting the Market: Generative Diffusion Models for Financial Limit Order         Generation via Rectified Flow. arXiv preprint arXiv:2411.07506 (2024).
+     Book Simulation and Forecasting. arXiv preprint arXiv:2509.05107 (2025).            [35] Yu-Hao Huang, Chang Xu, Yang Liu, Weiqing Liu, Wu-Jun Li, and Jiang Bian.
+ [7] Emmanuel Bacry, Iacopo Mastromatteo, and Jean-François Muzy. 2015. Hawkes                2026. Controllable Financial Market Generation with Diffusion Guided Meta
+     Processes in Finance. Market Microstructure and Liquidity 1, 1 (2015), 1550005.          Agent. In AAAI. arXiv:2408.12991, oral.
+ [8] Avi Bagchi, Michael Tesfaye, and Om Shastri. 2026. Factor Dimensionality            [36] Md. Tawfique Ihsan, Md. Rakibul Hasan Rafi, Ahmed Shoyeb Raihan, Imtiaz
+     and the Bias-Variance Tradeoff in Diffusion Portfolio Models. arXiv preprint             Ahmed, and Abdullahil Azeem. 2025. Boosting Predictive Performance on Tabular
+     arXiv:2603.10385 (2026).                                                                 Data through Data Augmentation with Latent-Space Flow-Based Diffusion. arXiv
+ [9] Julius Berner, Lorenz Richter, and Karen Ullrich. 2024. An Optimal Control               preprint arXiv:2511.16571 (2025).
+     Perspective on Diffusion-Based Generative Modeling. Transactions on Machine         [37] Michael Janner, Yilun Du, Joshua B. Tenenbaum, and Sergey Levine. 2022. Plan-
+     Learning Research (2024). arXiv:2211.01364.                                              ning with Diffusion for Flexible Behavior Synthesis. In ICML. arXiv:2205.09991.
+                                                                                                                                                        Anonymous Author(s)
+
+
+[38] Chen Jin and Ankush Agarwal. 2025. Forecasting Implied Volatility Surface with            ICML. arXiv:1503.03585.
+     Generative Diffusion Models. arXiv preprint arXiv:2511.07571 (2025).                 [66] Jiaming Song, Chenlin Meng, and Stefano Ermon. 2021. Denoising Diffusion
+[39] Tero Karras, Miika Aittala, Timo Aila, and Samuli Laine. 2022. Elucidating the De-        Implicit Models. In ICLR. arXiv:2010.02502.
+     sign Space of Diffusion-Based Generative Models. In NeurIPS. arXiv:2206.00364.       [67] Yang Song, Prafulla Dhariwal, Mark Chen, and Ilya Sutskever. 2023. Consistency
+[40] Gihun Kim, Sun-Yong Choi, and Yeoneung Kim. 2025. A Diffusion-Based Gener-                Models. In ICML. arXiv:2303.01469.
+     ative Model for Financial Time Series via Geometric Brownian Motion. arXiv           [68] Yang Song and Stefano Ermon. 2019. Generative Modeling by Estimating Gradi-
+     preprint arXiv:2507.19003 (2025).                                                         ents of the Data Distribution. In NeurIPS. arXiv:1907.05600.
+[41] Marcel Kollovieh, Abdul Fatir Ansari, Michael Bohlke-Schneider, Jasper Zschieg-      [69] Yang Song, Jascha Sohl-Dickstein, Diederik P. Kingma, Abhishek Kumar, Ste-
+     ner, Hao Wang, and Yuyang Wang. 2023. Predict, Refine, Synthesize: Self-                  fano Ermon, and Ben Poole. 2021. Score-Based Generative Modeling through
+     Guiding Diffusion Models for Probabilistic Time Series Forecasting. In NeurIPS.           Stochastic Differential Equations. In ICLR. arXiv:2011.13456.
+     arXiv:2307.11494.                                                                    [70] Mingchun Sun, Rongqiang Zhao, Hengrui Hu, Songyu Ding, and Jie Liu. 2025.
+[42] Akim Kotelnikov, Dmitry Baranchuk, Ivan Rubachev, and Artem Babenko.                      DS-Diffusion: Data Style-Guided Diffusion Model for Time-Series Generation.
+     2023. TabDDPM: Modelling Tabular Data with Diffusion Models. In ICML.                     arXiv preprint arXiv:2509.18584 (2025).
+     arXiv:2209.15421.                                                                    [71] Tomonori Takahashi and Takayuki Mizuno. 2025. Generation of Synthetic
+[43] En-Ya Kuo and Sebastien Motsch. 2026. EmDT: Embedding Diffusion Transformer               Financial Time Series by Diffusion Models. Quantitative Finance (2025).
+     for Tabular Data Generation in Fraud Detection. arXiv preprint arXiv:2603.13566           arXiv:2410.18897.
+     (2026).                                                                              [72] Yuki Tanaka, Ryuji Hashimoto, Takehiro Takayanagi, Zhe Piao, Yuri Murayama,
+[44] Taegyeong Lee, Jiwon Park, Kyunga Bang, Seunghyun Hwang, and Ung-Jin Jang.                and Kiyoshi Izumi. 2025. CoFinDiff: Controllable Financial Diffusion Model for
+     2025. Exploring Diffusion Models for Generative Forecasting of Financial Charts.          Time Series Generation. arXiv preprint arXiv:2503.04164 (2025).
+     arXiv preprint arXiv:2509.02308 (2025).                                              [73] Yusuke Tashiro, Jiaming Song, Yang Song, and Stefano Ermon. 2021. CSDI: Con-
+[45] Andrew Lesniewski and Giulio Trigila. 2024. Beyond Monte Carlo: Harness-                  ditional Score-based Diffusion Models for Probabilistic Time Series Imputation.
+     ing Diffusion Models to Simulate Financial Market Dynamics. arXiv preprint                In NeurIPS. arXiv:2107.03502.
+     arXiv:2412.00036 (2024).                                                             [74] Nilay Tiwari. 2026. Generative Diffusion Model for Risk-Neutral Derivative
+[46] Dawei Li, Yue Huang, Ming Li, Tianyi Zhou, Xiangliang Zhang, and Huan Liu.                Pricing. arXiv preprint arXiv:2603.20582 (2026).
+     2025. Generative Models for Synthetic Data: Transforming Data Mining in the          [75] Ziyao Wang and Svetlozar T. Rachev. 2025. Neural Lévy SDE for State-Dependent
+     GenAI Era. arXiv preprint arXiv:2508.19570 (2025).                                        Risk and Density Forecasting. arXiv preprint arXiv:2509.01041 (2025).
+[47] Yang Li and Zhi Chen. 2025. ByteGen: A Tokenizer-Free Generative Model for           [76] Zhuohan Wang and Carmine Ventre. 2024. A Financial Time Series Denoiser
+     Orderbook Events in Byte Space. arXiv preprint arXiv:2508.02247 (2025).                   Based on Diffusion Model. arXiv preprint arXiv:2409.02138 (2024).
+[48] Yang Li, Zhi Chen, and Steve Yang. 2025. FlowHFT: Imitation Learning via Flow        [77] Zhuohan Wang and Carmine Ventre. 2025. DiffVolume: Diffusion Models for
+     Matching Policy for Optimal High-Frequency Trading under Diverse Market                   Volume Generation in Limit Order Books. arXiv preprint arXiv:2508.08698 (2025).
+     Conditions. arXiv preprint arXiv:2505.05784 (2025).                                  [78] Zhuohan Wang and Carmine Ventre. 2026. DiffLOB: Diffusion Models for Coun-
+[49] Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, and Matt                terfactual Generation in Limit Order Books. arXiv preprint arXiv:2602.03776
+     Le. 2023. Flow Matching for Generative Modeling. In ICLR. arXiv:2210.02747.               (2026).
+[50] Changshuo Liu and Canyao Liu. 2024. Entity-based Financial Tabular Data              [79] Magnus Wiese, Robert Knobloch, Ralf Korn, and Peter Kretschmer. 2020. Quant
+     Synthesis with Diffusion Models. In Proc. 5th ACM Int. Conf. on AI in Finance             GANs: Deep Generation of Financial Time Series. Quantitative Finance 20, 9
+     (ICAIF). doi:10.1145/3677052.3698625.                                                     (2020). arXiv:1907.06673.
+[51] Jing Liu, Zhenchao Ma, Zepu Wang, Chenxuanyin Zou, Jiayang Ren, Zehua                [80] Haochong Xia, Simin Li, Ruixiao Xu, Zhixia Zhang, Hongxiang Wang, Zhiqian
+     Wang, Liang Song, Bo Hu, Yang Liu, and Victor C.M. Leung. 2025. A Survey on               Liu, Teng Yao Long, Molei Qin, Chuqiao Zong, and Bo An. 2026. Bayesian
+     Diffusion Models for Anomaly Detection. arXiv preprint arXiv:2501.11430 (2025).           Robust Financial Trading with Adversarial Synthetic Market Data. arXiv preprint
+[52] Xingchao Liu, Chengyue Gong, and Qiang Liu. 2023. Flow Straight and                       arXiv:2601.17008 (2026).
+     Fast: Learning to Generate and Transfer Data with Rectified Flow. In ICLR.           [81] Yiyuan Yang, Ming Jin, Haomin Wen, Chaoli Zhang, Yuxuan Liang, Lintao Ma,
+     arXiv:2209.03003.                                                                         Yi Wang, Chenghao Liu, Bin Yang, Zenglin Xu, Shirui Pan, and Qingsong Wen.
+[53] Chung I Lu and Julian Sester. 2024. Generative Modelling of Financial Time                2024. A Survey on Diffusion Models for Time Series and Spatio-Temporal Data.
+     Series with Structured Noise and MMD-based Signature Learning. arXiv preprint             Comput. Surveys (2024). arXiv:2404.18886.
+     arXiv:2407.19848 (2024).                                                             [82] Xinyu Yuan and Yan Qiao. 2024. Diffusion-TS: Interpretable Diffusion for General
+[54] Hao Ni, Lukasz Szpruch, Marc Sabate-Vidales, Baoren Xiao, Magnus Wiese, and               Time Series Generation. In ICLR. arXiv:2403.01742.
+     Shujian Liao. 2021. Sig-Wasserstein GANs for Time Series Generation. In Proc.        [83] Stelios Zarifis, Ioannis Kordonis, and Petros Maragos. 2025. Diffusion-Based
+     2nd ACM Int. Conf. on AI in Finance (ICAIF). arXiv:2111.01207.                            Scenario Tree Generation for Multivariate Time Series Prediction and Multistage
+[55] Alexander Quinn Nichol and Prafulla Dhariwal. 2021. Improved Denoising                    Stochastic Optimization. arXiv preprint arXiv:2509.14832 (2025).
+     Diffusion Probabilistic Models. In ICML. arXiv:2102.09672.                           [84] Hengrui Zhang, Jiani Zhang, Balasubramaniam Srinivasan, Zhengyuan Shen,
+[56] Antonis Papapantoleon and Jasper Rou. 2024. A Time-Stepping Deep Gradient                 Xiao Qin, Christos Faloutsos, Huzefa Rangwala, and George Karypis. 2024. Mixed-
+     Flow Method for Option Pricing in (Rough) Diffusion Models. arXiv preprint                Type Tabular Data Synthesis with Score-based Diffusion in Latent Space. In ICLR.
+     arXiv:2403.00746 (2024).                                                                  arXiv:2310.09656.
+[57] William Peebles and Saining Xie. 2023. Scalable Diffusion Models with Trans-         [85] Yingxiao Zhang, Jiaxin Duan, Junfu Zhang, and Ke Feng. 2026. TF-CoDiT: Con-
+     formers. In ICCV. arXiv:2212.09748.                                                       ditional Time Series Synthesis with Diffusion Transformers for Treasury Futures.
+[58] Kashif Rasul, Calvin Seward, Ingmar Schuster, and Roland Vollgraf. 2021. Autore-          arXiv preprint arXiv:2601.11880 (2026).
+     gressive Denoising Diffusion Models for Multivariate Probabilistic Time Series       [86] Helin Zhao and Junchi Shen. 2025. Valuation of Exotic Options and Counterparty
+     Forecasting. In ICML. arXiv:2101.12072.                                                   Games Based on Conditional Diffusion. arXiv preprint arXiv:2509.13374 (2025).
+[59] Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, and Björn           [87] Zetao Zheng, Guoan Li, Deqiang Ouyang, Decui Liang, and Jie Shao. 2024. Limit
+     Ommer. 2022. High-Resolution Image Synthesis with Latent Diffusion Models.                Order Book Event Stream Prediction with Diffusion Model. Data Science and
+     In CVPR. arXiv:2112.10752.                                                                Engineering (2024). arXiv:2412.09631.
+[60] Jože M. Rožanec, Tina Žezlin, Laurentiu Vasiliu, Dunja Mladenić, Radu Prodan,        [88] Michael Zuo, Inwon Kang, Stacy Patterson, and Oshani Seneviratne. 2026. Mea-
+     and Dumitru Roman. 2025. Fiaingen: A Financial Time Series Generative Method              suring Privacy Risks and Tradeoffs in Financial Synthetic Data Generation. arXiv
+     Matching Real-World Data Quality. arXiv preprint arXiv:2510.01169 (2025).                 preprint arXiv:2602.09288 (2026).
+[61] Timur Sattarov, Marco Schreyer, and Damian Borth. 2023. FinDiff: Diffusion
+     Models for Financial Tabular Data Generation. In Proc. 4th ACM Int. Conf. on AI
+     in Finance (ICAIF). arXiv:2309.01472.
+[62] Timur Sattarov, Marco Schreyer, and Damian Borth. 2024. Federated Diffusion
+     Modeling with Differential Privacy for Tabular Data Synthesis. arXiv preprint
+     arXiv:2412.16083 (2024).
+[63] Timur Sattarov, Marco Schreyer, and Damian Borth. 2024. Imb-FinDiff: Condi-
+     tional Diffusion Models for Class Imbalance Synthesis of Financial Tabular Data.
+     In Proc. 5th ACM Int. Conf. on AI in Finance (ICAIF). doi:10.1145/3677052.3698659.
+[64] Timur Sattarov, Marco Schreyer, and Damian Borth. 2025. Privacy Preserv-
+     ing Diffusion Models for Mixed-Type Tabular Data Generation. arXiv preprint
+     arXiv:2512.00638 (2025).
+[65] Jascha Sohl-Dickstein, Eric A. Weiss, Niru Maheswaranathan, and Surya Ganguli.
+     2015. Deep Unsupervised Learning using Nonequilibrium Thermodynamics. In
+

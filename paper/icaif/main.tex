@@ -16,9 +16,16 @@
 \definecolor{finInk}{HTML}{263238}
 \definecolor{finMist}{HTML}{EEF3F6}
 
-\newcommand{\coverage}[2]{%
-  \tikz[baseline=-0.6ex]\filldraw[draw=white, line width=0.25pt, fill=#1]
-    (0,0) circle (#2);%
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\dblfloatsep}{6pt plus 2pt minus 2pt}
+\captionsetup{font=small,skip=3pt}
+
+\newcommand{\coverageCount}[2]{%
+  \tikz[baseline=(count.base)]\node[
+    circle, draw=white, line width=0.25pt, fill=#1, text=white,
+    minimum size=1.65em, inner sep=0pt, font=\scriptsize\bfseries] (count) {#2};%
 }
 
 \begin{document}
@@ -547,36 +554,30 @@ we turn to next.
 \begin{figure*}[t]
 \centering
 \small
-\setlength{\tabcolsep}{4pt}
+\setlength{\tabcolsep}{8pt}
 \begin{tabular}{@{}lccccc@{}}
 \toprule
 Method family & Synthetic & LOB & Risk & Pricing & Portfolio \\
 \midrule
-DDPM / score-SDE & \coverage{finBlue!95}{3.1pt} & \coverage{finBlue!80}{2.7pt} &
-  \coverage{finBlue!55}{2.1pt} & \coverage{finBlue!55}{2.1pt} &
-  \coverage{finBlue!65}{2.4pt} \\
-Conditional / guided & \coverage{finTeal!85}{2.9pt} & \coverage{finTeal!85}{2.9pt} &
-  \coverage{finTeal!95}{3.1pt} & \coverage{finTeal!75}{2.7pt} &
-  \coverage{finTeal!85}{2.9pt} \\
-Structure-informed & \coverage{finGold!85}{2.7pt} & \coverage{finGold!55}{2.1pt} &
-  \coverage{finGold!92}{2.9pt} & \coverage{finGold!98}{3.1pt} &
-  \coverage{finGold!85}{2.7pt} \\
-Latent / tabular & \coverage{finViolet!80}{2.7pt} & \coverage{finViolet!25}{1.4pt} &
-  \coverage{finViolet!45}{1.9pt} & \coverage{finViolet!20}{1.2pt} &
-  \coverage{finViolet!35}{1.6pt} \\
-Flow / interpolant & \coverage{finRed!60}{2.1pt} & \coverage{finRed!50}{1.9pt} &
-  \coverage{finRed!35}{1.6pt} & \coverage{finRed!20}{1.2pt} &
-  \coverage{finRed!60}{2.1pt} \\
+DDPM / score-SDE & \coverageCount{finBlue!82}{2} & \coverageCount{finBlue!82}{4} &
+  \coverageCount{finBlue!82}{3} & -- & \coverageCount{finBlue!82}{3} \\
+Conditional / guided & -- & \coverageCount{finTeal!82}{3} &
+  \coverageCount{finTeal!82}{2} & \coverageCount{finTeal!82}{3} &
+  \coverageCount{finTeal!82}{2} \\
+Structure-informed & \coverageCount{finGold!90}{2} & \coverageCount{finGold!90}{1} &
+  \coverageCount{finGold!90}{1} & \coverageCount{finGold!90}{3} &
+  \coverageCount{finGold!90}{4} \\
+Latent / tabular & \coverageCount{finViolet!82}{9} & -- & -- & -- & -- \\
+Flow / interpolant & \coverageCount{finRed!82}{1} & -- & -- & -- &
+  \coverageCount{finRed!82}{3} \\
 \bottomrule
 \end{tabular}
-\caption{Coverage map of the surveyed literature. Each retained work was coded by
-primary method family and primary financial task; marker area and darkness
-increase with the number of coded works \emph{in this survey} in each
-method\,$\times$\,task cell (coarsely binned: small $\le2$, medium $3$--$5$, large
-$>5$). It is not a bibliometric count of the wider literature.}
-\Description{A method-by-task matrix with dot size and darkness indicating
-qualitative literature density across synthetic data, LOB, risk, pricing, and
-portfolio applications.}
+\caption{Coverage map of primary-coded finance applications in the companion
+sheet. Numbers are deduplicated work counts; method foundations, generic
+backbones, baselines, and replaced candidates are omitted, so the matrix is a
+survey-scope audit rather than a bibliometric count of the wider literature.}
+\Description{A method-by-task matrix with exact counts across synthetic data,
+LOB, risk, pricing, and portfolio applications.}
 \label{fig:coverage}
 \end{figure*}
 
@@ -584,14 +585,9 @@ portfolio applications.}
 \centering\footnotesize
 \setlength{\tabcolsep}{5pt}
 \caption{Representative finance works using learned generative diffusion,
-score-based, or flow-matching/rectified-flow models, with methodological
-backbone/representation and explicit conditioning (``C''). Classical
-``diffusion'' SDE or PDE models without a learned generative diffusion/flow
-sampler are excluded from this table. The final column is the headline
-comparison \emph{as reported by each cited work}---self-reported,
-protocol-heterogeneous, and not independently verified, hence indicative rather
-than a ranking (\S\ref{sec:eval}); entries are drawn from the same coding sheet
-summarized in Figure~\ref{fig:coverage}.}
+score-based, or flow-matching/rectified-flow models. ``C'' marks explicit
+conditioning. Reported comparisons are self-reported and protocol-heterogeneous,
+so the table is indicative rather than a ranking (\S\ref{sec:eval}).}
 %% Public-code and dataset availability are tracked in the companion artifact
 %% until links are verified for release.
 \label{tab:summary}
