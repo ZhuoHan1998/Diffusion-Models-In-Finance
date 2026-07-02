@@ -1,11 +1,10 @@
 # Diffusion Models in Finance — Survey
 
-A comprehensive, citation-grounded survey of diffusion / score-based generative
-models applied to finance, built toward an **ICAIF** submission.
+A comprehensive, citation-grounded survey of diffusion-based / score-based / flow-based generative models applied to finance, built toward an **ICAIF** submission.
 
 Run under the **Deli_AutoResearch** protocol
 (<https://victorchen96.github.io/auto_research/framework.html>): build a
-comprehensive survey first, then condense to a ~9-page ACM `sigconf` paper.
+comprehensive survey first, then condense to a ~8-page ACM `sigconf` paper.
 
 ## Layout
 ```

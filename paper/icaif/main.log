@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.28)  24 JUN 2026 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.28)  2 JUL 2026 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main.tex
+**main
 (./main.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06>
@@ -1230,38 +1230,35 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 168.
+(Font)              scaled to size 6.0pt on input line 169.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 6.0pt on input line 168.
+(Font)              scaled to size 6.0pt on input line 169.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 189.
+(Font)              scaled to size 8.0pt on input line 190.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 189.
+(Font)              scaled to size 8.0pt on input line 190.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 200.
+(Font)              scaled to size 7.3pt on input line 201.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 200.
+(Font)              scaled to size 5.5pt on input line 201.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 310.
+(Font)              scaled to size 9.0pt on input line 311.
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 310.
+(Font)              scaled to size 7.0pt on input line 311.
  [2.2]
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
-
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
- [3.3]
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [3.3]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [4.4]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 558.
+(Font)              scaled to size 8.0pt on input line 568.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 558.
+(Font)              scaled to size 6.2pt on input line 568.
 
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
@@ -1284,16 +1281,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 800.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 800.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 800.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D216DFD64B37E59AD1DA6A1506B80B9D;2646.
+(rerunfilecheck)             Checksum: E6800983DD362DF6912CDA44D95EB408;3034.
  ) 
 Here is how much of TeX's memory you used:
  29567 strings out of 480608
- 523412 string characters out of 5903629
- 816980 words of memory out of 5000000
- 44188 multiletter control sequences out of 15000+600000
- 708756 words of font info for 394 fonts, out of 8000000 for 9000
+ 523403 string characters out of 5903629
+ 816831 words of memory out of 5000000
+ 44190 multiletter control sequences out of 15000+600000
+ 708385 words of font info for 392 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 63i,15n,100p,795b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,15n,100p,791b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc
 }{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{
@@ -1312,10 +1309,10 @@ txexs.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/newtx/txmiaX.p
 fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></u
 sr/local/texlive/2020/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/loc
 al/texlive/2020/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (8 pages, 489133 bytes).
+Output written on main.pdf (8 pages, 489020 bytes).
 PDF statistics:
- 576 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 118 named destinations out of 1000 (max. 500000)
- 45193 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 530 compressed objects within 6 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 45201 words of extra memory for PDF output out of 51595 (max. 10000000)
 

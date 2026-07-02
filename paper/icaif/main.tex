@@ -120,8 +120,9 @@ focused specifically on diffusion-family generative models across financial
 tasks, rather than on time-series diffusion, tabular synthesis, GenAI-in-finance,
 or portfolio/forecasting use alone.
 Section~\ref{sec:bg} reviews fundamentals; Sections~\ref{sec:synth}--\ref{sec:port}
-survey applications; Section~\ref{sec:emerging} covers emerging and cross-domain
-uses; Section~\ref{sec:themes} synthesizes cross-cutting themes;
+survey applications---generating financial data (\S\ref{sec:synth}), risk and
+pricing (\S\ref{sec:riskprice}), and forecasting and portfolio construction
+(\S\ref{sec:port}); Section~\ref{sec:themes} synthesizes cross-cutting themes;
 Section~\ref{sec:eval} treats evaluation; and Section~\ref{sec:open} discusses
 open problems.
 
@@ -174,7 +175,7 @@ work; negative results are likely under-represented (\S\ref{sec:eval}).
 \node[bridge, right=0.43cm of m2] (b) {conditioning\\SDE structure};
 
 \node[axis, right=2.65cm of m] (t) {\textbf{Task axis}};
-\node[task, below=2pt of t] (t1) {synthetic data (\S\ref{sec:synth})};
+\node[task, below=2pt of t] (t1) {synthetic data (\S\ref{sec:synth-ts})};
 \node[task, below=2pt of t1] (t2) {LOB simulation (\S\ref{sec:lob})};
 \node[task, below=2pt of t2] (t3) {risk \& scenarios (\S\ref{sec:risk})};
 \node[task, below=2pt of t3] (t4) {pricing \& hedging (\S\ref{sec:price})};
@@ -308,7 +309,7 @@ designs---GBM forward processes~\cite{kim2025gbmdiff}, factor
 structure~\cite{chen2025difffactor}, arbitrage penalties~\cite{jin2025ivsurface},
 risk-neutral drift corrections---that recur throughout.
 
-\section{Synthetic Data and Time-Series Generation}\label{sec:synth}
+\section{Generating Financial Data: Time Series, Tabular, and Microstructure}\label{sec:synth}
 The largest cluster targets data that passes for real. Two design philosophies
 recur. The first \emph{reshapes} data so off-the-shelf diffusion applies:
 \citet{takahashi2024synthfts} apply a wavelet transform mapping price, volume, and
@@ -326,7 +327,7 @@ autocorrelation alongside strong autocorrelation of absolute returns, and
 gain/loss asymmetry---none of which a low reconstruction error guarantees. The
 multivariate case additionally demands faithful cross-sectional dependence,
 motivating the factor- and correlation-structured designs that recur in
-\S\ref{sec:risk}--\ref{sec:port}.
+\S\ref{sec:riskprice}--\ref{sec:port}.
 
 Machinery differs by modality: low-frequency univariate and panel returns, the
 most-studied setting, are the home of stylized-fact
@@ -340,6 +341,7 @@ built in~\cite{jin2025ivsurface,fukunishi2025termstructure}. ``Diffusion for
 finance'' is thus not one method but a family, specialized per modality from the
 cross-domain backbones of \S\ref{sec:bg}.
 
+\subsection{Time-Series and Tabular Synthesis}\label{sec:synth-ts}
 \textbf{High-dimensional generation.} Portfolio and risk
 applications need realistic \emph{dependence}. \citet{chen2025difffactor} embed a
 latent factor structure into diffusion, generating high-dimensional returns that
@@ -392,7 +394,7 @@ comparisons, not an independently verified ranking (\S\ref{sec:eval}), so we rea
 it as a hypothesis explaining the field's rapid migration rather than a settled
 result.
 
-\section{Market Microstructure and LOB Simulation}\label{sec:lob}
+\subsection{Market Microstructure and LOB Simulation}\label{sec:lob}
 Simulating the LOB and its order flow is harder than low-frequency generation: the
 data are high-frequency, discrete, bursty, and rule-governed, and a useful
 simulator must be \emph{responsive}---reacting plausibly to an agent's own orders,
@@ -443,7 +445,15 @@ question---certifying that a simulator's \emph{reaction} to an unseen agent is
 realistic, not merely that unconditional samples match history---remains the key
 obstacle to high-stakes strategy validation.
 
-\section{Risk, Scenario Generation, and Stress Testing}\label{sec:risk}
+\section{Risk, Pricing, and Hedging}\label{sec:riskprice}
+These two applications consume a generator the same way: as a Monte Carlo engine
+whose samples must respect an economic constraint. In risk the constraint is
+distributional---tail mass sets the capital number; in pricing it is
+structural---no-arbitrage and the martingale property under the risk-neutral
+measure set the price. In both, satisfying and validating the constraint, not
+average-case realism, gates deployment.
+
+\subsection{Risk, Scenario Generation, and Stress Testing}\label{sec:risk}
 Controllability pays off most in risk, where the goal is to populate \emph{tails}
 and \emph{what-ifs} absent from history. Guidance~\cite{dhariwal2021beatgan,
 ho2022cfg} yields samples \emph{given} a crash intensity or regime; the same
@@ -476,7 +486,7 @@ used for capital must itself be validated and auditable
 (Section~\ref{sec:open})---in our view the main barrier between these results and
 regulated deployment.
 
-\section{Pricing, Hedging, and Calibration}\label{sec:price}
+\subsection{Pricing, Hedging, and Calibration}\label{sec:price}
 Pricing imposes the hardest economic constraints: no-arbitrage and the change of
 measure from the physical ($\mathbb{P}$) to the risk-neutral ($\mathbb{Q}$) world.
 A change of measure shifts the SDE drift~\cite{song2021sde}, which in
@@ -617,16 +627,6 @@ FlowHFT~\cite{li2025flowhft} & Trading (flow) & HF features & Flow-matching poli
 \bottomrule
 \end{tabular}
 \end{table*}
-
-\section{Emerging and Cross-Domain Applications}\label{sec:emerging}
-Beyond the five core tasks, adjacent applications are maturing along one recurring
-pattern: a technique proven on a structurally similar problem is specialized with a
-financial prior. \emph{Fixed income} has its first generative treatments
-(arbitrage-aware term structures~\cite{fukunishi2025termstructure},
-Treasury-futures synthesis~\cite{zhang2026tfcodit}); \emph{macro-conditioned}
-generation links returns to macro state~\cite{gao2025factorcond,xia2026bayesrobust};
-and scenario trees~\cite{zarifis2025scenariotree} connect diffusion forecasts to
-multistage optimization.
 
 \section{Cross-Cutting Themes}\label{sec:themes}
 Read across tasks, four threads organize the field. \textbf{Conditioning is the
