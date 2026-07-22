@@ -28,12 +28,11 @@ Within each category, papers are ordered by year and then alphabetically by titl
 
 ## Surveys and Resources
 
-- A Survey on Diffusion Models for Time Series and Spatio-Temporal Data, ACM Computing Surveys 2024. [paper](https://arxiv.org/abs/2404.18886) [awesome-list](https://github.com/yyysjz1997/Awesome-TimeSeries-SpatioTemporal-Diffusion-Model)
-- Diffusion Models for Tabular Data: Challenges, Current Progress, and Future Directions, 2024+. [awesome-list](https://github.com/Diffusion-Model-Leiden/awesome-diffusion-models-for-tabular-data)
+- A Survey on Diffusion Models for Time Series and Spatio-Temporal Data, ACM Computing Surveys 2024. [paper](https://arxiv.org/abs/2404.18886) [github-list](https://github.com/yyysjz1997/Awesome-TimeSeries-SpatioTemporal-Diffusion-Model)
 - Synthetic Data Applications in Finance, arXiv 2024. [paper](https://arxiv.org/abs/2401.00081)
 - Deep Generative Models for Synthetic Financial Data: Applications to Portfolio and Risk Modeling, arXiv 2025. [paper](https://arxiv.org/abs/2512.21798)
+- Diffusion Models for Tabular Data: Challenges, Current Progress, and Future Directions, arXiv 2025. [paper](https://arxiv.org/abs/2502.17119) [github-list](https://github.com/Diffusion-Model-Leiden/awesome-diffusion-models-for-tabular-data)
 - Generative Models for Synthetic Data: Transforming Data Mining in the GenAI Era, arXiv 2025. [paper](https://arxiv.org/abs/2508.19570)
-- Diffusion Models in Finance: A Survey, 2026. [manuscript](paper/icaif/main.pdf) [source](paper/icaif/main.tex) [corpus](paper/icaif/companion/corpus_coding.csv)
 
 ## Synthetic Financial Time Series and Market Data
 
@@ -41,7 +40,7 @@ Within each category, papers are ordered by year and then alphabetically by titl
 - Synthetic Asset Price Paths Generation Using Denoising Diffusion Probabilistic Model, SCML 2024. [event](https://www.scml.jp/scml2024.html)
 - A diffusion-based generative model for financial time series via geometric Brownian motion, arXiv 2025. [paper](https://arxiv.org/abs/2507.19003)
 - CoFinDiff: Controllable Financial Diffusion Model for Time Series Generation, arXiv 2025. [paper](https://arxiv.org/abs/2503.04164)
-- Diffusion Factor Models: Generating High-Dimensional Returns with Factor Structure, arXiv 2025. [paper](https://arxiv.org/abs/2504.06566)
+- Diffusion Factor Models: Generating High-Dimensional Returns with Factor Structure, arXiv 2025. [paper](https://arxiv.org/abs/2504.06566) [code](https://github.com/xymmmm00/diffusion_factor_model)
 - Diffusion Generative Models Meet Compressed Sensing, with Applications to Imaging and Finance, arXiv 2025. [paper](https://arxiv.org/abs/2509.03898)
 - Fiaingen: A Financial Time Series Generative Method Matching Real-World Data Quality, arXiv 2025. [paper](https://arxiv.org/abs/2510.01169)
 - Generation of Synthetic Financial Time Series by Diffusion Models, Quantitative Finance 2025. [paper](https://arxiv.org/abs/2410.18897)
@@ -54,10 +53,10 @@ Within each category, papers are ordered by year and then alphabetically by titl
 - DiffVolume: Diffusion Models for Volume Generation in Limit Order Books, arXiv 2025. [paper](https://arxiv.org/abs/2508.08698)
 - Painting the Market: Generative Diffusion Models for Financial Limit Order Book Simulation and Forecasting, arXiv 2025. [paper](https://arxiv.org/abs/2509.05107)
 - Towards Realistic and Interpretable Market Simulations: Factorizing Financial Power Law using Optimal Transport, arXiv 2025. [paper](https://arxiv.org/abs/2507.09863)
-- TRADES: Generating Realistic Market Simulations with Diffusion Models, arXiv 2025. [paper](https://arxiv.org/abs/2502.07071) [code](https://github.com/LeonardoBerti00/TRADES)
+- TRADES: Generating Realistic Market Simulations with Diffusion Models, arXiv 2025. [paper](https://arxiv.org/abs/2502.07071) [code](https://github.com/LeonardoBerti00/DeepMarket)
 - Controllable Financial Market Generation with Diffusion Guided Meta Agent, AAAI 2026. [paper](https://arxiv.org/abs/2408.12991)
 - DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books, arXiv 2026. [paper](https://arxiv.org/abs/2602.03776)
-- Limit Order Book Event Stream Prediction with Diffusion Model, Data Science and Engineering 2026. [paper](https://arxiv.org/abs/2412.09631) [journal](https://link.springer.com/article/10.1007/s41019-025-00328-4)
+- Limit Order Book Event Stream Prediction with Diffusion Model, Data Science and Engineering 2026. [paper](https://arxiv.org/abs/2412.09631) [journal](https://link.springer.com/article/10.1007/s41019-025-00328-4) [code](https://github.com/zhengzetao/LOBDIF)
 
 ## Forecasting, Portfolio Construction, and Trading
 
@@ -98,8 +97,8 @@ Within each category, papers are ordered by year and then alphabetically by titl
 
 ## Tabular, Fraud, Privacy, and Compliance
 
-- FinDiff: Diffusion Models for Financial Tabular Data Generation, ICAIF 2023. [paper](https://arxiv.org/abs/2309.01472)
-- Denoising Diffusion Probabilistic Model for Realistic Financial Correlation Matrices, ICAIF 2024. [paper](https://doi.org/10.1145/3677052.3698640) [record](https://dblp.org/rec/conf/icaif/KubiakWGPG24.html)
+- FinDiff: Diffusion Models for Financial Tabular Data Generation, ICAIF 2023. [paper](https://arxiv.org/abs/2309.01472) [code](https://github.com/sattarov/FinDiff)
+- Denoising Diffusion Probabilistic Model for Realistic Financial Correlation Matrices, ICAIF 2024. [paper](https://doi.org/10.1145/3677052.3698640) [record](https://dblp.org/rec/conf/icaif/KubiakWGPG24.html) [code](https://github.com/szymkubiak/DDPM-for-Correlation-Matrices)
 - Entity-based Financial Tabular Data Synthesis with Diffusion Models, ICAIF 2024. [paper](https://doi.org/10.1145/3677052.3698625)
 - Federated Diffusion Modeling with Differential Privacy for Tabular Data Synthesis, arXiv 2024. [paper](https://arxiv.org/abs/2412.16083)
 - Imb-FinDiff: Conditional Diffusion Models for Class Imbalance Synthesis of Financial Tabular Data, ICAIF 2024. [paper](https://doi.org/10.1145/3677052.3698659)
@@ -120,46 +119,46 @@ Finance-specific:
 
 General time-series/tabular flow papers useful for finance:
 
-- Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow, ICLR 2023. [paper](https://arxiv.org/abs/2209.03003)
-- Stochastic Interpolants: A Unifying Framework for Flows and Diffusions, arXiv 2023. [paper](https://arxiv.org/abs/2303.08797)
-- FlowTS: Time Series Generation via Rectified Flow, arXiv 2024. [paper](https://arxiv.org/abs/2411.07506)
-- Probabilistic Forecasting with Stochastic Interpolants and Follmer Processes, ICML 2024. [paper](https://arxiv.org/abs/2403.13724)
+- Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow, ICLR 2023. [paper](https://arxiv.org/abs/2209.03003) [code](https://github.com/gnobitab/RectifiedFlow)
+- Stochastic Interpolants: A Unifying Framework for Flows and Diffusions, arXiv 2023. [paper](https://arxiv.org/abs/2303.08797) [code](https://github.com/malbergo/stochastic-interpolants)
+- FlowTS: Time Series Generation via Rectified Flow, arXiv 2024. [paper](https://arxiv.org/abs/2411.07506) [code](https://github.com/UNITES-Lab/FlowTS)
+- Probabilistic Forecasting with Stochastic Interpolants and Follmer Processes, ICML 2024. [paper](https://arxiv.org/abs/2403.13724) [code](https://github.com/interpolants/forecasting)
 - Recurrent Interpolants for Probabilistic Time Series Prediction, arXiv 2024. [paper](https://arxiv.org/abs/2409.11684)
-- RecTable: Fast Modeling Tabular Data with Rectified Flow, arXiv 2025. [paper](https://arxiv.org/abs/2503.20731)
+- RecTable: Fast Modeling Tabular Data with Rectified Flow, arXiv 2025. [paper](https://arxiv.org/abs/2503.20731) [code](https://github.com/fmp453/rectable)
 - TimeFlow: Towards Stochastic-Aware and Efficient Time Series Generation via Flow Matching Modeling, arXiv 2025. [paper](https://arxiv.org/abs/2511.07968)
 
 ## Related Foundations and Backbones
 
 Diffusion and score-based modeling:
 
-- Deep Unsupervised Learning using Nonequilibrium Thermodynamics, ICML 2015. [paper](https://arxiv.org/abs/1503.03585)
-- Generative Modeling by Estimating Gradients of the Data Distribution, NeurIPS 2019. [paper](https://arxiv.org/abs/1907.05600)
-- Denoising Diffusion Probabilistic Models, NeurIPS 2020. [paper](https://arxiv.org/abs/2006.11239)
-- Denoising Diffusion Implicit Models, ICLR 2021. [paper](https://arxiv.org/abs/2010.02502)
-- Diffusion Models Beat GANs on Image Synthesis, NeurIPS 2021. [paper](https://arxiv.org/abs/2105.05233)
-- Improved Denoising Diffusion Probabilistic Models, ICML 2021. [paper](https://arxiv.org/abs/2102.09672)
-- Score-Based Generative Modeling through Stochastic Differential Equations, ICLR 2021. [paper](https://arxiv.org/abs/2011.13456)
+- Deep Unsupervised Learning using Nonequilibrium Thermodynamics, ICML 2015. [paper](https://arxiv.org/abs/1503.03585) [code](https://github.com/Sohl-Dickstein/Diffusion-Probabilistic-Models)
+- Generative Modeling by Estimating Gradients of the Data Distribution, NeurIPS 2019. [paper](https://arxiv.org/abs/1907.05600) [code](https://github.com/ermongroup/ncsn)
+- Denoising Diffusion Probabilistic Models, NeurIPS 2020. [paper](https://arxiv.org/abs/2006.11239) [code](https://github.com/hojonathanho/diffusion)
+- Denoising Diffusion Implicit Models, ICLR 2021. [paper](https://arxiv.org/abs/2010.02502) [code](https://github.com/ermongroup/ddim)
+- Diffusion Models Beat GANs on Image Synthesis, NeurIPS 2021. [paper](https://arxiv.org/abs/2105.05233) [code](https://github.com/openai/guided-diffusion)
+- Improved Denoising Diffusion Probabilistic Models, ICML 2021. [paper](https://arxiv.org/abs/2102.09672) [code](https://github.com/openai/improved-diffusion)
+- Score-Based Generative Modeling through Stochastic Differential Equations, ICLR 2021. [paper](https://arxiv.org/abs/2011.13456) [code](https://github.com/yang-song/score_sde)
 - Classifier-Free Diffusion Guidance, NeurIPS Workshop 2022. [paper](https://arxiv.org/abs/2207.12598)
-- Elucidating the Design Space of Diffusion-Based Generative Models, NeurIPS 2022. [paper](https://arxiv.org/abs/2206.00364)
-- Consistency Models, ICML 2023. [paper](https://arxiv.org/abs/2303.01469)
+- Elucidating the Design Space of Diffusion-Based Generative Models, NeurIPS 2022. [paper](https://arxiv.org/abs/2206.00364) [code](https://github.com/NVlabs/edm)
+- Consistency Models, ICML 2023. [paper](https://arxiv.org/abs/2303.01469) [code](https://github.com/openai/consistency_models)
 
 Time-series and tabular backbones:
 
-- Autoregressive Denoising Diffusion Models for Multivariate Probabilistic Time Series Forecasting, ICML 2021. [paper](https://arxiv.org/abs/2101.12072)
-- CSDI: Conditional Score-based Diffusion Models for Probabilistic Time Series Imputation, NeurIPS 2021. [paper](https://arxiv.org/abs/2107.03502)
-- Diffusion-based Time Series Imputation and Forecasting with Structured State Space Models, TMLR 2022. [paper](https://arxiv.org/abs/2208.09399)
-- Predict, Refine, Synthesize: Self-Guiding Diffusion Models for Probabilistic Time Series Forecasting, NeurIPS 2023. [paper](https://arxiv.org/abs/2307.11494)
-- TabDDPM: Modelling Tabular Data with Diffusion Models, ICML 2023. [paper](https://arxiv.org/abs/2209.15421)
-- Diffusion-TS: Interpretable Diffusion for General Time Series Generation, ICLR 2024. [paper](https://arxiv.org/abs/2403.01742)
-- Mixed-Type Tabular Data Synthesis with Score-based Diffusion in Latent Space, ICLR 2024. [paper](https://arxiv.org/abs/2310.09656)
+- Autoregressive Denoising Diffusion Models for Multivariate Probabilistic Time Series Forecasting, ICML 2021. [paper](https://arxiv.org/abs/2101.12072) [code](https://github.com/zalandoresearch/pytorch-ts)
+- CSDI: Conditional Score-based Diffusion Models for Probabilistic Time Series Imputation, NeurIPS 2021. [paper](https://arxiv.org/abs/2107.03502) [code](https://github.com/ermongroup/CSDI)
+- Diffusion-based Time Series Imputation and Forecasting with Structured State Space Models, TMLR 2022. [paper](https://arxiv.org/abs/2208.09399) [code](https://github.com/AI4HealthUOL/SSSD)
+- Predict, Refine, Synthesize: Self-Guiding Diffusion Models for Probabilistic Time Series Forecasting, NeurIPS 2023. [paper](https://arxiv.org/abs/2307.11494) [code](https://github.com/amazon-science/unconditional-time-series-diffusion)
+- TabDDPM: Modelling Tabular Data with Diffusion Models, ICML 2023. [paper](https://arxiv.org/abs/2209.15421) [code](https://github.com/yandex-research/tab-ddpm)
+- Diffusion-TS: Interpretable Diffusion for General Time Series Generation, ICLR 2024. [paper](https://arxiv.org/abs/2403.01742) [code](https://github.com/Y-debug-sys/Diffusion-TS)
+- Mixed-Type Tabular Data Synthesis with Score-based Diffusion in Latent Space, ICLR 2024. [paper](https://arxiv.org/abs/2310.09656) [code](https://github.com/amazon-science/tabsyn)
 - DS-Diffusion: Data Style-Guided Diffusion Model for Time-Series Generation, arXiv 2025. [paper](https://arxiv.org/abs/2509.18584)
 
 Decision-making and control:
 
-- Planning with Diffusion for Flexible Behavior Synthesis, ICML 2022. [paper](https://arxiv.org/abs/2205.09991)
-- Diffusion Models for Reinforcement Learning: A Survey, arXiv 2023. [paper](https://arxiv.org/abs/2311.01223)
-- Is Conditional Generative Modeling all you need for Decision-Making?, ICLR 2023. [paper](https://arxiv.org/abs/2211.15657)
-- An Optimal Control Perspective on Diffusion-Based Generative Modeling, TMLR 2024. [paper](https://arxiv.org/abs/2211.01364)
+- Planning with Diffusion for Flexible Behavior Synthesis, ICML 2022. [paper](https://arxiv.org/abs/2205.09991) [code](https://github.com/jannerm/diffuser)
+- Diffusion Models for Reinforcement Learning: A Survey, arXiv 2023. [paper](https://arxiv.org/abs/2311.01223) [code](https://github.com/apexrl/Diff4RLSurvey)
+- Is Conditional Generative Modeling all you need for Decision-Making?, ICLR 2023. [paper](https://arxiv.org/abs/2211.15657) [code](https://github.com/anuragajay/decision-diffuser/tree/main/code)
+- An Optimal Control Perspective on Diffusion-Based Generative Modeling, TMLR 2024. [paper](https://arxiv.org/abs/2211.01364) [code](https://github.com/juliusberner/sde_sampler)
 
 ## Non-Diffusion Finance Baselines
 
