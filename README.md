@@ -41,7 +41,7 @@ Within each category, papers are ordered by year and then alphabetically by titl
 - A diffusion-based generative model for financial time series via geometric Brownian motion, arXiv 2025. [paper](https://arxiv.org/abs/2507.19003)
 - CoFinDiff: Controllable Financial Diffusion Model for Time Series Generation, arXiv 2025. [paper](https://arxiv.org/abs/2503.04164)
 - Diffusion Factor Models: Generating High-Dimensional Returns with Factor Structure, arXiv 2025. [paper](https://arxiv.org/abs/2504.06566) [code](https://github.com/xymmmm00/diffusion_factor_model)
-- Diffusion Generative Models Meet Compressed Sensing, with Applications to Imaging and Finance, arXiv 2025. [paper](https://arxiv.org/abs/2509.03898)
+- Diffusion Generative Models Meet Compressed Sensing, with Applications to Imaging and Finance, arXiv 2025. [paper](https://arxiv.org/abs/2509.03898) [code](https://github.com/ZhengyiGuo2002/CSDM-code)
 - Fiaingen: A Financial Time Series Generative Method Matching Real-World Data Quality, arXiv 2025. [paper](https://arxiv.org/abs/2510.01169)
 - Generation of Synthetic Financial Time Series by Diffusion Models, Quantitative Finance 2025. [paper](https://arxiv.org/abs/2410.18897)
 - InterDiff: Synthesizing Financial Time Series with Inter-Stock Correlations via Classifier-Free Guided Diffusion, ECML-PKDD 2025. [paper](https://link.springer.com/chapter/10.1007/978-3-032-01655-9_13)
@@ -54,8 +54,8 @@ Within each category, papers are ordered by year and then alphabetically by titl
 - Painting the Market: Generative Diffusion Models for Financial Limit Order Book Simulation and Forecasting, arXiv 2025. [paper](https://arxiv.org/abs/2509.05107)
 - Towards Realistic and Interpretable Market Simulations: Factorizing Financial Power Law using Optimal Transport, arXiv 2025. [paper](https://arxiv.org/abs/2507.09863)
 - TRADES: Generating Realistic Market Simulations with Diffusion Models, arXiv 2025. [paper](https://arxiv.org/abs/2502.07071) [code](https://github.com/LeonardoBerti00/DeepMarket)
-- Controllable Financial Market Generation with Diffusion Guided Meta Agent, AAAI 2026. [paper](https://arxiv.org/abs/2408.12991)
-- DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books, arXiv 2026. [paper](https://arxiv.org/abs/2602.03776)
+- Controllable Financial Market Generation with Diffusion Guided Meta Agent, AAAI 2026. [paper](https://arxiv.org/abs/2408.12991) [code](https://github.com/microsoft/TimeCraft)
+- DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books, arXiv 2026. [paper](https://arxiv.org/abs/2602.03776) [code](https://github.com/ZhuoHan1998/DiffLOB)
 - Limit Order Book Event Stream Prediction with Diffusion Model, Data Science and Engineering 2026. [paper](https://arxiv.org/abs/2412.09631) [journal](https://link.springer.com/article/10.1007/s41019-025-00328-4) [code](https://github.com/zhengzetao/LOBDIF)
 
 ## Forecasting, Portfolio Construction, and Trading
@@ -77,18 +77,18 @@ Within each category, papers are ordered by year and then alphabetically by titl
 
 ## Risk, Scenario Generation, and Stress Testing
 
-- DiffCharge: Generating EV Charging Scenarios via a Denoising Diffusion Model, arXiv 2023. [paper](https://arxiv.org/abs/2308.09857)
+- DiffCharge: Generating EV Charging Scenarios via a Denoising Diffusion Model, arXiv 2023. [paper](https://arxiv.org/abs/2308.09857) [code](https://github.com/LSY-Cython/DiffCharge)
 - Diffusion-Augmented Reinforcement Learning for Robust Portfolio Optimization under Stress Scenarios, arXiv 2025. [paper](https://arxiv.org/abs/2510.07099)
 - Diffusion-Based Scenario Tree Generation for Multivariate Time Series Prediction and Multistage Stochastic Optimization, arXiv 2025. [paper](https://arxiv.org/abs/2509.14832)
 - Multi-Agent Regime-Conditioned Diffusion (MARCD) for CVaR-Constrained Portfolio Decisions, arXiv 2025. [paper](https://arxiv.org/abs/2510.10807)
 - Neural Levy SDE for State-Dependent Risk and Density Forecasting, arXiv 2025. [paper](https://arxiv.org/abs/2509.01041)
-- SurvDiff: A Diffusion Model for Generating Synthetic Data in Survival Analysis, arXiv 2025. [paper](https://arxiv.org/abs/2509.22352)
+- SurvDiff: A Diffusion Model for Generating Synthetic Data in Survival Analysis, arXiv 2025. [paper](https://arxiv.org/abs/2509.22352) [code](https://github.com/mariebrockschmidt/SurvDiff)
 - The Day-Ahead Scenario Generation Method for New Energy Based on an Improved Conditional Generative Diffusion Model, arXiv 2025. [paper](https://arxiv.org/abs/2503.07648)
 
 ## Pricing, Hedging, Volatility, and Fixed Income
 
 - A Time-Stepping Deep Gradient Flow Method for Option Pricing in (Rough) Diffusion Models, arXiv 2024. [related neural-PDE paper](https://arxiv.org/abs/2403.00746)
-- Forecasting Implied Volatility Surface with Generative Diffusion Models, arXiv 2025. [paper](https://arxiv.org/abs/2511.07571)
+- Forecasting Implied Volatility Surface with Generative Diffusion Models, arXiv 2025. [paper](https://arxiv.org/abs/2511.07571) [code](https://github.com/Austinjinc/diffusion-paper-code)
 - Generating Solution Paths of Markovian Stochastic Differential Equations using Diffusion Models, arXiv 2025. [paper](https://arxiv.org/abs/2509.08731)
 - Valuation of Exotic Options and Counterparty Games Based on Conditional Diffusion, arXiv 2025. [paper](https://arxiv.org/abs/2509.13374)
 - Generating the Term Structure of Interest Rates with Diffusion Models, Expert Systems with Applications 2026. [paper](https://doi.org/10.1016/j.eswa.2026.132895)
@@ -105,7 +105,7 @@ Within each category, papers are ordered by year and then alphabetically by titl
 - Synthetic Data Generation for Fraud Detection Using Diffusion Models, Information and Security 2024. [paper](https://www.isij.eu/article/synthetic-data-generation-fraud-detection-using-diffusion-models)
 - Boosting Predictive Performance on Tabular Data through Data Augmentation with Latent-Space Flow-Based Diffusion, arXiv 2025. [paper](https://arxiv.org/abs/2511.16571)
 - Constrained Tabular Diffusion for Finance, ICAIF 2025 / arXiv 2026. [paper](https://arxiv.org/abs/2606.28674)
-- Privacy Preserving Diffusion Models for Mixed-Type Tabular Data Generation, arXiv 2025. [paper](https://arxiv.org/abs/2512.00638)
+- Privacy Preserving Diffusion Models for Mixed-Type Tabular Data Generation, arXiv 2025. [paper](https://arxiv.org/abs/2512.00638) [code](https://github.com/sattarov/DP-FinDiff)
 - EmDT: Embedding Diffusion Transformer for Tabular Data Generation in Fraud Detection, arXiv 2026. [paper](https://arxiv.org/abs/2603.13566)
 - Measuring Privacy Risks and Tradeoffs in Financial Synthetic Data Generation, arXiv 2026. [paper](https://arxiv.org/abs/2602.09288)
 - Tabular diffusion counterfactual explanations, Frontiers in Artificial Intelligence 2026. [paper](https://doi.org/10.3389/frai.2026.1743495)
@@ -125,7 +125,7 @@ General time-series/tabular flow papers useful for finance:
 - Probabilistic Forecasting with Stochastic Interpolants and Follmer Processes, ICML 2024. [paper](https://arxiv.org/abs/2403.13724) [code](https://github.com/interpolants/forecasting)
 - Recurrent Interpolants for Probabilistic Time Series Prediction, arXiv 2024. [paper](https://arxiv.org/abs/2409.11684)
 - RecTable: Fast Modeling Tabular Data with Rectified Flow, arXiv 2025. [paper](https://arxiv.org/abs/2503.20731) [code](https://github.com/fmp453/rectable)
-- TimeFlow: Towards Stochastic-Aware and Efficient Time Series Generation via Flow Matching Modeling, arXiv 2025. [paper](https://arxiv.org/abs/2511.07968)
+- TimeFlow: Towards Stochastic-Aware and Efficient Time Series Generation via Flow Matching Modeling, arXiv 2025. [paper](https://arxiv.org/abs/2511.07968) [code](https://github.com/PanJingHe/TimeFlow)
 
 ## Related Foundations and Backbones
 
@@ -168,11 +168,11 @@ These are useful comparison points, but they are not counted as diffusion/flow f
 - A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options, Review of Financial Studies 1993. [paper](https://doi.org/10.1093/rfs/6.2.327)
 - Hawkes Processes in Finance, Market Microstructure and Liquidity 2015. [paper](https://doi.org/10.1142/S2382626615500057)
 - Volatility is Rough, Quantitative Finance 2018. [paper](https://doi.org/10.1080/14697688.2017.1393551)
-- Deep Hedging, Quantitative Finance 2019. [paper](https://arxiv.org/abs/1802.03042)
+- Deep Hedging, Quantitative Finance 2019. [paper](https://arxiv.org/abs/1802.03042) [code](https://github.com/hansbuehler/deephedging)
 - Quant GANs: Deep Generation of Financial Time Series, Quantitative Finance 2020. [paper](https://arxiv.org/abs/1907.06673)
-- Sig-Wasserstein GANs for Time Series Generation, ICAIF 2021. [paper](https://arxiv.org/abs/2111.01207)
-- Generative Modelling of Financial Time Series with Structured Noise and MMD-based Signature Learning, arXiv 2024. [paper](https://arxiv.org/abs/2407.19848)
-- Bayesian Robust Financial Trading with Adversarial Synthetic Market Data, arXiv 2026. [paper](https://arxiv.org/abs/2601.17008)
+- Sig-Wasserstein GANs for Time Series Generation, ICAIF 2021. [paper](https://arxiv.org/abs/2111.01207) [code](https://github.com/SigCGANs/Sig-Wasserstein-GANs)
+- Generative Modelling of Financial Time Series with Structured Noise and MMD-based Signature Learning, arXiv 2024. [paper](https://arxiv.org/abs/2407.19848) [code](https://github.com/Anonymous1701/mmd-repo)
+- Bayesian Robust Financial Trading with Adversarial Synthetic Market Data, arXiv 2026. [paper](https://arxiv.org/abs/2601.17008) [code](https://github.com/XiaHaochong98/Bayesian-Robust-Financial-Trading-with-Adversarial-Synthetic-Market-Data)
 
 ## Contributing
 
