@@ -1,14 +1,10 @@
 # Awesome Diffusion Models in Finance Papers
 
-A curated list of papers on learned generative diffusion, score-based, rectified-flow, flow-matching, and closely related stochastic-interpolant models for finance.
-
-This repository also contains an ICAIF-style survey manuscript in [`paper/icaif/main.tex`](paper/icaif/main.tex) and an auditable companion corpus in [`paper/icaif/companion/corpus_coding.csv`](paper/icaif/companion/corpus_coding.csv).
-
-Last updated: 2026-07-22.
+A curated list of papers on learned generative diffusion, flow, and closely related stochastic-interpolant models for finance.
 
 ## Scope
 
-Included papers should use a learned generative diffusion/score/flow sampler, or make a finance-specific contribution that directly evaluates such models. Classical financial "diffusion" in the SDE/PDE sense is not included unless the paper also contains a learned generative diffusion or flow model.
+Included papers should use a learned diffusion/flow generator, or make a finance-specific contribution that directly evaluates such models. Classical financial "diffusion" in the SDE/PDE sense is not included unless the paper also contains a learned generative diffusion or flow model.
 
 Related time-series, tabular, decision-making, and non-diffusion finance generators are listed separately as background or baselines.
 
