@@ -47,32 +47,34 @@ Generation:
 - InterDiff: Synthesizing Financial Time Series with Inter-Stock Correlations via Classifier-Free Guided Diffusion, ECML-PKDD 2025. CN / Stock / Price series. [paper](https://link.springer.com/chapter/10.1007/978-3-032-01655-9_13)
 - High-Quality Synthetic Financial Time-Series using a GAN-Diffusion Framework, arXiv 2026. US / Stock / Price series & Volume. [paper](https://arxiv.org/abs/2605.27113)
 
-Forecasting, portfolio construction, and trading:
+Forecasting, data inference, portfolio construction, and trading:
 
 - Diffusion Variational Autoencoder for Tackling Stochasticity in Multi-Step Regression Stock Price Prediction, CIKM 2023. US / Stock / Price series. [paper](https://dl.acm.org/doi/10.1145/3583780.3614915) [code](https://github.com/kentang2017/diffusion-vae)
+- A Financial Time Series Denoiser Based on Diffusion Models, ICAIF 2024. US / Stock / Price series. [paper](https://doi.org/10.1145/3677052.3698649) [arXiv](https://arxiv.org/abs/2409.02138)
+- A Spatio-Temporal Diffusion Model for Missing and Real-Time Financial Data Inference, CIKM 2024. US / Stock / Firm-characteristic panel. [paper](https://doi.org/10.1145/3627673.3679806) [record](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5104672)
 - DiffsFormer: A Diffusion Transformer on Stock Factor Augmentation, arXiv 2024. CN / Stock / Price series. [paper](https://arxiv.org/abs/2402.06656)
 - DiffSTOCK: Probabilistic Relational Stock Market Predictions using Diffusion Models, ICASSP 2024. US / Stock / Price series. [paper](https://arxiv.org/abs/2403.14063)
 - DHMoE: Diffusion Generated Hierarchical Multi-Granular Expertise for Stock Prediction, AAAI 2025. US, CN, HK / Stock / Price series. [paper](https://ojs.aaai.org/index.php/AAAI/article/view/33250)
-- Diffolio: A Diffusion Model for Multivariate Probabilistic Financial Time-Series Forecasting and Portfolio Construction, Information Fusion 2026. US / Stock / Return series. [paper](https://arxiv.org/abs/2511.07014)
 - Diffusion-Augmented Reinforcement Learning for Robust Portfolio Optimization under Stress Scenarios, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2510.07099)
 - Exploring Diffusion Models for Generative Forecasting of Financial Charts, arXiv 2025. Global / Bitcoin Future / Price series. [paper](https://arxiv.org/abs/2509.02308)
 - Factor-Based Conditional Diffusion Model for Contextual Portfolio Optimization, arXiv 2025. CN / Stock / Return series. [paper](https://arxiv.org/abs/2509.22088)
 - FlowHFT: Imitation Learning via Flow Matching Policy for Optimal High-Frequency Trading under Diverse Market Conditions, arXiv 2025. Synthetic / Stock / Synthetic data. [paper](https://arxiv.org/abs/2505.05784)
 - Multi-Agent Regime-Conditioned Diffusion (MARCD) for CVaR-Constrained Portfolio Decisions, arXiv 2025. US / ETF / Return series. [paper](https://arxiv.org/abs/2510.10807)
 - Solving Dynamic Portfolio Selection Problems via Score-Based Diffusion Models, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2507.09916)
+- Diffolio: A Diffusion Model for Multivariate Probabilistic Financial Time-Series Forecasting and Portfolio Construction, Information Fusion 2026. US / Stock / Return series. [paper](https://arxiv.org/abs/2511.07014)
 - Factor Dimensionality and the Bias-Variance Tradeoff in Diffusion Portfolio Models, arXiv 2026. US / Stock / Return series. [paper](https://arxiv.org/abs/2603.10385)
 - VARDiff: Vision-augmented retrieval-guided diffusion for stock forecasting, Information Sciences 2026. US / Stock / Price series. [paper](https://doi.org/10.1016/j.ins.2026.123113)
 
 Risk, scenario generation, and stress testing:
 
 - Diffusion-Augmented Reinforcement Learning for Robust Portfolio Optimization under Stress Scenarios, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2510.07099)
-- Diffusion Generative Models Meet Compressed Sensing, with Applications to Imaging and Finance, arXiv 2025. US / Stock, Macro / Price series. [paper](https://arxiv.org/abs/2509.03898) [code](https://github.com/ZhengyiGuo2002/CSDM-code)
 - Diffusion-Based Scenario Tree Generation for Multivariate Time Series Prediction and Multistage Stochastic Optimization, arXiv 2025. US / Energy / Price series. [paper](https://arxiv.org/abs/2509.14832)
+- Diffusion Generative Models Meet Compressed Sensing, with Applications to Imaging and Finance, arXiv 2025. US / Stock, Macro / Price series. [paper](https://arxiv.org/abs/2509.03898) [code](https://github.com/ZhengyiGuo2002/CSDM-code)
 - Multi-Agent Regime-Conditioned Diffusion (MARCD) for CVaR-Constrained Portfolio Decisions, arXiv 2025. US / ETF / Return series. [paper](https://arxiv.org/abs/2510.10807)
 
 ## Limit Order Books and Market Microstructure
 
-LOB snapshots, order flow, and market simulation:
+Market simulation:
 
 - ByteGen: A Tokenizer-Free Generative Model for Orderbook Events in Byte Space, arXiv 2025. US / Bitcoin Future / LOB orderflow. [paper](https://arxiv.org/abs/2508.02247)
 - DiffVolume: Diffusion Models for Volume Generation in Limit Order Books, ICAIF 2025. US / Stock / LOB volume. [paper](https://arxiv.org/abs/2508.08698)
@@ -85,7 +87,7 @@ LOB snapshots, order flow, and market simulation:
 
 ## Financial Tabular and Relational Data
 
-Tabular synthesis, privacy, fraud, and compliance:
+Generation:
 
 - FinDiff: Diffusion Models for Financial Tabular Data Generation, ICAIF 2023. Multi / Credit, Payment, Fund / Tabular. [paper](https://arxiv.org/abs/2309.01472) [code](https://github.com/sattarov/FinDiff)
 - Entity-based Financial Tabular Data Synthesis with Diffusion Models, ICAIF 2024. Multi / Finance / Tabular. [paper](https://doi.org/10.1145/3677052.3698625)
@@ -129,11 +131,11 @@ Diffusion and score-based modeling:
 Flow matching, rectified flow, and stochastic interpolants:
 
 - Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow, ICLR 2023. [paper](https://arxiv.org/abs/2209.03003) [code](https://github.com/gnobitab/RectifiedFlow)
-- Stochastic Interpolants: A Unifying Framework for Flows and Diffusions, JMLR 2025. [paper](https://arxiv.org/abs/2303.08797) [journal](https://jmlr.org/beta/papers/v26/23-1605.html) [code](https://github.com/malbergo/stochastic-interpolants)
 - FlowTS: Time Series Generation via Rectified Flow, arXiv 2024. [paper](https://arxiv.org/abs/2411.07506) [code](https://github.com/UNITES-Lab/FlowTS)
 - Probabilistic Forecasting with Stochastic Interpolants and Follmer Processes, ICML 2024. [paper](https://arxiv.org/abs/2403.13724) [code](https://github.com/interpolants/forecasting)
 - Recurrent Interpolants for Probabilistic Time Series Prediction, arXiv 2024. [paper](https://arxiv.org/abs/2409.11684)
 - RecTable: Fast Modeling Tabular Data with Rectified Flow, arXiv 2025. [paper](https://arxiv.org/abs/2503.20731) [code](https://github.com/fmp453/rectable)
+- Stochastic Interpolants: A Unifying Framework for Flows and Diffusions, JMLR 2025. [paper](https://arxiv.org/abs/2303.08797) [journal](https://jmlr.org/beta/papers/v26/23-1605.html) [code](https://github.com/malbergo/stochastic-interpolants)
 - TimeFlow: Towards Stochastic-Aware and Efficient Time Series Generation via Flow Matching Modeling, arXiv 2025. [paper](https://arxiv.org/abs/2511.07968) [code](https://github.com/PanJingHe/TimeFlow)
 
 Time-series and tabular backbones:

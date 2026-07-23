@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{88}
+\begin{thebibliography}{59}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,19 +37,6 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
-\bibitem[\protect\citeauthoryear{Aghapour, Bayraktar, and Yuan}{Aghapour
-  et~al\mbox{.}}{2025}]%
-        {aghapour2025dynport}
-\bibfield{author}{\bibinfo{person}{Ahmad Aghapour}, \bibinfo{person}{Erhan
-  Bayraktar}, {and} \bibinfo{person}{Fengyi Yuan}.}
-  \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{Solving Dynamic Portfolio Selection Problems via
-  Score-Based Diffusion Models}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2507.09916}}
-  (\bibinfo{year}{2025}).
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Ajay, Du, Gupta, Tenenbaum, Jaakkola, and
   Agrawal}{Ajay et~al\mbox{.}}{2023}]%
         {ajay2022decisiondiffuser}
@@ -77,20 +64,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Alcaraz and Strodthoff}{Alcaraz and
-  Strodthoff}{2022}]%
-        {alcaraz2022sssd}
-\bibfield{author}{\bibinfo{person}{Juan Miguel~Lopez Alcaraz} {and}
-  \bibinfo{person}{Nils Strodthoff}.} \bibinfo{year}{2022}\natexlab{}.
-\newblock \showarticletitle{Diffusion-based Time Series Imputation and
-  Forecasting with Structured State Space Models}.
-\newblock \bibinfo{journal}{\emph{Transactions on Machine Learning Research}}
-  (\bibinfo{year}{2022}).
-\newblock
-\newblock
-\shownote{arXiv:2208.09399.}
-
-
 \bibitem[\protect\citeauthoryear{Alzahrani}{Alzahrani}{2025}]%
         {alzahrani2025marcd}
 \bibfield{author}{\bibinfo{person}{Ali~Atiah Alzahrani}.}
@@ -115,47 +88,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Bacry, Mastromatteo, and Muzy}{Bacry
-  et~al\mbox{.}}{2015}]%
-        {bacry2015hawkes}
-\bibfield{author}{\bibinfo{person}{Emmanuel Bacry}, \bibinfo{person}{Iacopo
-  Mastromatteo}, {and} \bibinfo{person}{Jean-Fran\c{c}ois Muzy}.}
-  \bibinfo{year}{2015}\natexlab{}.
-\newblock \showarticletitle{Hawkes Processes in Finance}.
-\newblock \bibinfo{journal}{\emph{Market Microstructure and Liquidity}}
-  \bibinfo{volume}{1}, \bibinfo{number}{1} (\bibinfo{year}{2015}),
-  \bibinfo{pages}{1550005}.
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Bagchi, Tesfaye, and Shastri}{Bagchi
-  et~al\mbox{.}}{2026}]%
-        {bagchi2026factordim}
-\bibfield{author}{\bibinfo{person}{Avi Bagchi}, \bibinfo{person}{Michael
-  Tesfaye}, {and} \bibinfo{person}{Om Shastri}.}
-  \bibinfo{year}{2026}\natexlab{}.
-\newblock \showarticletitle{Factor Dimensionality and the Bias-Variance
-  Tradeoff in Diffusion Portfolio Models}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2603.10385}}
-  (\bibinfo{year}{2026}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Berner, Richter, and Ullrich}{Berner
-  et~al\mbox{.}}{2024}]%
-        {berner2022optcontrol}
-\bibfield{author}{\bibinfo{person}{Julius Berner}, \bibinfo{person}{Lorenz
-  Richter}, {and} \bibinfo{person}{Karen Ullrich}.}
-  \bibinfo{year}{2024}\natexlab{}.
-\newblock \showarticletitle{An Optimal Control Perspective on Diffusion-Based
-  Generative Modeling}.
-\newblock \bibinfo{journal}{\emph{Transactions on Machine Learning Research}}
-  (\bibinfo{year}{2024}).
-\newblock
-\newblock
-\shownote{arXiv:2211.01364.}
-
-
 \bibitem[\protect\citeauthoryear{Berti, Prenkaj, and Velardi}{Berti
   et~al\mbox{.}}{2025}]%
         {berti2025trades}
@@ -167,32 +99,6 @@
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2502.07071}}
   (\bibinfo{year}{2025}).
 \newblock
-
-
-\bibitem[\protect\citeauthoryear{Bollerslev}{Bollerslev}{1986}]%
-        {bollerslev1986garch}
-\bibfield{author}{\bibinfo{person}{Tim Bollerslev}.}
-  \bibinfo{year}{1986}\natexlab{}.
-\newblock \showarticletitle{Generalized Autoregressive Conditional
-  Heteroskedasticity}.
-\newblock \bibinfo{journal}{\emph{Journal of Econometrics}}
-  \bibinfo{volume}{31}, \bibinfo{number}{3} (\bibinfo{year}{1986}),
-  \bibinfo{pages}{307--327}.
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{B{\"u}hler, Gonon, Teichmann, and
-  Wood}{B{\"u}hler et~al\mbox{.}}{2019}]%
-        {buehler2019deephedging}
-\bibfield{author}{\bibinfo{person}{Hans B{\"u}hler}, \bibinfo{person}{Lukas
-  Gonon}, \bibinfo{person}{Josef Teichmann}, {and} \bibinfo{person}{Ben Wood}.}
-  \bibinfo{year}{2019}\natexlab{}.
-\newblock \showarticletitle{Deep Hedging}.
-\newblock \bibinfo{journal}{\emph{Quantitative Finance}} \bibinfo{volume}{19},
-  \bibinfo{number}{8} (\bibinfo{year}{2019}).
-\newblock
-\newblock
-\shownote{arXiv:1802.03042.}
 
 
 \bibitem[\protect\citeauthoryear{Challagundla, Dorodchi, Wang, and
@@ -219,34 +125,6 @@
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2504.06566}}
   (\bibinfo{year}{2025}).
 \newblock
-
-
-\bibitem[\protect\citeauthoryear{Chen, Bilo{\v{s}}, Mittal, Deng, Rasul, and
-  Schneider}{Chen et~al\mbox{.}}{2024a}]%
-        {chen2024recurrentinterpolants}
-\bibfield{author}{\bibinfo{person}{Yu Chen}, \bibinfo{person}{Marin
-  Bilo{\v{s}}}, \bibinfo{person}{Sarthak Mittal}, \bibinfo{person}{Wei Deng},
-  \bibinfo{person}{Kashif Rasul}, {and} \bibinfo{person}{Anderson Schneider}.}
-  \bibinfo{year}{2024}\natexlab{a}.
-\newblock \showarticletitle{Recurrent Interpolants for Probabilistic Time
-  Series Prediction}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2409.11684}}
-  (\bibinfo{year}{2024}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Chen, Goldstein, Hua, Albergo, Boffi, and
-  Vanden-Eijnden}{Chen et~al\mbox{.}}{2024b}]%
-        {chen2024siforecasting}
-\bibfield{author}{\bibinfo{person}{Yifan Chen}, \bibinfo{person}{Mark
-  Goldstein}, \bibinfo{person}{Mengjian Hua}, \bibinfo{person}{Michael~S.
-  Albergo}, \bibinfo{person}{Nicholas~M. Boffi}, {and} \bibinfo{person}{Eric
-  Vanden-Eijnden}.} \bibinfo{year}{2024}\natexlab{b}.
-\newblock \showarticletitle{Probabilistic Forecasting with Stochastic
-  Interpolants and {F\"ollmer} Processes}. In \bibinfo{booktitle}{\emph{ICML}}.
-\newblock
-\newblock
-\shownote{arXiv:2403.13724.}
 
 
 \bibitem[\protect\citeauthoryear{Cho, Kim, Ban, Koo, and Kim}{Cho
@@ -298,17 +176,6 @@
 \newblock
 \newblock
 \shownote{arXiv:2105.05233.}
-
-
-\bibitem[\protect\citeauthoryear{Fuchi and Takagi}{Fuchi and Takagi}{2025}]%
-        {fuchi2025rectable}
-\bibfield{author}{\bibinfo{person}{Masane Fuchi} {and}
-  \bibinfo{person}{Tomohiro Takagi}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{{RecTable}: Fast Modeling Tabular Data with
-  Rectified Flow}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2503.20731}}
-  (\bibinfo{year}{2025}).
-\newblock
 
 
 \bibitem[\protect\citeauthoryear{Fukunishi, Qiu, Takahashi, and Ye}{Fukunishi
@@ -363,18 +230,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Gatheral, Jaisson, and Rosenbaum}{Gatheral
-  et~al\mbox{.}}{2018}]%
-        {gatheral2018rough}
-\bibfield{author}{\bibinfo{person}{Jim Gatheral}, \bibinfo{person}{Thibault
-  Jaisson}, {and} \bibinfo{person}{Mathieu Rosenbaum}.}
-  \bibinfo{year}{2018}\natexlab{}.
-\newblock \showarticletitle{Volatility is Rough}.
-\newblock \bibinfo{journal}{\emph{Quantitative Finance}} \bibinfo{volume}{18},
-  \bibinfo{number}{6} (\bibinfo{year}{2018}), \bibinfo{pages}{933--949}.
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Guo, Li, Tang, and Yao}{Guo
   et~al\mbox{.}}{2025}]%
         {guo2025compressedsensing}
@@ -400,31 +255,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{He, Cheng, Li, and Zhang}{He
-  et~al\mbox{.}}{2025}]%
-        {he2025timeflow}
-\bibfield{author}{\bibinfo{person}{Panjing He}, \bibinfo{person}{Mingyue
-  Cheng}, \bibinfo{person}{Li Li}, {and} \bibinfo{person}{XiaoHan Zhang}.}
-  \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{{TimeFlow}: Towards Stochastic-Aware and Efficient
-  Time Series Generation via Flow Matching Modeling}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2511.07968}}
-  (\bibinfo{year}{2025}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Heston}{Heston}{1993}]%
-        {heston1993sv}
-\bibfield{author}{\bibinfo{person}{Steven~L. Heston}.}
-  \bibinfo{year}{1993}\natexlab{}.
-\newblock \showarticletitle{A Closed-Form Solution for Options with Stochastic
-  Volatility with Applications to Bond and Currency Options}.
-\newblock \bibinfo{journal}{\emph{The Review of Financial Studies}}
-  \bibinfo{volume}{6}, \bibinfo{number}{2} (\bibinfo{year}{1993}),
-  \bibinfo{pages}{327--343}.
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Ho, Jain, and Abbeel}{Ho
   et~al\mbox{.}}{2020}]%
         {ho2020ddpm}
@@ -446,34 +276,6 @@
 \newblock
 \newblock
 \shownote{arXiv:2207.12598.}
-
-
-\bibitem[\protect\citeauthoryear{Hounwanou and Gaba}{Hounwanou and
-  Gaba}{2025}]%
-        {hounwanou2025deepgen}
-\bibfield{author}{\bibinfo{person}{Christophe~D. Hounwanou} {and}
-  \bibinfo{person}{Yae~Ulrich Gaba}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{Deep Generative Models for Synthetic Financial
-  Data: Applications to Portfolio and Risk Modeling}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2512.21798}}
-  (\bibinfo{year}{2025}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Hu, Wang, Ding, Wu, Zhang, Li, Wang, Zhang,
-  Li, and Chen}{Hu et~al\mbox{.}}{2024}]%
-        {hu2024flowts}
-\bibfield{author}{\bibinfo{person}{Yang Hu}, \bibinfo{person}{Xiao Wang},
-  \bibinfo{person}{Zezhen Ding}, \bibinfo{person}{Lirong Wu},
-  \bibinfo{person}{Huatian Zhang}, \bibinfo{person}{Stan~Z. Li},
-  \bibinfo{person}{Sheng Wang}, \bibinfo{person}{Jiheng Zhang},
-  \bibinfo{person}{Ziyun Li}, {and} \bibinfo{person}{Tianlong Chen}.}
-  \bibinfo{year}{2024}\natexlab{}.
-\newblock \showarticletitle{{FlowTS}: Time Series Generation via Rectified
-  Flow}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2411.07506}}
-  (\bibinfo{year}{2024}).
-\newblock
 
 
 \bibitem[\protect\citeauthoryear{Huang, Xu, Liu, Liu, Li, and Bian}{Huang
@@ -552,21 +354,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Kollovieh, Ansari, Bohlke-Schneider,
-  Zschiegner, Wang, and Wang}{Kollovieh et~al\mbox{.}}{2023}]%
-        {kollovieh2023tsdiff}
-\bibfield{author}{\bibinfo{person}{Marcel Kollovieh},
-  \bibinfo{person}{Abdul~Fatir Ansari}, \bibinfo{person}{Michael
-  Bohlke-Schneider}, \bibinfo{person}{Jasper Zschiegner}, \bibinfo{person}{Hao
-  Wang}, {and} \bibinfo{person}{Yuyang Wang}.} \bibinfo{year}{2023}\natexlab{}.
-\newblock \showarticletitle{Predict, Refine, Synthesize: Self-Guiding Diffusion
-  Models for Probabilistic Time Series Forecasting}. In
-  \bibinfo{booktitle}{\emph{NeurIPS}}.
-\newblock
-\newblock
-\shownote{arXiv:2307.11494.}
-
-
 \bibitem[\protect\citeauthoryear{Kotelnikov, Baranchuk, Rubachev, and
   Babenko}{Kotelnikov et~al\mbox{.}}{2023}]%
         {kotelnikov2023tabddpm}
@@ -588,19 +375,6 @@
   Data Generation in Fraud Detection}.
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2603.13566}}
   (\bibinfo{year}{2026}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Lee, Park, Bang, Hwang, and Jang}{Lee
-  et~al\mbox{.}}{2025}]%
-        {lee2025charts}
-\bibfield{author}{\bibinfo{person}{Taegyeong Lee}, \bibinfo{person}{Jiwon
-  Park}, \bibinfo{person}{Kyunga Bang}, \bibinfo{person}{Seunghyun Hwang},
-  {and} \bibinfo{person}{Ung-Jin Jang}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{Exploring Diffusion Models for Generative
-  Forecasting of Financial Charts}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2509.02308}}
-  (\bibinfo{year}{2025}).
 \newblock
 
 
@@ -677,22 +451,6 @@
 \shownote{doi:10.1145/3677052.3698625.}
 
 
-\bibitem[\protect\citeauthoryear{Liu, Ma, Wang, Zou, Ren, Wang, Song, Hu, Liu,
-  and Leung}{Liu et~al\mbox{.}}{2025}]%
-        {liu2025anomalysurvey}
-\bibfield{author}{\bibinfo{person}{Jing Liu}, \bibinfo{person}{Zhenchao Ma},
-  \bibinfo{person}{Zepu Wang}, \bibinfo{person}{Chenxuanyin Zou},
-  \bibinfo{person}{Jiayang Ren}, \bibinfo{person}{Zehua Wang},
-  \bibinfo{person}{Liang Song}, \bibinfo{person}{Bo Hu}, \bibinfo{person}{Yang
-  Liu}, {and} \bibinfo{person}{Victor~C.M. Leung}.}
-  \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{A Survey on Diffusion Models for Anomaly
-  Detection}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2501.11430}}
-  (\bibinfo{year}{2025}).
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Liu, Gong, and Liu}{Liu et~al\mbox{.}}{2023}]%
         {liu2023rectifiedflow}
 \bibfield{author}{\bibinfo{person}{Xingchao Liu}, \bibinfo{person}{Chengyue
@@ -702,32 +460,6 @@
 \newblock
 \newblock
 \shownote{arXiv:2209.03003.}
-
-
-\bibitem[\protect\citeauthoryear{Lu and Sester}{Lu and Sester}{2024}]%
-        {lu2024structnoise}
-\bibfield{author}{\bibinfo{person}{Chung~I Lu} {and} \bibinfo{person}{Julian
-  Sester}.} \bibinfo{year}{2024}\natexlab{}.
-\newblock \showarticletitle{Generative Modelling of Financial Time Series with
-  Structured Noise and {MMD}-based Signature Learning}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2407.19848}}
-  (\bibinfo{year}{2024}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Ni, Szpruch, Sabate-Vidales, Xiao, Wiese, and
-  Liao}{Ni et~al\mbox{.}}{2021}]%
-        {ni2021sigwgan}
-\bibfield{author}{\bibinfo{person}{Hao Ni}, \bibinfo{person}{Lukasz Szpruch},
-  \bibinfo{person}{Marc Sabate-Vidales}, \bibinfo{person}{Baoren Xiao},
-  \bibinfo{person}{Magnus Wiese}, {and} \bibinfo{person}{Shujian Liao}.}
-  \bibinfo{year}{2021}\natexlab{}.
-\newblock \showarticletitle{Sig-Wasserstein {GAN}s for Time Series Generation}.
-  In \bibinfo{booktitle}{\emph{Proc.\ 2nd ACM Int.\ Conf.\ on AI in Finance
-  (ICAIF)}}.
-\newblock
-\newblock
-\shownote{arXiv:2111.01207.}
 
 
 \bibitem[\protect\citeauthoryear{Nichol and Dhariwal}{Nichol and
@@ -742,29 +474,6 @@
 \shownote{arXiv:2102.09672.}
 
 
-\bibitem[\protect\citeauthoryear{Papapantoleon and Rou}{Papapantoleon and
-  Rou}{2024}]%
-        {papapantoleon2024deepgradflow}
-\bibfield{author}{\bibinfo{person}{Antonis Papapantoleon} {and}
-  \bibinfo{person}{Jasper Rou}.} \bibinfo{year}{2024}\natexlab{}.
-\newblock \showarticletitle{A Time-Stepping Deep Gradient Flow Method for
-  Option Pricing in (Rough) Diffusion Models}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2403.00746}}
-  (\bibinfo{year}{2024}).
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Peebles and Xie}{Peebles and Xie}{2023}]%
-        {peebles2022dit}
-\bibfield{author}{\bibinfo{person}{William Peebles} {and}
-  \bibinfo{person}{Saining Xie}.} \bibinfo{year}{2023}\natexlab{}.
-\newblock \showarticletitle{Scalable Diffusion Models with Transformers}. In
-  \bibinfo{booktitle}{\emph{ICCV}}.
-\newblock
-\newblock
-\shownote{arXiv:2212.09748.}
-
-
 \bibitem[\protect\citeauthoryear{Rasul, Seward, Schuster, and Vollgraf}{Rasul
   et~al\mbox{.}}{2021}]%
         {rasul2021timegrad}
@@ -777,20 +486,6 @@
 \newblock
 \newblock
 \shownote{arXiv:2101.12072.}
-
-
-\bibitem[\protect\citeauthoryear{Rombach, Blattmann, Lorenz, Esser, and
-  Ommer}{Rombach et~al\mbox{.}}{2022}]%
-        {rombach2022ldm}
-\bibfield{author}{\bibinfo{person}{Robin Rombach}, \bibinfo{person}{Andreas
-  Blattmann}, \bibinfo{person}{Dominik Lorenz}, \bibinfo{person}{Patrick
-  Esser}, {and} \bibinfo{person}{Bj{\"o}rn Ommer}.}
-  \bibinfo{year}{2022}\natexlab{}.
-\newblock \showarticletitle{High-Resolution Image Synthesis with Latent
-  Diffusion Models}. In \bibinfo{booktitle}{\emph{CVPR}}.
-\newblock
-\newblock
-\shownote{arXiv:2112.10752.}
 
 
 \bibitem[\protect\citeauthoryear{Ro{\v{z}}anec, {\v{Z}}ezlin, Vasiliu,
@@ -862,19 +557,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Sohl-Dickstein, Weiss, Maheswaranathan, and
-  Ganguli}{Sohl-Dickstein et~al\mbox{.}}{2015}]%
-        {sohldickstein2015}
-\bibfield{author}{\bibinfo{person}{Jascha Sohl-Dickstein},
-  \bibinfo{person}{Eric~A. Weiss}, \bibinfo{person}{Niru Maheswaranathan},
-  {and} \bibinfo{person}{Surya Ganguli}.} \bibinfo{year}{2015}\natexlab{}.
-\newblock \showarticletitle{Deep Unsupervised Learning using Nonequilibrium
-  Thermodynamics}. In \bibinfo{booktitle}{\emph{ICML}}.
-\newblock
-\newblock
-\shownote{arXiv:1503.03585.}
-
-
 \bibitem[\protect\citeauthoryear{Song, Meng, and Ermon}{Song
   et~al\mbox{.}}{2021a}]%
         {songddim2021}
@@ -924,19 +606,6 @@
 \newblock
 \newblock
 \shownote{arXiv:2011.13456.}
-
-
-\bibitem[\protect\citeauthoryear{Sun, Zhao, Hu, Ding, and Liu}{Sun
-  et~al\mbox{.}}{2025}]%
-        {sun2025dsdiffusion}
-\bibfield{author}{\bibinfo{person}{Mingchun Sun}, \bibinfo{person}{Rongqiang
-  Zhao}, \bibinfo{person}{Hengrui Hu}, \bibinfo{person}{Songyu Ding}, {and}
-  \bibinfo{person}{Jie Liu}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{{DS-Diffusion}: Data Style-Guided Diffusion Model
-  for Time-Series Generation}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2509.18584}}
-  (\bibinfo{year}{2025}).
-\newblock
 
 
 \bibitem[\protect\citeauthoryear{Takahashi and Mizuno}{Takahashi and
@@ -992,26 +661,19 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Wang and Rachev}{Wang and Rachev}{2025}]%
-        {wang2025neuralllevy}
-\bibfield{author}{\bibinfo{person}{Ziyao Wang} {and}
-  \bibinfo{person}{Svetlozar~T. Rachev}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{Neural {L\'evy} {SDE} for State-Dependent Risk and
-  Density Forecasting}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2509.01041}}
-  (\bibinfo{year}{2025}).
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Wang and Ventre}{Wang and Ventre}{2024}]%
         {wang2024ftsdenoiser}
 \bibfield{author}{\bibinfo{person}{Zhuohan Wang} {and} \bibinfo{person}{Carmine
   Ventre}.} \bibinfo{year}{2024}\natexlab{}.
 \newblock \showarticletitle{A Financial Time Series Denoiser Based on Diffusion
-  Model}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2409.02138}}
-  (\bibinfo{year}{2024}).
+  Model}. In \bibinfo{booktitle}{\emph{Proceedings of the 5th ACM International
+  Conference on AI in Finance}}.
 \newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3677052.3698649}
+\showDOI{\tempurl}
+\newblock
+\shownote{arXiv:2409.02138.}
 
 
 \bibitem[\protect\citeauthoryear{Wang and Ventre}{Wang and Ventre}{2025}]%
@@ -1036,37 +698,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Wiese, Knobloch, Korn, and Kretschmer}{Wiese
-  et~al\mbox{.}}{2020}]%
-        {wiese2020quantgan}
-\bibfield{author}{\bibinfo{person}{Magnus Wiese}, \bibinfo{person}{Robert
-  Knobloch}, \bibinfo{person}{Ralf Korn}, {and} \bibinfo{person}{Peter
-  Kretschmer}.} \bibinfo{year}{2020}\natexlab{}.
-\newblock \showarticletitle{Quant {GAN}s: Deep Generation of Financial Time
-  Series}.
-\newblock \bibinfo{journal}{\emph{Quantitative Finance}} \bibinfo{volume}{20},
-  \bibinfo{number}{9} (\bibinfo{year}{2020}).
-\newblock
-\newblock
-\shownote{arXiv:1907.06673.}
-
-
-\bibitem[\protect\citeauthoryear{Xia, Li, Xu, Zhang, Wang, Liu, Long, Qin,
-  Zong, and An}{Xia et~al\mbox{.}}{2026}]%
-        {xia2026bayesrobust}
-\bibfield{author}{\bibinfo{person}{Haochong Xia}, \bibinfo{person}{Simin Li},
-  \bibinfo{person}{Ruixiao Xu}, \bibinfo{person}{Zhixia Zhang},
-  \bibinfo{person}{Hongxiang Wang}, \bibinfo{person}{Zhiqian Liu},
-  \bibinfo{person}{Teng~Yao Long}, \bibinfo{person}{Molei Qin},
-  \bibinfo{person}{Chuqiao Zong}, {and} \bibinfo{person}{Bo An}.}
-  \bibinfo{year}{2026}\natexlab{}.
-\newblock \showarticletitle{Bayesian Robust Financial Trading with Adversarial
-  Synthetic Market Data}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2601.17008}}
-  (\bibinfo{year}{2026}).
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Yang, Jin, Wen, Zhang, Liang, Ma, Wang, Liu,
   Yang, Xu, Pan, and Wen}{Yang et~al\mbox{.}}{2024}]%
         {yang2024tssurvey}
@@ -1085,17 +716,6 @@
 \shownote{arXiv:2404.18886.}
 
 
-\bibitem[\protect\citeauthoryear{Yuan and Qiao}{Yuan and Qiao}{2024}]%
-        {yuan2024diffusionts}
-\bibfield{author}{\bibinfo{person}{Xinyu Yuan} {and} \bibinfo{person}{Yan
-  Qiao}.} \bibinfo{year}{2024}\natexlab{}.
-\newblock \showarticletitle{Diffusion-{TS}: Interpretable Diffusion for General
-  Time Series Generation}. In \bibinfo{booktitle}{\emph{ICLR}}.
-\newblock
-\newblock
-\shownote{arXiv:2403.01742.}
-
-
 \bibitem[\protect\citeauthoryear{Zarifis, Kordonis, and Maragos}{Zarifis
   et~al\mbox{.}}{2025}]%
         {zarifis2025scenariotree}
@@ -1107,21 +727,6 @@
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2509.14832}}
   (\bibinfo{year}{2025}).
 \newblock
-
-
-\bibitem[\protect\citeauthoryear{Zhang, Zhang, Srinivasan, Shen, Qin,
-  Faloutsos, Rangwala, and Karypis}{Zhang et~al\mbox{.}}{2024}]%
-        {zhang2024tabsyn}
-\bibfield{author}{\bibinfo{person}{Hengrui Zhang}, \bibinfo{person}{Jiani
-  Zhang}, \bibinfo{person}{Balasubramaniam Srinivasan},
-  \bibinfo{person}{Zhengyuan Shen}, \bibinfo{person}{Xiao Qin},
-  \bibinfo{person}{Christos Faloutsos}, \bibinfo{person}{Huzefa Rangwala},
-  {and} \bibinfo{person}{George Karypis}.} \bibinfo{year}{2024}\natexlab{}.
-\newblock \showarticletitle{Mixed-Type Tabular Data Synthesis with Score-based
-  Diffusion in Latent Space}. In \bibinfo{booktitle}{\emph{ICLR}}.
-\newblock
-\newblock
-\shownote{arXiv:2310.09656.}
 
 
 \bibitem[\protect\citeauthoryear{Zhang, Duan, Zhang, and Feng}{Zhang
@@ -1161,6 +766,21 @@
 \newblock
 \newblock
 \shownote{arXiv:2412.09631.}
+
+
+\bibitem[\protect\citeauthoryear{Zhu, Zhao, He, Zhong, Zhang, Guo, Chen, and
+  Zhang}{Zhu et~al\mbox{.}}{2023}]%
+        {zhu2023diff4rl}
+\bibfield{author}{\bibinfo{person}{Zhengbang Zhu}, \bibinfo{person}{Hanye
+  Zhao}, \bibinfo{person}{Haoran He}, \bibinfo{person}{Yichao Zhong},
+  \bibinfo{person}{Shenyu Zhang}, \bibinfo{person}{Haoquan Guo},
+  \bibinfo{person}{Tingting Chen}, {and} \bibinfo{person}{Weinan Zhang}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Diffusion Models for Reinforcement Learning: A
+  Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2311.01223}}
+  (\bibinfo{year}{2023}).
+\newblock
 
 
 \bibitem[\protect\citeauthoryear{Zuo, Kang, Patterson, and Seneviratne}{Zuo
