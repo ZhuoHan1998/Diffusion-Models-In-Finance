@@ -1,87 +1,110 @@
 % references.bib — Diffusion Models in Finance survey
 % Every entry corresponds to a verified real paper (see state/findings.jsonl verify field).
+% Style rule: use inproceedings + booktitle for conference papers, article +
+% journal for journal papers, and arXiv preprint metadata only when no formal
+% venue is available. Keep venue names formal and protect acronyms in titles.
 % Foundations (canonical; spot-checked DDPM + Song-SDE exact).
 
 @inproceedings{sohldickstein2015,
   title={Deep Unsupervised Learning using Nonequilibrium Thermodynamics},
   author={Sohl-Dickstein, Jascha and Weiss, Eric A. and Maheswaranathan, Niru and Ganguli, Surya},
-  booktitle={ICML}, year={2015}, note={arXiv:1503.03585}}
+  booktitle={Proceedings of the 32nd International Conference on Machine Learning},
+  pages={2256--2265}, year={2015}, note={arXiv:1503.03585}}
 
 @inproceedings{song2019ncsn,
   title={Generative Modeling by Estimating Gradients of the Data Distribution},
   author={Song, Yang and Ermon, Stefano},
-  booktitle={NeurIPS}, year={2019}, note={arXiv:1907.05600}}
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={32}, year={2019}, note={arXiv:1907.05600}}
 
 @inproceedings{ho2020ddpm,
   title={Denoising Diffusion Probabilistic Models},
   author={Ho, Jonathan and Jain, Ajay and Abbeel, Pieter},
-  booktitle={NeurIPS}, year={2020}, note={arXiv:2006.11239}}
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={33}, pages={6840--6851}, year={2020}, note={arXiv:2006.11239}}
 
 @inproceedings{songddim2021,
   title={Denoising Diffusion Implicit Models},
   author={Song, Jiaming and Meng, Chenlin and Ermon, Stefano},
-  booktitle={ICLR}, year={2021}, note={arXiv:2010.02502}}
+  booktitle={International Conference on Learning Representations},
+  year={2021}, note={arXiv:2010.02502}}
 
 @inproceedings{song2021sde,
   title={Score-Based Generative Modeling through Stochastic Differential Equations},
   author={Song, Yang and Sohl-Dickstein, Jascha and Kingma, Diederik P. and Kumar, Abhishek and Ermon, Stefano and Poole, Ben},
-  booktitle={ICLR}, year={2021}, note={arXiv:2011.13456}}
+  booktitle={International Conference on Learning Representations},
+  year={2021}, note={arXiv:2011.13456}}
 
 @inproceedings{nichol2021improved,
   title={Improved Denoising Diffusion Probabilistic Models},
   author={Nichol, Alexander Quinn and Dhariwal, Prafulla},
-  booktitle={ICML}, year={2021}, note={arXiv:2102.09672}}
+  booktitle={Proceedings of the 38th International Conference on Machine Learning},
+  pages={8162--8171}, year={2021}, note={arXiv:2102.09672}}
 
 @inproceedings{dhariwal2021beatgan,
-  title={Diffusion Models Beat GANs on Image Synthesis},
+  title={Diffusion Models Beat {GAN}s on Image Synthesis},
   author={Dhariwal, Prafulla and Nichol, Alexander Quinn},
-  booktitle={NeurIPS}, year={2021}, note={arXiv:2105.05233}}
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={34}, pages={8780--8794}, year={2021}, note={arXiv:2105.05233}}
 
 @inproceedings{ho2022cfg,
   title={Classifier-Free Diffusion Guidance},
   author={Ho, Jonathan and Salimans, Tim},
-  booktitle={NeurIPS Workshop on Deep Generative Models}, year={2022}, note={arXiv:2207.12598}}
+  booktitle={NeurIPS Workshop on Deep Generative Models},
+  year={2022}, note={arXiv:2207.12598}}
 
 @inproceedings{rombach2022ldm,
   title={High-Resolution Image Synthesis with Latent Diffusion Models},
   author={Rombach, Robin and Blattmann, Andreas and Lorenz, Dominik and Esser, Patrick and Ommer, Bj{\"o}rn},
-  booktitle={CVPR}, year={2022}, note={arXiv:2112.10752}}
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={10684--10695}, year={2022}, note={arXiv:2112.10752}}
 
 @inproceedings{karras2022edm,
   title={Elucidating the Design Space of Diffusion-Based Generative Models},
   author={Karras, Tero and Aittala, Miika and Aila, Timo and Laine, Samuli},
-  booktitle={NeurIPS}, year={2022}, note={arXiv:2206.00364}}
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={35}, pages={26565--26577}, year={2022}, note={arXiv:2206.00364}}
 
 @inproceedings{lipman2023flow,
   title={Flow Matching for Generative Modeling},
   author={Lipman, Yaron and Chen, Ricky T. Q. and Ben-Hamu, Heli and Nickel, Maximilian and Le, Matt},
-  booktitle={ICLR}, year={2023}, note={arXiv:2210.02747}}
+  booktitle={International Conference on Learning Representations},
+  year={2023}, note={arXiv:2210.02747}}
 
 @inproceedings{song2023consistency,
   title={Consistency Models},
   author={Song, Yang and Dhariwal, Prafulla and Chen, Mark and Sutskever, Ilya},
-  booktitle={ICML}, year={2023}, note={arXiv:2303.01469}}
+  booktitle={Proceedings of the 40th International Conference on Machine Learning},
+  year={2023}, note={arXiv:2303.01469}}
 
 @article{berner2022optcontrol,
   title={An Optimal Control Perspective on Diffusion-Based Generative Modeling},
   author={Berner, Julius and Richter, Lorenz and Ullrich, Karen},
   journal={Transactions on Machine Learning Research}, year={2024}, note={arXiv:2211.01364}}
 
+@article{holderrieth2026introflowdiffusion,
+  title={An Introduction to Flow Matching and Diffusion Models},
+  author={Holderrieth, Peter and Erives, Ezra},
+  journal={arXiv preprint arXiv:2506.02070}, year={2026}}
+
 % Time-series / tabular diffusion (cross-domain, used in finance)
 @inproceedings{rasul2021timegrad,
   title={Autoregressive Denoising Diffusion Models for Multivariate Probabilistic Time Series Forecasting},
   author={Rasul, Kashif and Seward, Calvin and Schuster, Ingmar and Vollgraf, Roland},
-  booktitle={ICML}, year={2021}, note={arXiv:2101.12072}}
+  booktitle={Proceedings of the 38th International Conference on Machine Learning},
+  pages={8857--8868}, year={2021}, note={arXiv:2101.12072}}
 
 @inproceedings{tashiro2021csdi,
   title={{CSDI}: Conditional Score-based Diffusion Models for Probabilistic Time Series Imputation},
   author={Tashiro, Yusuke and Song, Jiaming and Song, Yang and Ermon, Stefano},
-  booktitle={NeurIPS}, year={2021}, note={arXiv:2107.03502}}
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={34}, pages={24804--24816}, year={2021}, note={arXiv:2107.03502}}
 
 @inproceedings{kotelnikov2023tabddpm,
   title={{TabDDPM}: Modelling Tabular Data with Diffusion Models},
   author={Kotelnikov, Akim and Baranchuk, Dmitry and Rubachev, Ivan and Babenko, Artem},
-  booktitle={ICML}, year={2023}, note={arXiv:2209.15421}}
+  booktitle={Proceedings of the 40th International Conference on Machine Learning},
+  year={2023}, note={arXiv:2209.15421}}
 
 % --- Finance-specific (verified) ---
 @article{takahashi2024synthfts,
@@ -122,7 +145,8 @@
 @inproceedings{sattarov2023findiff,
   title={{FinDiff}: Diffusion Models for Financial Tabular Data Generation},
   author={Sattarov, Timur and Schreyer, Marco and Borth, Damian},
-  booktitle={Proc.\ 4th ACM Int.\ Conf.\ on AI in Finance (ICAIF)}, year={2023}, note={arXiv:2309.01472}}
+  booktitle={Proceedings of the 4th ACM International Conference on AI in Finance},
+  year={2023}, note={arXiv:2309.01472}}
 
 @article{wang2025diffvolume,
   title={{DiffVolume}: Diffusion Models for Volume Generation in Limit Order Books},
@@ -143,6 +167,14 @@
   title={Forecasting Implied Volatility Surface with Generative Diffusion Models},
   author={Jin, Chen and Agarwal, Ankush},
   journal={arXiv preprint arXiv:2511.07571}, year={2025}}
+
+@inproceedings{kubiak2024corrddpm,
+  title={Denoising Diffusion Probabilistic Model for Realistic Financial Correlation Matrices},
+  author={Kubiak, Szymon and Weyde, Tillman and Galkin, Oleksandr and Philps, Daniel and Gopal, Ram},
+  booktitle={Proceedings of the 5th ACM International Conference on AI in Finance},
+  pages={1--9},
+  year={2024},
+  doi={10.1145/3677052.3698640}}
 
 @article{rozanec2025fiaingen,
   title={{Fiaingen}: A Financial Time Series Generative Method Matching Real-World Data Quality},
@@ -177,7 +209,8 @@
 @inproceedings{huang2024digma,
   title={Controllable Financial Market Generation with Diffusion Guided Meta Agent},
   author={Huang, Yu-Hao and Xu, Chang and Liu, Yang and Liu, Weiqing and Li, Wu-Jun and Bian, Jiang},
-  booktitle={AAAI}, year={2026}, note={arXiv:2408.12991, oral}}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2026}, note={arXiv:2408.12991, oral}}
 
 @article{lee2025charts,
   title={Exploring Diffusion Models for Generative Forecasting of Financial Charts},
@@ -198,7 +231,8 @@
 @inproceedings{ni2021sigwgan,
   title={Sig-Wasserstein {GAN}s for Time Series Generation},
   author={Ni, Hao and Szpruch, Lukasz and Sabate-Vidales, Marc and Xiao, Baoren and Wiese, Magnus and Liao, Shujian},
-  booktitle={Proc.\ 2nd ACM Int.\ Conf.\ on AI in Finance (ICAIF)}, year={2021}, note={arXiv:2111.01207}}
+  booktitle={Proceedings of the 2nd ACM International Conference on AI in Finance},
+  year={2021}, note={arXiv:2111.01207}}
 
 @article{lu2024structnoise,
   title={Generative Modelling of Financial Time Series with Structured Noise and {MMD}-based Signature Learning},
@@ -208,7 +242,9 @@
 % --- Expansion batch (iter 5): TS-diffusion methods, deep hedging, privacy ---
 @inproceedings{yuan2024diffusionts,
   title={Diffusion-{TS}: Interpretable Diffusion for General Time Series Generation},
-  author={Yuan, Xinyu and Qiao, Yan}, booktitle={ICLR}, year={2024}, note={arXiv:2403.01742}}
+  author={Yuan, Xinyu and Qiao, Yan},
+  booktitle={International Conference on Learning Representations},
+  year={2024}, note={arXiv:2403.01742}}
 
 @article{alcaraz2022sssd,
   title={Diffusion-based Time Series Imputation and Forecasting with Structured State Space Models},
@@ -218,7 +254,8 @@
 @inproceedings{kollovieh2023tsdiff,
   title={Predict, Refine, Synthesize: Self-Guiding Diffusion Models for Probabilistic Time Series Forecasting},
   author={Kollovieh, Marcel and Ansari, Abdul Fatir and Bohlke-Schneider, Michael and Zschiegner, Jasper and Wang, Hao and Wang, Yuyang},
-  booktitle={NeurIPS}, year={2023}, note={arXiv:2307.11494}}
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2023}, note={arXiv:2307.11494}}
 
 @article{yang2024tssurvey,
   title={A Survey on Diffusion Models for Time Series and Spatio-Temporal Data},
@@ -248,17 +285,21 @@
 % --- Expansion batch (iter 6): architecture + decision/RL + energy scenario ---
 @inproceedings{peebles2022dit,
   title={Scalable Diffusion Models with Transformers},
-  author={Peebles, William and Xie, Saining}, booktitle={ICCV}, year={2023}, note={arXiv:2212.09748}}
+  author={Peebles, William and Xie, Saining},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  year={2023}, note={arXiv:2212.09748}}
 
 @inproceedings{janner2022diffuser,
   title={Planning with Diffusion for Flexible Behavior Synthesis},
   author={Janner, Michael and Du, Yilun and Tenenbaum, Joshua B. and Levine, Sergey},
-  booktitle={ICML}, year={2022}, note={arXiv:2205.09991}}
+  booktitle={Proceedings of the 39th International Conference on Machine Learning},
+  year={2022}, note={arXiv:2205.09991}}
 
 @inproceedings{ajay2022decisiondiffuser,
   title={Is Conditional Generative Modeling all you need for Decision-Making?},
   author={Ajay, Anurag and Du, Yilun and Gupta, Abhi and Tenenbaum, Joshua and Jaakkola, Tommi and Agrawal, Pulkit},
-  booktitle={ICLR}, year={2023}, note={arXiv:2211.15657}}
+  booktitle={International Conference on Learning Representations},
+  year={2023}, note={arXiv:2211.15657}}
 
 @article{zhu2023diff4rl,
   title={Diffusion Models for Reinforcement Learning: A Survey},
@@ -274,7 +315,8 @@
 @inproceedings{daiya2024diffstock,
   title={{DiffSTOCK}: Probabilistic Relational Stock Market Predictions using Diffusion Models},
   author={Daiya, Divyanshu and Yadav, Monika and Rao, Harshit Singh},
-  booktitle={ICASSP}, year={2024}, note={arXiv:2403.14063}}
+  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing},
+  year={2024}, note={arXiv:2403.14063}}
 
 @article{gao2024diffsformer,
   title={{DiffsFormer}: A Diffusion Transformer on Stock Factor Augmentation},
@@ -326,7 +368,8 @@
 @inproceedings{zhang2024tabsyn,
   title={Mixed-Type Tabular Data Synthesis with Score-based Diffusion in Latent Space},
   author={Zhang, Hengrui and Zhang, Jiani and Srinivasan, Balasubramaniam and Shen, Zhengyuan and Qin, Xiao and Faloutsos, Christos and Rangwala, Huzefa and Karypis, George},
-  booktitle={ICLR}, year={2024}, note={arXiv:2310.09656}}
+  booktitle={International Conference on Learning Representations},
+  year={2024}, note={arXiv:2310.09656}}
 
 @article{xia2026bayesrobust,
   title={Bayesian Robust Financial Trading with Adversarial Synthetic Market Data},
@@ -367,12 +410,14 @@
 @inproceedings{sattarov2024imbfindiff,
   title={{Imb-FinDiff}: Conditional Diffusion Models for Class Imbalance Synthesis of Financial Tabular Data},
   author={Sattarov, Timur and Schreyer, Marco and Borth, Damian},
-  booktitle={Proc.\ 5th ACM Int.\ Conf.\ on AI in Finance (ICAIF)}, year={2024}, note={doi:10.1145/3677052.3698659}}
+  booktitle={Proceedings of the 5th ACM International Conference on AI in Finance},
+  year={2024}, doi={10.1145/3677052.3698659}}
 
 @inproceedings{liu2024enttabdiff,
   title={Entity-based Financial Tabular Data Synthesis with Diffusion Models},
   author={Liu, Changshuo and Liu, Canyao},
-  booktitle={Proc.\ 5th ACM Int.\ Conf.\ on AI in Finance (ICAIF)}, year={2024}, note={doi:10.1145/3677052.3698625}}
+  booktitle={Proceedings of the 5th ACM International Conference on AI in Finance},
+  year={2024}, doi={10.1145/3677052.3698625}}
 
 % --- Expansion batch (iter 10b): positioning surveys + energy scenario diffusion ---
 @article{li2025gensynthsurvey,
@@ -416,7 +461,8 @@
 @inproceedings{liu2023rectifiedflow,
   title={Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow},
   author={Liu, Xingchao and Gong, Chengyue and Liu, Qiang},
-  booktitle={ICLR}, year={2023}, note={arXiv:2209.03003}}
+  booktitle={International Conference on Learning Representations},
+  year={2023}, note={arXiv:2209.03003}}
 
 @article{albergo2023interpolants,
   title={Stochastic Interpolants: A Unifying Framework for Flows and Diffusions},
@@ -426,7 +472,8 @@
 @inproceedings{chen2024siforecasting,
   title={Probabilistic Forecasting with Stochastic Interpolants and {F\"ollmer} Processes},
   author={Chen, Yifan and Goldstein, Mark and Hua, Mengjian and Albergo, Michael S. and Boffi, Nicholas M. and Vanden-Eijnden, Eric},
-  booktitle={ICML}, year={2024}, note={arXiv:2403.13724}}
+  booktitle={Proceedings of the 41st International Conference on Machine Learning},
+  year={2024}, note={arXiv:2403.13724}}
 
 @article{chen2024recurrentinterpolants,
   title={Recurrent Interpolants for Probabilistic Time Series Prediction},

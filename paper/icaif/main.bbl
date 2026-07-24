@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{59}
+\begin{thebibliography}{64}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -45,7 +45,8 @@
   \bibinfo{person}{Tommi Jaakkola}, {and} \bibinfo{person}{Pulkit Agrawal}.}
   \bibinfo{year}{2023}\natexlab{}.
 \newblock \showarticletitle{Is Conditional Generative Modeling all you need for
-  Decision-Making?}. In \bibinfo{booktitle}{\emph{ICLR}}.
+  Decision-Making?}. In \bibinfo{booktitle}{\emph{International Conference on
+  Learning Representations}}.
 \newblock
 \newblock
 \shownote{arXiv:2211.15657.}
@@ -62,6 +63,20 @@
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2303.08797}}
   (\bibinfo{year}{2023}).
 \newblock
+
+
+\bibitem[\protect\citeauthoryear{Alcaraz and Strodthoff}{Alcaraz and
+  Strodthoff}{2022}]%
+        {alcaraz2022sssd}
+\bibfield{author}{\bibinfo{person}{Juan Miguel~Lopez Alcaraz} {and}
+  \bibinfo{person}{Nils Strodthoff}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Diffusion-based Time Series Imputation and
+  Forecasting with Structured State Space Models}.
+\newblock \bibinfo{journal}{\emph{Transactions on Machine Learning Research}}
+  (\bibinfo{year}{2022}).
+\newblock
+\newblock
+\shownote{arXiv:2208.09399.}
 
 
 \bibitem[\protect\citeauthoryear{Alzahrani}{Alzahrani}{2025}]%
@@ -160,7 +175,8 @@
   Yadav}, {and} \bibinfo{person}{Harshit~Singh Rao}.}
   \bibinfo{year}{2024}\natexlab{}.
 \newblock \showarticletitle{{DiffSTOCK}: Probabilistic Relational Stock Market
-  Predictions using Diffusion Models}. In \bibinfo{booktitle}{\emph{ICASSP}}.
+  Predictions using Diffusion Models}. In \bibinfo{booktitle}{\emph{IEEE
+  International Conference on Acoustics, Speech and Signal Processing}}.
 \newblock
 \newblock
 \shownote{arXiv:2403.14063.}
@@ -171,8 +187,9 @@
         {dhariwal2021beatgan}
 \bibfield{author}{\bibinfo{person}{Prafulla Dhariwal} {and}
   \bibinfo{person}{Alexander~Quinn Nichol}.} \bibinfo{year}{2021}\natexlab{}.
-\newblock \showarticletitle{Diffusion Models Beat GANs on Image Synthesis}. In
-  \bibinfo{booktitle}{\emph{NeurIPS}}.
+\newblock \showarticletitle{Diffusion Models Beat {GAN}s on Image Synthesis}.
+  In \bibinfo{booktitle}{\emph{Advances in Neural Information Processing
+  Systems}}, Vol.~\bibinfo{volume}{34}. \bibinfo{pages}{8780--8794}.
 \newblock
 \newblock
 \shownote{arXiv:2105.05233.}
@@ -243,25 +260,14 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Hashimoto and Izumi}{Hashimoto and
-  Izumi}{2025}]%
-        {hashimoto2025otpowerlaw}
-\bibfield{author}{\bibinfo{person}{Ryuji Hashimoto} {and}
-  \bibinfo{person}{Kiyoshi Izumi}.} \bibinfo{year}{2025}\natexlab{}.
-\newblock \showarticletitle{Towards Realistic and Interpretable Market
-  Simulations: Factorizing Financial Power Law using Optimal Transport}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2507.09863}}
-  (\bibinfo{year}{2025}).
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Ho, Jain, and Abbeel}{Ho
   et~al\mbox{.}}{2020}]%
         {ho2020ddpm}
 \bibfield{author}{\bibinfo{person}{Jonathan Ho}, \bibinfo{person}{Ajay Jain},
   {and} \bibinfo{person}{Pieter Abbeel}.} \bibinfo{year}{2020}\natexlab{}.
 \newblock \showarticletitle{Denoising Diffusion Probabilistic Models}. In
-  \bibinfo{booktitle}{\emph{NeurIPS}}.
+  \bibinfo{booktitle}{\emph{Advances in Neural Information Processing
+  Systems}}, Vol.~\bibinfo{volume}{33}. \bibinfo{pages}{6840--6851}.
 \newblock
 \newblock
 \shownote{arXiv:2006.11239.}
@@ -278,6 +284,18 @@
 \shownote{arXiv:2207.12598.}
 
 
+\bibitem[\protect\citeauthoryear{Holderrieth and Erives}{Holderrieth and
+  Erives}{2026}]%
+        {holderrieth2026introflowdiffusion}
+\bibfield{author}{\bibinfo{person}{Peter Holderrieth} {and}
+  \bibinfo{person}{Ezra Erives}.} \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{An Introduction to Flow Matching and Diffusion
+  Models}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2506.02070}}
+  (\bibinfo{year}{2026}).
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Huang, Xu, Liu, Liu, Li, and Bian}{Huang
   et~al\mbox{.}}{2026}]%
         {huang2024digma}
@@ -286,7 +304,8 @@
   \bibinfo{person}{Wu-Jun Li}, {and} \bibinfo{person}{Jiang Bian}.}
   \bibinfo{year}{2026}\natexlab{}.
 \newblock \showarticletitle{Controllable Financial Market Generation with
-  Diffusion Guided Meta Agent}. In \bibinfo{booktitle}{\emph{AAAI}}.
+  Diffusion Guided Meta Agent}. In \bibinfo{booktitle}{\emph{Proceedings of the
+  AAAI Conference on Artificial Intelligence}}.
 \newblock
 \newblock
 \shownote{arXiv:2408.12991, oral.}
@@ -313,7 +332,8 @@
   \bibinfo{person}{Joshua~B. Tenenbaum}, {and} \bibinfo{person}{Sergey
   Levine}.} \bibinfo{year}{2022}\natexlab{}.
 \newblock \showarticletitle{Planning with Diffusion for Flexible Behavior
-  Synthesis}. In \bibinfo{booktitle}{\emph{ICML}}.
+  Synthesis}. In \bibinfo{booktitle}{\emph{Proceedings of the 39th
+  International Conference on Machine Learning}}.
 \newblock
 \newblock
 \shownote{arXiv:2205.09991.}
@@ -337,7 +357,9 @@
   Aittala}, \bibinfo{person}{Timo Aila}, {and} \bibinfo{person}{Samuli Laine}.}
   \bibinfo{year}{2022}\natexlab{}.
 \newblock \showarticletitle{Elucidating the Design Space of Diffusion-Based
-  Generative Models}. In \bibinfo{booktitle}{\emph{NeurIPS}}.
+  Generative Models}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems}}, Vol.~\bibinfo{volume}{35}.
+  \bibinfo{pages}{26565--26577}.
 \newblock
 \newblock
 \shownote{arXiv:2206.00364.}
@@ -354,6 +376,22 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Kollovieh, Ansari, Bohlke-Schneider,
+  Zschiegner, Wang, and Wang}{Kollovieh et~al\mbox{.}}{2023}]%
+        {kollovieh2023tsdiff}
+\bibfield{author}{\bibinfo{person}{Marcel Kollovieh},
+  \bibinfo{person}{Abdul~Fatir Ansari}, \bibinfo{person}{Michael
+  Bohlke-Schneider}, \bibinfo{person}{Jasper Zschiegner}, \bibinfo{person}{Hao
+  Wang}, {and} \bibinfo{person}{Yuyang Wang}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Predict, Refine, Synthesize: Self-Guiding Diffusion
+  Models for Probabilistic Time Series Forecasting}. In
+  \bibinfo{booktitle}{\emph{Advances in Neural Information Processing
+  Systems}}.
+\newblock
+\newblock
+\shownote{arXiv:2307.11494.}
+
+
 \bibitem[\protect\citeauthoryear{Kotelnikov, Baranchuk, Rubachev, and
   Babenko}{Kotelnikov et~al\mbox{.}}{2023}]%
         {kotelnikov2023tabddpm}
@@ -361,10 +399,27 @@
   Baranchuk}, \bibinfo{person}{Ivan Rubachev}, {and} \bibinfo{person}{Artem
   Babenko}.} \bibinfo{year}{2023}\natexlab{}.
 \newblock \showarticletitle{{TabDDPM}: Modelling Tabular Data with Diffusion
-  Models}. In \bibinfo{booktitle}{\emph{ICML}}.
+  Models}. In \bibinfo{booktitle}{\emph{Proceedings of the 40th International
+  Conference on Machine Learning}}.
 \newblock
 \newblock
 \shownote{arXiv:2209.15421.}
+
+
+\bibitem[\protect\citeauthoryear{Kubiak, Weyde, Galkin, Philps, and
+  Gopal}{Kubiak et~al\mbox{.}}{2024}]%
+        {kubiak2024corrddpm}
+\bibfield{author}{\bibinfo{person}{Szymon Kubiak}, \bibinfo{person}{Tillman
+  Weyde}, \bibinfo{person}{Oleksandr Galkin}, \bibinfo{person}{Daniel Philps},
+  {and} \bibinfo{person}{Ram Gopal}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Denoising Diffusion Probabilistic Model for
+  Realistic Financial Correlation Matrices}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 5th ACM International Conference
+  on AI in Finance}}. \bibinfo{pages}{1--9}.
+\newblock
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3677052.3698640}
+\showDOI{\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Kuo and Motsch}{Kuo and Motsch}{2026}]%
@@ -375,6 +430,19 @@
   Data Generation in Fraud Detection}.
 \newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2603.13566}}
   (\bibinfo{year}{2026}).
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Lee, Park, Bang, Hwang, and Jang}{Lee
+  et~al\mbox{.}}{2025}]%
+        {lee2025charts}
+\bibfield{author}{\bibinfo{person}{Taegyeong Lee}, \bibinfo{person}{Jiwon
+  Park}, \bibinfo{person}{Kyunga Bang}, \bibinfo{person}{Seunghyun Hwang},
+  {and} \bibinfo{person}{Ung-Jin Jang}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Exploring Diffusion Models for Generative
+  Forecasting of Financial Charts}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2509.02308}}
+  (\bibinfo{year}{2025}).
 \newblock
 
 
@@ -433,7 +501,8 @@
   Chen}, \bibinfo{person}{Heli Ben-Hamu}, \bibinfo{person}{Maximilian Nickel},
   {and} \bibinfo{person}{Matt Le}.} \bibinfo{year}{2023}\natexlab{}.
 \newblock \showarticletitle{Flow Matching for Generative Modeling}. In
-  \bibinfo{booktitle}{\emph{ICLR}}.
+  \bibinfo{booktitle}{\emph{International Conference on Learning
+  Representations}}.
 \newblock
 \newblock
 \shownote{arXiv:2210.02747.}
@@ -444,11 +513,12 @@
 \bibfield{author}{\bibinfo{person}{Changshuo Liu} {and} \bibinfo{person}{Canyao
   Liu}.} \bibinfo{year}{2024}\natexlab{}.
 \newblock \showarticletitle{Entity-based Financial Tabular Data Synthesis with
-  Diffusion Models}. In \bibinfo{booktitle}{\emph{Proc.\ 5th ACM Int.\ Conf.\
-  on AI in Finance (ICAIF)}}.
+  Diffusion Models}. In \bibinfo{booktitle}{\emph{Proceedings of the 5th ACM
+  International Conference on AI in Finance}}.
 \newblock
-\newblock
-\shownote{doi:10.1145/3677052.3698625.}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3677052.3698625}
+\showDOI{\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Liu, Gong, and Liu}{Liu et~al\mbox{.}}{2023}]%
@@ -456,7 +526,9 @@
 \bibfield{author}{\bibinfo{person}{Xingchao Liu}, \bibinfo{person}{Chengyue
   Gong}, {and} \bibinfo{person}{Qiang Liu}.} \bibinfo{year}{2023}\natexlab{}.
 \newblock \showarticletitle{Flow Straight and Fast: Learning to Generate and
-  Transfer Data with Rectified Flow}. In \bibinfo{booktitle}{\emph{ICLR}}.
+  Transfer Data with Rectified Flow}. In
+  \bibinfo{booktitle}{\emph{International Conference on Learning
+  Representations}}.
 \newblock
 \newblock
 \shownote{arXiv:2209.03003.}
@@ -468,7 +540,8 @@
 \bibfield{author}{\bibinfo{person}{Alexander~Quinn Nichol} {and}
   \bibinfo{person}{Prafulla Dhariwal}.} \bibinfo{year}{2021}\natexlab{}.
 \newblock \showarticletitle{Improved Denoising Diffusion Probabilistic Models}.
-  In \bibinfo{booktitle}{\emph{ICML}}.
+  In \bibinfo{booktitle}{\emph{Proceedings of the 38th International Conference
+  on Machine Learning}}. \bibinfo{pages}{8162--8171}.
 \newblock
 \newblock
 \shownote{arXiv:2102.09672.}
@@ -482,7 +555,8 @@
   Vollgraf}.} \bibinfo{year}{2021}\natexlab{}.
 \newblock \showarticletitle{Autoregressive Denoising Diffusion Models for
   Multivariate Probabilistic Time Series Forecasting}. In
-  \bibinfo{booktitle}{\emph{ICML}}.
+  \bibinfo{booktitle}{\emph{Proceedings of the 38th International Conference on
+  Machine Learning}}. \bibinfo{pages}{8857--8868}.
 \newblock
 \newblock
 \shownote{arXiv:2101.12072.}
@@ -509,8 +583,8 @@
   Schreyer}, {and} \bibinfo{person}{Damian Borth}.}
   \bibinfo{year}{2023}\natexlab{}.
 \newblock \showarticletitle{{FinDiff}: Diffusion Models for Financial Tabular
-  Data Generation}. In \bibinfo{booktitle}{\emph{Proc.\ 4th ACM Int.\ Conf.\ on
-  AI in Finance (ICAIF)}}.
+  Data Generation}. In \bibinfo{booktitle}{\emph{Proceedings of the 4th ACM
+  International Conference on AI in Finance}}.
 \newblock
 \newblock
 \shownote{arXiv:2309.01472.}
@@ -537,11 +611,12 @@
   \bibinfo{year}{2024}\natexlab{b}.
 \newblock \showarticletitle{{Imb-FinDiff}: Conditional Diffusion Models for
   Class Imbalance Synthesis of Financial Tabular Data}. In
-  \bibinfo{booktitle}{\emph{Proc.\ 5th ACM Int.\ Conf.\ on AI in Finance
-  (ICAIF)}}.
+  \bibinfo{booktitle}{\emph{Proceedings of the 5th ACM International Conference
+  on AI in Finance}}.
 \newblock
-\newblock
-\shownote{doi:10.1145/3677052.3698659.}
+\urldef\tempurl%
+\url{https://doi.org/10.1145/3677052.3698659}
+\showDOI{\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Sattarov, Schreyer, and Borth}{Sattarov
@@ -564,7 +639,8 @@
   Meng}, {and} \bibinfo{person}{Stefano Ermon}.}
   \bibinfo{year}{2021}\natexlab{a}.
 \newblock \showarticletitle{Denoising Diffusion Implicit Models}. In
-  \bibinfo{booktitle}{\emph{ICLR}}.
+  \bibinfo{booktitle}{\emph{International Conference on Learning
+  Representations}}.
 \newblock
 \newblock
 \shownote{arXiv:2010.02502.}
@@ -577,7 +653,8 @@
   Dhariwal}, \bibinfo{person}{Mark Chen}, {and} \bibinfo{person}{Ilya
   Sutskever}.} \bibinfo{year}{2023}\natexlab{}.
 \newblock \showarticletitle{Consistency Models}. In
-  \bibinfo{booktitle}{\emph{ICML}}.
+  \bibinfo{booktitle}{\emph{Proceedings of the 40th International Conference on
+  Machine Learning}}.
 \newblock
 \newblock
 \shownote{arXiv:2303.01469.}
@@ -588,7 +665,8 @@
 \bibfield{author}{\bibinfo{person}{Yang Song} {and} \bibinfo{person}{Stefano
   Ermon}.} \bibinfo{year}{2019}\natexlab{}.
 \newblock \showarticletitle{Generative Modeling by Estimating Gradients of the
-  Data Distribution}. In \bibinfo{booktitle}{\emph{NeurIPS}}.
+  Data Distribution}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems}}, Vol.~\bibinfo{volume}{32}.
 \newblock
 \newblock
 \shownote{arXiv:1907.05600.}
@@ -602,7 +680,8 @@
   \bibinfo{person}{Abhishek Kumar}, \bibinfo{person}{Stefano Ermon}, {and}
   \bibinfo{person}{Ben Poole}.} \bibinfo{year}{2021}\natexlab{b}.
 \newblock \showarticletitle{Score-Based Generative Modeling through Stochastic
-  Differential Equations}. In \bibinfo{booktitle}{\emph{ICLR}}.
+  Differential Equations}. In \bibinfo{booktitle}{\emph{International
+  Conference on Learning Representations}}.
 \newblock
 \newblock
 \shownote{arXiv:2011.13456.}
@@ -644,7 +723,8 @@
   \bibinfo{year}{2021}\natexlab{}.
 \newblock \showarticletitle{{CSDI}: Conditional Score-based Diffusion Models
   for Probabilistic Time Series Imputation}. In
-  \bibinfo{booktitle}{\emph{NeurIPS}}.
+  \bibinfo{booktitle}{\emph{Advances in Neural Information Processing
+  Systems}}, Vol.~\bibinfo{volume}{34}. \bibinfo{pages}{24804--24816}.
 \newblock
 \newblock
 \shownote{arXiv:2107.03502.}
@@ -716,6 +796,18 @@
 \shownote{arXiv:2404.18886.}
 
 
+\bibitem[\protect\citeauthoryear{Yuan and Qiao}{Yuan and Qiao}{2024}]%
+        {yuan2024diffusionts}
+\bibfield{author}{\bibinfo{person}{Xinyu Yuan} {and} \bibinfo{person}{Yan
+  Qiao}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Diffusion-{TS}: Interpretable Diffusion for General
+  Time Series Generation}. In \bibinfo{booktitle}{\emph{International
+  Conference on Learning Representations}}.
+\newblock
+\newblock
+\shownote{arXiv:2403.01742.}
+
+
 \bibitem[\protect\citeauthoryear{Zarifis, Kordonis, and Maragos}{Zarifis
   et~al\mbox{.}}{2025}]%
         {zarifis2025scenariotree}
@@ -729,17 +821,20 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Zhang, Duan, Zhang, and Feng}{Zhang
-  et~al\mbox{.}}{2026}]%
-        {zhang2026tfcodit}
-\bibfield{author}{\bibinfo{person}{Yingxiao Zhang}, \bibinfo{person}{Jiaxin
-  Duan}, \bibinfo{person}{Junfu Zhang}, {and} \bibinfo{person}{Ke Feng}.}
-  \bibinfo{year}{2026}\natexlab{}.
-\newblock \showarticletitle{{TF-CoDiT}: Conditional Time Series Synthesis with
-  Diffusion Transformers for Treasury Futures}.
-\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:2601.11880}}
-  (\bibinfo{year}{2026}).
+\bibitem[\protect\citeauthoryear{Zhang, Zhang, Srinivasan, Shen, Qin,
+  Faloutsos, Rangwala, and Karypis}{Zhang et~al\mbox{.}}{2024}]%
+        {zhang2024tabsyn}
+\bibfield{author}{\bibinfo{person}{Hengrui Zhang}, \bibinfo{person}{Jiani
+  Zhang}, \bibinfo{person}{Balasubramaniam Srinivasan},
+  \bibinfo{person}{Zhengyuan Shen}, \bibinfo{person}{Xiao Qin},
+  \bibinfo{person}{Christos Faloutsos}, \bibinfo{person}{Huzefa Rangwala},
+  {and} \bibinfo{person}{George Karypis}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Mixed-Type Tabular Data Synthesis with Score-based
+  Diffusion in Latent Space}. In \bibinfo{booktitle}{\emph{International
+  Conference on Learning Representations}}.
 \newblock
+\newblock
+\shownote{arXiv:2310.09656.}
 
 
 \bibitem[\protect\citeauthoryear{Zhao and Shen}{Zhao and Shen}{2025}]%

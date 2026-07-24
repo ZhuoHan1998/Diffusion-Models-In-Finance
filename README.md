@@ -37,13 +37,13 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 
 Generation:
 
-- Beyond Monte Carlo: Harnessing Diffusion Models to Simulate Financial Market Dynamics, arXiv 2024. US / Stock / Price series. [paper](https://arxiv.org/abs/2412.00036)
+- Beyond Monte Carlo: Harnessing Diffusion Models to Simulate Financial Market Dynamics, arXiv 2024. US / Stock / Return vectors. [paper](https://arxiv.org/abs/2412.00036)
 - Synthetic Asset Price Paths Generation Using Denoising Diffusion Probabilistic Model, SCML 2024. Synthetic / Stock, Option / Price series. [paper](https://scml.jp/2024/paper/8/CameraReady/scml2024.pdf)
 - A diffusion-based generative model for financial time series via geometric Brownian motion, arXiv 2025. US / Stock / Price series. [paper](https://arxiv.org/abs/2507.19003)
 - CoFinDiff: Controllable Financial Diffusion Model for Time Series Generation, IJCAI 2025. JP / Stock / Price series. [paper](https://arxiv.org/abs/2503.04164)
 - Diffusion Factor Models: Generating High-Dimensional Returns with Factor Structure, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2504.06566) [code](https://github.com/xymmmm00/diffusion_factor_model)
 - Fiaingen: A Financial Time Series Generative Method Matching Real-World Data Quality, arXiv 2025. Multi / Stock / Price series. [paper](https://arxiv.org/abs/2510.01169)
-- Generation of Synthetic Financial Time Series by Diffusion Models, Quantitative Finance 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2410.18897)
+- Generation of Synthetic Financial Time Series by Diffusion Models, Quantitative Finance 2025. US / Stock / Return & Volume series. [paper](https://arxiv.org/abs/2410.18897)
 - InterDiff: Synthesizing Financial Time Series with Inter-Stock Correlations via Classifier-Free Guided Diffusion, ECML-PKDD 2025. CN / Stock / Price series. [paper](https://link.springer.com/chapter/10.1007/978-3-032-01655-9_13)
 - High-Quality Synthetic Financial Time-Series using a GAN-Diffusion Framework, arXiv 2026. US / Stock / Price series & Volume. [paper](https://arxiv.org/abs/2605.27113)
 

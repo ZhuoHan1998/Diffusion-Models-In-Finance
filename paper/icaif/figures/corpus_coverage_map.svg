@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330">
+  <rect width="960" height="330" fill="#ffffff"/>
+  <style>
+    .label { font-family: Arial, Helvetica, sans-serif; fill: #263238; font-size: 24px; }
+    .small { font-family: Arial, Helvetica, sans-serif; fill: #465a64; font-size: 16px; }
+    .num { font-family: Arial, Helvetica, sans-serif; font-weight: 700; font-size: 28px; }
+    .code { font-family: Arial, Helvetica, sans-serif; font-size: 15px; }
+    .grid { stroke: #ffffff; stroke-width: 3; }
+  </style>
+  <text x="208" y="35" class="label">Generation</text>
+  <text x="365" y="28" class="label">Prediction</text>
+  <text x="387" y="51" class="small">/ trading</text>
+  <text x="538" y="28" class="label">Risk</text>
+  <text x="526" y="51" class="small">/ pricing</text>
+  <text x="680" y="28" class="label">Privacy</text>
+  <text x="684" y="51" class="small">/ trust</text>
+
+  <text x="28" y="91" class="label">Time series</text>
+  <text x="28" y="145" class="label">LOB</text>
+  <text x="28" y="199" class="label">Tabular</text>
+  <text x="28" y="253" class="label">Structured</text>
+
+  <!-- x0=190, y0=62, w=150, h=50 -->
+  <rect x="190" y="62" width="150" height="50" fill="#236b8e" class="grid"/>
+  <text x="265" y="84" text-anchor="middle" class="num" fill="#ffffff">9</text>
+  <text x="265" y="105" text-anchor="middle" class="code" fill="#ffffff">code 1</text>
+  <rect x="340" y="62" width="150" height="50" fill="#123f6d" class="grid"/>
+  <text x="415" y="84" text-anchor="middle" class="num" fill="#ffffff">15</text>
+  <text x="415" y="105" text-anchor="middle" class="code" fill="#ffffff">code 1</text>
+  <rect x="490" y="62" width="150" height="50" fill="#73bfc2" class="grid"/>
+  <text x="565" y="84" text-anchor="middle" class="num" fill="#102a43">4</text>
+  <text x="565" y="105" text-anchor="middle" class="code" fill="#334e68">code 1</text>
+  <rect x="640" y="62" width="150" height="50" fill="#f3f4f6" class="grid"/>
+  <text x="715" y="94" text-anchor="middle" class="num" fill="#6b7280">0</text>
+
+  <rect x="190" y="112" width="150" height="50" fill="#2e859d" class="grid"/>
+  <text x="265" y="134" text-anchor="middle" class="num" fill="#ffffff">7</text>
+  <text x="265" y="155" text-anchor="middle" class="code" fill="#ffffff">code 3</text>
+  <rect x="340" y="112" width="150" height="50" fill="#bee3e3" class="grid"/>
+  <text x="415" y="134" text-anchor="middle" class="num" fill="#102a43">2</text>
+  <text x="415" y="155" text-anchor="middle" class="code" fill="#334e68">code 1</text>
+  <rect x="490" y="112" width="150" height="50" fill="#f3f4f6" class="grid"/>
+  <text x="565" y="144" text-anchor="middle" class="num" fill="#6b7280">0</text>
+  <rect x="640" y="112" width="150" height="50" fill="#f3f4f6" class="grid"/>
+  <text x="715" y="144" text-anchor="middle" class="num" fill="#6b7280">0</text>
+
+  <rect x="190" y="162" width="150" height="50" fill="#3f9bab" class="grid"/>
+  <text x="265" y="184" text-anchor="middle" class="num" fill="#ffffff">6</text>
+  <text x="265" y="205" text-anchor="middle" class="code" fill="#ffffff">code 1</text>
+  <rect x="340" y="162" width="150" height="50" fill="#f3f4f6" class="grid"/>
+  <text x="415" y="194" text-anchor="middle" class="num" fill="#6b7280">0</text>
+  <rect x="490" y="162" width="150" height="50" fill="#f3f4f6" class="grid"/>
+  <text x="565" y="194" text-anchor="middle" class="num" fill="#6b7280">0</text>
+  <rect x="640" y="162" width="150" height="50" fill="#57aeb9" class="grid"/>
+  <text x="715" y="184" text-anchor="middle" class="num" fill="#102a43">5</text>
+  <text x="715" y="205" text-anchor="middle" class="code" fill="#334e68">code 1</text>
+
+  <rect x="190" y="212" width="150" height="50" fill="#99d2d0" class="grid"/>
+  <text x="265" y="234" text-anchor="middle" class="num" fill="#102a43">3</text>
+  <text x="265" y="255" text-anchor="middle" class="code" fill="#334e68">code 1</text>
+  <rect x="340" y="212" width="150" height="50" fill="#d9eef2" class="grid"/>
+  <text x="415" y="234" text-anchor="middle" class="num" fill="#102a43">1</text>
+  <text x="415" y="255" text-anchor="middle" class="code" fill="#334e68">code 1</text>
+  <rect x="490" y="212" width="150" height="50" fill="#99d2d0" class="grid"/>
+  <text x="565" y="234" text-anchor="middle" class="num" fill="#102a43">3</text>
+  <text x="565" y="255" text-anchor="middle" class="code" fill="#334e68">code 0</text>
+  <rect x="640" y="212" width="150" height="50" fill="#f3f4f6" class="grid"/>
+  <text x="715" y="244" text-anchor="middle" class="num" fill="#6b7280">0</text>
+
+  <rect x="820" y="72" width="26" height="26" fill="#f3f4f6" stroke="#ffffff" stroke-width="2"/>
+  <text x="855" y="92" class="small">0 papers</text>
+  <rect x="820" y="112" width="26" height="26" fill="#73bfc2" stroke="#ffffff" stroke-width="2"/>
+  <text x="855" y="132" class="small">medium</text>
+  <rect x="820" y="152" width="26" height="26" fill="#123f6d" stroke="#ffffff" stroke-width="2"/>
+  <text x="855" y="172" class="small">high</text>
+  <text x="190" y="302" class="small">Cell number = papers; code number = entries with public implementation. Cross-listed papers may appear in multiple cells.</text>
+</svg>
