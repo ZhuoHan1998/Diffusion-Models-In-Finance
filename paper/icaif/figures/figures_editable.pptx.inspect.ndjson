@@ -1,0 +1,78 @@
+{"kind":"deck","id":"pr/3fwpuk","name":"Deck"}
+{"kind":"layout","layoutId":"ec4006c5-c8fe-4e20-b1bc-1ee61454c0b3","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"00016301-efa3-4ff6-8048-522751394dd3","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/gtaiok","slide":1,"title":"Figure 1. Data-first taxonomy","textShapes":18}
+{"kind":"textbox","id":"sh/balg7eho","slide":1,"text":"Figure 1. Data-first taxonomy","textPreview":"Figure 1. Data-first taxonomy","textChars":29,"textLines":1,"bbox":[58,34,800,54]}
+{"kind":"textbox","id":"sh/wbuhgji9","slide":1,"text":"Organize finance diffusion papers by the object being generated, then by application and method family.","textPreview":"Organize finance diffusion papers by the object being generated, then by application and method family.","textChars":103,"textLines":1,"bbox":[60,88,1020,34]}
+{"kind":"textbox","id":"sh/xc3y9ozu","slide":1,"text":"Financial data object","textPreview":"Financial data object","textChars":21,"textLines":1,"bbox":[70,128,300,28]}
+{"kind":"textbox","id":"sh/ydczit0f","slide":1,"text":"Application","textPreview":"Application","textChars":11,"textLines":1,"bbox":[490,128,300,28]}
+{"kind":"textbox","id":"sh/jelgbeh0","slide":1,"text":"Method family","textPreview":"Method family","textChars":13,"textLines":1,"bbox":[910,128,300,28]}
+{"kind":"textbox","id":"sh/kfuhkjil","slide":1,"text":"Financial time series\nPrices, returns, factors, scenarios","textPreview":"Financial time series | Prices, returns, factors, scenarios","textChars":57,"textLines":2,"bbox":[70,155,300,70]}
+{"kind":"textbox","id":"sh/l03ydozq","slide":1,"text":"Limit order books\nSnapshots, order flow, volume","textPreview":"Limit order books | Snapshots, order flow, volume","textChars":47,"textLines":2,"bbox":[70,243,300,70]}
+{"kind":"textbox","id":"sh/61wzmt0b","slide":1,"text":"Tabular data\nCredit, payment, customer, fraud rows","textPreview":"Tabular data | Credit, payment, customer, fraud rows","textChars":50,"textLines":2,"bbox":[70,331,300,70]}
+{"kind":"textbox","id":"sh/725gfyhw","slide":1,"text":"Structured data\nMatrices, surfaces, curves, pricing paths","textPreview":"Structured data | Matrices, surfaces, curves, pricing paths","textChars":57,"textLines":2,"bbox":[70,419,300,70]}
+{"kind":"textbox","id":"sh/r6lk7i90","slide":1,"text":"Generation\nSynthetic data and market simulation","textPreview":"Generation | Synthetic data and market simulation","textChars":47,"textLines":2,"bbox":[490,155,300,70]}
+{"kind":"textbox","id":"sh/q5s3ed8f","slide":1,"text":"Prediction and trading\nForecasts, signals, policies","textPreview":"Prediction and trading | Forecasts, signals, policies","textChars":51,"textLines":2,"bbox":[490,243,300,70]}
+{"kind":"textbox","id":"sh/d83m9srq","slide":1,"text":"Risk and pricing\nStress paths, valuation, scenarios","textPreview":"Risk and pricing | Stress paths, valuation, scenarios","textChars":51,"textLines":2,"bbox":[490,331,300,70]}
+{"kind":"textbox","id":"sh/c7ulgnq5","slide":1,"text":"Privacy and trust\nUtility, leakage, constraints","textPreview":"Privacy and trust | Utility, leakage, constraints","textChars":47,"textLines":2,"bbox":[490,419,300,70]}
+{"kind":"textbox","id":"sh/3i1k3y9o","slide":1,"text":"DDPM / score-SDE\nDenoising and reverse-time sampling","textPreview":"DDPM / score-SDE | Denoising and reverse-time sampling","textChars":52,"textLines":2,"bbox":[910,155,300,70]}
+{"kind":"textbox","id":"sh/2hs3ad83","slide":1,"text":"Conditional guidance\nControls, regimes, masks, constraints","textPreview":"Conditional guidance | Controls, regimes, masks, constraints","textChars":58,"textLines":2,"bbox":[910,243,300,70]}
+{"kind":"textbox","id":"sh/p4j258ru","slide":1,"text":"Latent / tabular diffusion\nMixed fields and compact spaces","textPreview":"Latent / tabular diffusion | Mixed fields and compact spaces","textChars":58,"textLines":2,"bbox":[910,331,300,70]}
+{"kind":"textbox","id":"sh/4jalc3q9","slide":1,"text":"Flow matching\nFast transport and decision loops","textPreview":"Flow matching | Fast transport and decision loops","textChars":47,"textLines":2,"bbox":[910,419,300,70]}
+{"kind":"shape","id":"sh/ne54f29s","slide":1,"bbox":[370,190,120,0]}
+{"kind":"shape","id":"sh/mdc3mx8n","slide":1,"bbox":[370,190,120,88]}
+{"kind":"shape","id":"sh/i50fu5wr","slide":1,"bbox":[370,366,120,88]}
+{"kind":"shape","id":"sh/j69w3qxc","slide":1,"bbox":[370,366,120,88]}
+{"kind":"shape","id":"sh/k7ixwvex","slide":1,"bbox":[790,190,120,0]}
+{"kind":"shape","id":"sh/58ry50fi","slide":1,"bbox":[790,278,120,176]}
+{"kind":"shape","id":"sh/690fy5w3","slide":1,"bbox":[790,278,120,88]}
+{"kind":"shape","id":"sh/7atg7axo","slide":1,"bbox":[790,366,120,88]}
+{"kind":"textbox","id":"sh/sb2x0fe9","slide":1,"text":"Editable reconstruction of the manuscript taxonomy figure","textPreview":"Editable reconstruction of the manuscript taxonomy figure","textChars":57,"textLines":1,"bbox":[70,650,760,24]}
+{"kind":"notes","id":"nt/gtaiok","slide":1,"text":"[Sources]\nDerived from paper/icaif/figures/data_first_taxonomy.png and the taxonomy text in paper/icaif/main.tex."}
+{"kind":"slide","id":"sl/igc83e","slide":2,"title":"Figure 2. Corpus coverage map","textShapes":23}
+{"kind":"textbox","id":"sh/zy9s3ihw","slide":2,"text":"Figure 2. Corpus coverage map","textPreview":"Figure 2. Corpus coverage map","textChars":29,"textLines":1,"bbox":[58,34,800,54]}
+{"kind":"textbox","id":"sh/0zitwnyh","slide":2,"text":"Bubble size encodes paper count; blue rings indicate cells with public implementations.","textPreview":"Bubble size encodes paper count; blue rings indicate cells with public implementations.","textChars":87,"textLines":1,"bbox":[60,88,940,32]}
+{"kind":"textbox","id":"sh/l0ba5sz2","slide":2,"text":"Generation","textPreview":"Generation","textChars":10,"textLines":1,"bbox":[315,126,205,30]}
+{"kind":"textbox","id":"sh/q90bqdgf","slide":2,"text":"Prediction / trading","textPreview":"Prediction / trading","textChars":20,"textLines":1,"bbox":[520,126,205,30]}
+{"kind":"textbox","id":"sh/ba9szih0","slide":2,"text":"Risk / pricing","textPreview":"Risk / pricing","textChars":14,"textLines":1,"bbox":[725,126,205,30]}
+{"kind":"textbox","id":"sh/cbitsny5","slide":2,"text":"Privacy / trust","textPreview":"Privacy / trust","textChars":15,"textLines":1,"bbox":[930,126,205,30]}
+{"kind":"textbox","id":"sh/dwra18zq","slide":2,"text":"Financial time series","textPreview":"Financial time series","textChars":21,"textLines":1,"bbox":[62,197,220,28]}
+{"kind":"textbox","id":"sh/a5kb2xgj","slide":2,"text":"Limit order books","textPreview":"Limit order books","textChars":17,"textLines":1,"bbox":[62,289,220,28]}
+{"kind":"textbox","id":"sh/v6tcb2h4","slide":2,"text":"Tabular data","textPreview":"Tabular data","textChars":12,"textLines":1,"bbox":[62,381,220,28]}
+{"kind":"textbox","id":"sh/ju1ov2hw","slide":2,"text":"Structured data","textPreview":"Structured data","textChars":15,"textLines":1,"bbox":[62,473,220,28]}
+{"kind":"shape","id":"sh/its72x0b","slide":2,"bbox":[315,165,205,92]}
+{"kind":"shape","id":"sh/5wj6xsz2","slide":2,"bbox":[372.01,165.51,90.99,90.99]}
+{"kind":"textbox","id":"sh/4vap4nih","slide":2,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[379.01,172.51,76.99,76.99]}
+{"kind":"shape","id":"sh/ri1oz2hs","slide":2,"bbox":[520,165,205,92]}
+{"kind":"textbox","id":"sh/6xs76x07","slide":2,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[575.33,163.83,94.33,94.33]}
+{"kind":"shape","id":"sh/tkj61czy","slide":2,"bbox":[725,165,205,92]}
+{"kind":"textbox","id":"sh/sjap87id","slide":2,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[793.5,177,68,68]}
+{"kind":"shape","id":"sh/fmlo3mh4","slide":2,"bbox":[930,165,205,92]}
+{"kind":"shape","id":"sh/elc7ah0j","slide":2,"bbox":[315,257,205,92]}
+{"kind":"shape","id":"sh/ahwr2lkr","slide":2,"bbox":[370.04,255.54,94.92,94.92]}
+{"kind":"textbox","id":"sh/bi5sbq1c","slide":2,"text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[377.04,262.54,80.92,80.92]}
+{"kind":"shape","id":"sh/cje94b2x","slide":2,"bbox":[520,257,205,92]}
+{"kind":"textbox","id":"sh/xk7adgji","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[594.36,274.86,56.28,56.28]}
+{"kind":"shape","id":"sh/2dwry1kf","slide":2,"bbox":[725,257,205,92]}
+{"kind":"shape","id":"sh/3e5s7610","slide":2,"bbox":[930,257,205,92]}
+{"kind":"shape","id":"sh/ofe90b2l","slide":2,"bbox":[315,349,205,92]}
+{"kind":"shape","id":"sh/pgna9gj6","slide":2,"bbox":[368.22,345.72,98.57,98.57]}
+{"kind":"textbox","id":"sh/m9gra5kz","slide":2,"text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[375.22,352.72,84.57,84.57]}
+{"kind":"shape","id":"sh/7aps3a1k","slide":2,"bbox":[520,349,205,92]}
+{"kind":"textbox","id":"sh/h4bu943m","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[598.5,371,48,48]}
+{"kind":"shape","id":"sh/w32d0zm1","slide":2,"bbox":[725,349,205,92]}
+{"kind":"shape","id":"sh/v29c7ulg","slide":2,"bbox":[930,349,205,92]}
+{"kind":"textbox","id":"sh/u10byp4v","slide":2,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[998.5,361,68,68]}
+{"kind":"shape","id":"sh/9gru5k3q","slide":2,"bbox":[315,441,205,92]}
+{"kind":"textbox","id":"sh/8fitwfm5","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[393.5,463,48,48]}
+{"kind":"shape","id":"sh/7e9c3alk","slide":2,"bbox":[520,441,205,92]}
+{"kind":"shape","id":"sh/md0bup4z","slide":2,"bbox":[591.5,456,62,62]}
+{"kind":"textbox","id":"sh/tcvuho3u","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[598.5,463,48,48]}
+{"kind":"shape","id":"sh/sbmd8j29","slide":2,"bbox":[725,441,205,92]}
+{"kind":"textbox","id":"sh/0fal8jm5","slide":2,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[789.01,448.51,76.99,76.99]}
+{"kind":"shape","id":"sh/lgj21o3a","slide":2,"bbox":[930,441,205,92]}
+{"kind":"shape","id":"sh/yd83694z","slide":2,"bbox":[318,611,34,34]}
+{"kind":"textbox","id":"sh/zehkzelk","slide":2,"text":"Bubble size = paper count","textPreview":"Bubble size = paper count","textChars":25,"textLines":1,"bbox":[365,613,280,30]}
+{"kind":"shape","id":"sh/8jalcj21","slide":2,"bbox":[700,611,36,36]}
+{"kind":"textbox","id":"sh/9kj25o3m","slide":2,"text":"Blue ring = open-source code available","textPreview":"Blue ring = open-source code available","textChars":38,"textLines":1,"bbox":[750,613,420,30]}
+{"kind":"notes","id":"nt/igc83e","slide":2,"text":"[Sources]\nDerived from paper/icaif/figures/corpus_coverage_map.png and corpus buckets in paper/icaif/companion/corpus_coding.csv."}
