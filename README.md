@@ -55,8 +55,7 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 - Multi-Agent Regime-Conditioned Diffusion (MARCD) for CVaR-Constrained Portfolio Decisions, arXiv 2025. US / ETF / Return series. [paper](https://arxiv.org/abs/2510.10807)
 - Diffusion-Augmented Reinforcement Learning for Robust Portfolio Optimization under Stress Scenarios, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2510.07099)
 - Diffusion Generative Models Meet Compressed Sensing, with Applications to Imaging and Finance, arXiv 2025. US / Stock, Macro / Price series. [paper](https://arxiv.org/abs/2509.03898) [code](https://github.com/ZhengyiGuo2002/CSDM-code)
-- Exploring Diffusion Models for Generative Forecasting of Financial Charts, arXiv 2025. Global / Bitcoin Future / Price series. [paper](https://arxiv.org/abs/2509.02308)
-- InterDiff: Synthesizing Financial Time Series with Inter-Stock Correlations via Classifier-Free Guided Diffusion, ECML-PKDD 2025. CN / Stock / Price series. [paper](https://link.springer.com/chapter/10.1007/978-3-032-01655-9_13)
+- InterDiff: Synthesizing Financial Time Series with Inter-Stock Correlations via Classifier-Free Guided Diffusion, ECML-PKDD 2025. CN / Stock / Price series. [paper](https://link.springer.com/chapter/10.1007/978-3-032-06118-8_13)
 - CoFinDiff: Controllable Financial Diffusion Model for Time Series Generation, IJCAI 2025. JP / Stock / Price series. [paper](https://arxiv.org/abs/2503.04164)
 - Diffusion-Based Scenario Tree Generation for Multivariate Time Series Prediction and Multistage Stochastic Optimization, arXiv 2025. US / Energy / Price series. [paper](https://arxiv.org/abs/2509.14832)
 
@@ -68,7 +67,6 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 - DiffsFormer: A Diffusion Transformer on Stock Factor Augmentation, arXiv 2024. CN / Stock / Price series. [paper](https://arxiv.org/abs/2402.06656)
 - A Financial Time Series Denoiser Based on Diffusion Models, ICAIF 2024. US / Stock / Price series. [paper](https://doi.org/10.1145/3677052.3698649) [arXiv](https://arxiv.org/abs/2409.02138)
 - Solving Dynamic Portfolio Selection Problems via Score-Based Diffusion Models, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2507.09916)
-- Multi-Agent Regime-Conditioned Diffusion (MARCD) for CVaR-Constrained Portfolio Decisions, arXiv 2025. US / ETF / Return series. [paper](https://arxiv.org/abs/2510.10807)
 - DHMoE: Diffusion Generated Hierarchical Multi-Granular Expertise for Stock Prediction, AAAI 2025. US, CN, HK / Stock / Price series. [paper](https://ojs.aaai.org/index.php/AAAI/article/view/33250)
 - Diffusion-Augmented Reinforcement Learning for Robust Portfolio Optimization under Stress Scenarios, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2510.07099)
 - Factor-Based Conditional Diffusion Model for Contextual Portfolio Optimization, arXiv 2025. CN / Stock / Return series. [paper](https://arxiv.org/abs/2509.22088)
@@ -80,20 +78,18 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 
 ## Limit Order Book Data
 
-### Generative Market Simulation
+### Orderflow Generation
 
-- Painting the Market: Generative Diffusion Models for Financial Limit Order Book Simulation and Forecasting, arXiv 2025. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2509.05107)
 - TRADES: Generating Realistic Market Simulations with Diffusion Models, arXiv 2025. US / Stock / LOB orderflow. [paper](https://arxiv.org/abs/2502.07071) [code](https://github.com/LeonardoBerti00/DeepMarket)
-- Towards Realistic and Interpretable Market Simulations: Factorizing Financial Power Law using Optimal Transport, arXiv 2025. JP / Stock / LOB orderflow. [paper](https://arxiv.org/abs/2507.09863)
 - ByteGen: A Tokenizer-Free Generative Model for Orderbook Events in Byte Space, arXiv 2025. US / Bitcoin Future / LOB orderflow. [paper](https://arxiv.org/abs/2508.02247)
-- DiffVolume: Diffusion Models for Volume Generation in Limit Order Books, ICAIF 2025. US / Stock / LOB volume. [paper](https://arxiv.org/abs/2508.08698)
 - Controllable Financial Market Generation with Diffusion Guided Meta Agent, AAAI 2026. CN / Stock / LOB orderflow. [paper](https://arxiv.org/abs/2408.12991) [code](https://github.com/microsoft/TimeCraft)
-- DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books, IJCAI-ECAI 2026. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2602.03776) [record](https://kclpure.kcl.ac.uk/portal/en/publications/difflob-diffusion-models-for-counterfactual-generation-in-limit-o/) [code](https://github.com/ZhuoHan1998/DiffLOB)
-
-### Prediction
-
-- Painting the Market: Generative Diffusion Models for Financial Limit Order Book Simulation and Forecasting, arXiv 2025. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2509.05107)
 - Limit Order Book Event Stream Prediction with Diffusion Model, Data Science and Engineering 2026. US, CN / Stock / LOB orderflow. [paper](https://arxiv.org/abs/2412.09631) [code](https://github.com/zhengzetao/LOBDIF)
+
+### Orderbook Generation
+
+- DiffVolume: Diffusion Models for Volume Generation in Limit Order Books, ICAIF 2025. US / Stock / LOB volume. [paper](https://arxiv.org/abs/2508.08698)
+- Painting the Market: Generative Diffusion Models for Financial Limit Order Book Simulation and Forecasting, arXiv 2025. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2509.05107)
+- DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books, IJCAI-ECAI 2026. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2602.03776) [record](https://kclpure.kcl.ac.uk/portal/en/publications/difflob-diffusion-models-for-counterfactual-generation-in-limit-o/) [code](https://github.com/ZhuoHan1998/DiffLOB)
 
 ## Tabular Data
 
@@ -169,19 +165,6 @@ Decision-making and control:
 - Diffusion Models for Reinforcement Learning: A Survey, arXiv 2023. [paper](https://arxiv.org/abs/2311.01223) [code](https://github.com/apexrl/Diff4RLSurvey)
 - An Optimal Control Perspective on Diffusion-Based Generative Modeling, TMLR 2024. [paper](https://arxiv.org/abs/2211.01364) [code](https://github.com/juliusberner/sde_sampler)
 
-## Non-Diffusion Finance Baselines
-
-These are useful comparison points, but they are not counted as diffusion/flow finance papers.
-
-- Generalized Autoregressive Conditional Heteroskedasticity, Journal of Econometrics 1986. Global / Multi-asset / Return series. [paper](https://doi.org/10.1016/0304-4076(86)90063-1)
-- A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options, Review of Financial Studies 1993. Global / Option / Price path. [paper](https://doi.org/10.1093/rfs/6.2.327)
-- Hawkes Processes in Finance, Market Microstructure and Liquidity 2015. Global / Multi-asset / LOB orderflow. [paper](https://doi.org/10.1142/S2382626615500057)
-- Volatility is Rough, Quantitative Finance 2018. Global / Stock, Option / Volatility series. [paper](https://doi.org/10.1080/14697688.2017.1393551)
-- Deep Hedging, Quantitative Finance 2019. Global / Option / Price series. [paper](https://arxiv.org/abs/1802.03042) [code](https://github.com/hansbuehler/deephedging)
-- Quant GANs: Deep Generation of Financial Time Series, Quantitative Finance 2020. Global / Stock / Return series. [paper](https://arxiv.org/abs/1907.06673)
-- Sig-Wasserstein GANs for Time Series Generation, ICAIF 2021. Global / Multi-asset / Return series. [paper](https://arxiv.org/abs/2111.01207) [code](https://github.com/SigCGANs/Sig-Wasserstein-GANs)
-- Generative Modelling of Financial Time Series with Structured Noise and MMD-based Signature Learning, arXiv 2024. US / Stock index / Return series. [paper](https://arxiv.org/abs/2407.19848) [code](https://github.com/Anonymous1701/mmd-repo)
-- Bayesian Robust Financial Trading with Adversarial Synthetic Market Data, arXiv 2026. US / Stock / Price series. [paper](https://arxiv.org/abs/2601.17008) [code](https://github.com/XiaHaochong98/Bayesian-Robust-Financial-Trading-with-Adversarial-Synthetic-Market-Data)
 
 ## Contributing
 
