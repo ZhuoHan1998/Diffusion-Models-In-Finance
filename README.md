@@ -4,7 +4,7 @@ A curated list of papers on learned generative diffusion, flow, and closely rela
 
 ## Scope
 
-Included papers should use a learned diffusion/flow generator, or make a finance-specific contribution that directly evaluates such models. Classical financial "diffusion" in the SDE/PDE sense is not included unless the paper also contains a learned generative diffusion or flow model. Related time-series, tabular, decision-making, and non-diffusion finance generators are listed separately as background or baselines. Some papers are cross-listed when they span more than one financial task, such as portfolio construction and stress-scenario generation. Within each category, papers are ordered by year and then alphabetically by first author name.
+Included papers should use a learned diffusion/flow generator, or make a finance-specific contribution that directly evaluates such models. Classical financial "diffusion" in the SDE/PDE sense is not included unless the paper also contains a learned generative diffusion or flow model. Related time-series, tabular, decision-making, and non-diffusion finance generators are listed separately as background or baselines. Within each category, papers are ordered by year and then alphabetically by first author name.
 
 ![taxonomy](images/taxonomy.png)
 
@@ -177,19 +177,4 @@ Preferred entry format:
 
 ```markdown
 - Paper Title, Venue Year. Region / Asset / Data. [paper](https://...) [code](https://...) - optional short note.
-```
-
-Before adding a paper, check:
-
-- The model is a learned generative diffusion, score-based, flow-matching, rectified-flow, or stochastic-interpolant model.
-- The application is financial, or the paper is clearly useful as a backbone/baseline for finance.
-- The title, authors, year, venue, and paper link resolve to a real source.
-- Classical SDE/PDE "diffusion" papers are not added unless they contain a learned generative sampler.
-
-## Repository Layout
-
-```text
-state/    framework state, findings, progress, and iteration logs
-logs/     work, orchestrator, and heartbeat logs
-paper/    comprehensive survey draft, ICAIF paper, references, and companion corpus
 ```
