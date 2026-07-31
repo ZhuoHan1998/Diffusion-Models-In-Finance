@@ -31,7 +31,6 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
   - [Privacy and Trustworthiness](#privacy-and-trustworthiness)
 - [Structured Financial Objects](#structured-financial-objects)
 - [Related Foundations and Backbones](#related-foundations-and-backbones)
-- [Non-Diffusion Finance Baselines](#non-diffusion-finance-baselines)
 - [Contributing](#contributing)
 
 ## Related Surveys and Resources
@@ -71,7 +70,6 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 - A Financial Time Series Denoiser Based on Diffusion Models, ICAIF 2024. US / Stock / Price series. [paper](https://doi.org/10.1145/3677052.3698649) [arXiv](https://arxiv.org/abs/2409.02138)
 - Solving Dynamic Portfolio Selection Problems via Score-Based Diffusion Models, arXiv 2025. US / Stock / Return series. [paper](https://arxiv.org/abs/2507.09916)
 - DHMoE: Diffusion Generated Hierarchical Multi-Granular Expertise for Stock Prediction, AAAI 2025. US, CN, HK / Stock / Price series. [paper](https://ojs.aaai.org/index.php/AAAI/article/view/33250)
-- Diffusion-Augmented Reinforcement Learning for Robust Portfolio Optimization under Stress Scenarios, NeurIPS 2025 Workshop on Generative AI in Finance. US / Stock / Return series. [paper](https://arxiv.org/abs/2510.07099) [record](https://nips.cc/virtual/2025/132534)
 - Factor-Based Conditional Diffusion Model for Contextual Portfolio Optimization, arXiv 2025. CN / Stock / Return series. [paper](https://arxiv.org/abs/2509.22088)
 - Exploring Diffusion Models for Generative Forecasting of Financial Charts, arXiv 2025. Global / Bitcoin Future / Price series. [paper](https://arxiv.org/abs/2509.02308)
 - FlowHFT: Imitation Learning via Flow Matching Policy for Optimal High-Frequency Trading under Diverse Market Conditions, arXiv 2025. Synthetic / Stock / Synthetic data. [paper](https://arxiv.org/abs/2505.05784)
