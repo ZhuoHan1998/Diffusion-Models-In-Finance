@@ -35,10 +35,12 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 
 ## Related Surveys and Resources
 
-- Synthetic Data Applications in Finance, arXiv 2024. [paper](https://arxiv.org/abs/2401.00081)
-- A Survey on Diffusion Models for Time Series and Spatio-Temporal Data, ACM Computing Surveys 2026. [paper](https://arxiv.org/abs/2404.18886) [journal](https://doi.org/10.1145/3783986) [list](https://github.com/yyysjz1997/Awesome-TimeSeries-SpatioTemporal-Diffusion-Model)
-- Diffusion and Flow Matching Models for Tabular Data: A Survey, arXiv 2025. [paper](https://arxiv.org/abs/2502.17119) [list](https://github.com/Diffusion-Model-Leiden/awesome-diffusion-models-for-tabular-data)
+- Large Language Models in Finance: A Survey, arXiv 2023. [paper](https://arxiv.org/abs/2311.10723)
 - Diffusion Models for Reinforcement Learning: A Survey, arXiv 2023. [paper](https://arxiv.org/abs/2311.01223) [list](https://github.com/apexrl/diff4rlsurvey)
+- Synthetic Data Applications in Finance, arXiv 2024. [paper](https://arxiv.org/abs/2401.00081)
+- Diffusion and Flow Matching Models for Tabular Data: A Survey, arXiv 2025. [paper](https://arxiv.org/abs/2502.17119) [list](https://github.com/Diffusion-Model-Leiden/awesome-diffusion-models-for-tabular-data)
+- Large Language Model Agents for Investment Management: Foundations, Benchmarks, and Research Frontiers, ICAIF 2025. [paper](https://doi.org/10.1145/3768292.3770387)
+- A Survey on Diffusion Models for Time Series and Spatio-Temporal Data, ACM Computing Surveys 2026. [paper](https://arxiv.org/abs/2404.18886) [journal](https://doi.org/10.1145/3783986) [list](https://github.com/yyysjz1997/Awesome-TimeSeries-SpatioTemporal-Diffusion-Model)
 
 ## Financial Time Series Data
 
@@ -88,8 +90,8 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 
 ### Orderbook Generation
 
-- DiffVolume: Diffusion Models for Volume Generation in Limit Order Books, ICAIF 2025. US / Stock / LOB volume. [paper](https://arxiv.org/abs/2508.08698)
 - Painting the Market: Generative Diffusion Models for Financial Limit Order Book Simulation and Forecasting, arXiv 2025. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2509.05107)
+- DiffVolume: Diffusion Models for Volume Generation in Limit Order Books, ICAIF 2025. US / Stock / LOB volume. [paper](https://arxiv.org/abs/2508.08698)
 - DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books, IJCAI-ECAI 2026. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2602.03776) [record](https://kclpure.kcl.ac.uk/portal/en/publications/difflob-diffusion-models-for-counterfactual-generation-in-limit-o/) [code](https://github.com/ZhuoHan1998/DiffLOB)
 
 ## Tabular Data
@@ -131,10 +133,10 @@ Diffusion and score-based modeling:
 - Generative Modeling by Estimating Gradients of the Data Distribution, NeurIPS 2019. [paper](https://arxiv.org/abs/1907.05600) [code](https://github.com/ermongroup/ncsn)
 - Denoising Diffusion Probabilistic Models, NeurIPS 2020. [paper](https://arxiv.org/abs/2006.11239) [code](https://github.com/hojonathanho/diffusion)
 - Diffusion Models Beat GANs on Image Synthesis, NeurIPS 2021. [paper](https://arxiv.org/abs/2105.05233) [code](https://github.com/openai/guided-diffusion)
+- Classifier-Free Diffusion Guidance, NeurIPS 2021 Workshop on Deep Generative Models and Downstream Applications. [paper](https://arxiv.org/abs/2207.12598) [record](https://nips.cc/virtual/2021/48591)
 - Improved Denoising Diffusion Probabilistic Models, ICML 2021. [paper](https://arxiv.org/abs/2102.09672) [code](https://github.com/openai/improved-diffusion)
 - Denoising Diffusion Implicit Models, ICLR 2021. [paper](https://arxiv.org/abs/2010.02502) [code](https://github.com/ermongroup/ddim)
 - Score-Based Generative Modeling through Stochastic Differential Equations, ICLR 2021. [paper](https://arxiv.org/abs/2011.13456) [code](https://github.com/yang-song/score_sde)
-- Classifier-Free Diffusion Guidance, NeurIPS 2021 Workshop on Deep Generative Models and Downstream Applications. [paper](https://arxiv.org/abs/2207.12598) [record](https://nips.cc/virtual/2021/48591)
 - Elucidating the Design Space of Diffusion-Based Generative Models, NeurIPS 2022. [paper](https://arxiv.org/abs/2206.00364) [code](https://github.com/NVlabs/edm)
 - Consistency Models, ICML 2023. [paper](https://arxiv.org/abs/2303.01469) [code](https://github.com/openai/consistency_models)
 
