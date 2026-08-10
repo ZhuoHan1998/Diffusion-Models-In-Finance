@@ -35,7 +35,7 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 
 ## Related Surveys and Resources
 
-- Large Language Models in Finance: A Survey, arXiv 2023. [paper](https://arxiv.org/abs/2311.10723)
+- Large Language Models in Finance: A Survey, ICAIF 2023. [paper](https://arxiv.org/abs/2311.10723)
 - Diffusion Models for Reinforcement Learning: A Survey, arXiv 2023. [paper](https://arxiv.org/abs/2311.01223) [list](https://github.com/apexrl/diff4rlsurvey)
 - Synthetic Data Applications in Finance, arXiv 2024. [paper](https://arxiv.org/abs/2401.00081)
 - Diffusion and Flow Matching Models for Tabular Data: A Survey, arXiv 2025. [paper](https://arxiv.org/abs/2502.17119) [list](https://github.com/Diffusion-Model-Leiden/awesome-diffusion-models-for-tabular-data)
