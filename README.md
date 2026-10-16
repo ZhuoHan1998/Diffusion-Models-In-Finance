@@ -24,8 +24,8 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
   - [Conditional Generation](#conditional-generation)
   - [Prediction and Trading](#prediction-and-trading)
 - [Limit Order Book Data](#limit-order-book-data)
-  - [Generative Market Simulation](#generative-market-simulation)
-  - [Prediction](#prediction)
+  - [Orderflow Generation](#orderflow-generation)
+  - [Orderbook Generation](#orderbook-generation)
 - [Tabular Data](#tabular-data)
   - [Synthesis and Augmentation](#synthesis-and-augmentation)
   - [Privacy and Trustworthiness](#privacy-and-trustworthiness)
@@ -93,6 +93,7 @@ Use `Global` for general methods, `Synthetic` for simulated-only data, and `Unkn
 - Painting the Market: Generative Diffusion Models for Financial Limit Order Book Simulation and Forecasting, arXiv 2025. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2509.05107)
 - DiffVolume: Diffusion Models for Volume Generation in Limit Order Books, ICAIF 2025. US / Stock / LOB volume. [paper](https://arxiv.org/abs/2508.08698)
 - DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books, IJCAI-ECAI 2026. US / Stock / LOB snapshots. [paper](https://arxiv.org/abs/2602.03776) [record](https://kclpure.kcl.ac.uk/portal/en/publications/difflob-diffusion-models-for-counterfactual-generation-in-limit-o/) [code](https://github.com/ZhuoHan1998/DiffLOB)
+- FlowLOB: Efficient and Controllable Limit Order Book Generation with Flow Matching, ICAIF 2026. HK / Stock / LOB trajectories. [paper](https://arxiv.org/abs/2608.13096) [record](https://kclpure.kcl.ac.uk/portal/en/publications/flowlob-efficient-and-controllable-limit-order-book-generation-wi/)
 
 ## Tabular Data
 
